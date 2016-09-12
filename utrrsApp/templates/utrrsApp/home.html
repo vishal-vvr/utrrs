@@ -3,28 +3,28 @@
 <html>
 <head>
 	<title>Unicode Text Rendering Reference System</title>
-	<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.css' %}" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	{% block header %}{% endblock %}
 </head>
 <body>
 	
 	<!-- Header -->
-	<div class="container-fluid" style="background-color:#EAFFFF;border-top:10px solid #337ACC;">
+	<div class="container-fluid" style="background-color:#FAD2C9;border-top:10px solid #337ACC;">
 		<div class="row">
-  			<div class="col-xs-1" style="margin-top:10px;margin-left:20px">
+  			<div class="col-xs-1" style="margin-top:5px;margin-left:20px;margin-bottom:5px">
   				<a href="#"><img height="100px" src="{% static 'images/logo.png' %}"></a>
   			</div>
 
   			<div class="col-xs-6">
-  				<a class="navbar-brand" href="#" style="margin-top:10px;">Unicode Text Rendering Reference System</a>
+  				<span class="navbar-brand" style="margin-top:10px;">Unicode Text Rendering Reference System</span>
   			</div>
   			<div class="col-xs-6">
   				<div id="navbar" class="collapse navbar-collapse">
           			<ul class="nav navbar-nav">
-           				<li class="active"><a href="#">Home</a></li>
-            			<li><a href="#about">About</a></li>
-            			<li><a href="#feedback">Feedback</a></li>
+           				<li class="active"><a href="#"><i class="glyphicon glyphicon-home"></i>&nbsp&nbspHome </a></li>
+            			<li><a href="#about"><i class="glyphicon glyphicon-question-sign"></i>&nbsp&nbspAbout</a></li>
+            			<li><a href="#feedback"><i class="glyphicon glyphicon-pencil"></i>&nbsp&nbspFeedback</a></li>
           			</ul>
         	    </div>
   			</div>
@@ -32,21 +32,43 @@
 	</div>
 
 	<!-- Body -->
-    <div class="container" style="margin-top:20px;margin-bottom:20px">
-    	<div>
-        	<h2>Unicode Text Rendering Reference System</h2>
-        	<p>A system to compare a reference image of a text character, word or phrase with another image of the character, word or phrase that was rendered by a text rendering engine. Differences between the reference image and the rendered image may be recorded for subsequent analysis. Performance of a text rendering engine producing text according to typographical rules applicable to a natural language can be evaluated by one with no knowledge or ability to read the natural language.
-        	</p>
-        	<p>This Application Test for the Codepoints (Unicode Character set), GSUB and GPOS (Composed characters, that built with the combination of more than two codepoints in Indic Scripts).
-			</p>
-			<p>For latest information about the project, please do visit the <a href="https://fedorahosted.org/fuel/wiki/UTRRS">trac</a> page.</p>
-			<br/>
+    <div class="container-fluid" style="margin-top:20px;margin-bottom:20px;">
+    	<div class="row">
+    	    <!-- Sidebar -->
+    	    <div class="col-xs-2" style="height:560px;">
+    	        <ul class="" style="margin-left:30px;">
+		        <span class="navbar-brand" style="margin-left:15px;">LANGUAGES</span>
+		        <button type="button" class="btn btn-default btn-block button1" style="text-align:left;font-weight: bold;"><i class="glyphicon glyphicon-tags"></i>&nbsp&nbsp&nbsp&nbsp Assamese</button>
+		        <button type="button" class="btn btn-default btn-block button2" style="text-align:left;font-weight: bold;"><i class="glyphicon glyphicon-tags"></i>&nbsp&nbsp&nbsp&nbsp Bengali</button>
+		        <button type="button" class="btn btn-default btn-block button3" style="text-align:left;font-weight: bold;"><i class="glyphicon glyphicon-tags"></i>&nbsp&nbsp&nbsp&nbsp German</button>
+		        <button type="button" class="btn btn-default btn-block button4" style="text-align:left;font-weight: bold;"><i class="glyphicon glyphicon-tags"></i>&nbsp&nbsp&nbsp&nbsp Gujarati</button>
+		        <button type="button" class="btn btn-default btn-block button5" style="text-align:left;font-weight: bold;"><i class="glyphicon glyphicon-tags"></i>&nbsp&nbsp&nbsp&nbsp Hindi</button>
+		        <button type="button" class="btn btn-default btn-block button2" style="text-align:left;font-weight: bold;"><i class="glyphicon glyphicon-tags"></i>&nbsp&nbsp&nbsp&nbsp Kannada</button>
+		        <button type="button" class="btn btn-default btn-block button2" style="text-align:left;font-weight: bold;"><i class="glyphicon glyphicon-tags"></i>&nbsp&nbsp&nbsp&nbsp Maithili</button>
+		        <button type="button" class="btn btn-default btn-block button2" style="text-align:left;font-weight: bold;"><i class="glyphicon glyphicon-tags"></i>&nbsp&nbsp&nbsp&nbsp Malayalam</button>
+		        <button type="button" class="btn btn-default btn-block button2" style="text-align:left;font-weight: bold;"><i class="glyphicon glyphicon-tags"></i>&nbsp&nbsp&nbsp&nbsp Marathi</button>
+		        <button type="button" class="btn btn-default btn-block button2" style="text-align:left;font-weight: bold;"><i class="glyphicon glyphicon-tags"></i>&nbsp&nbsp&nbsp&nbsp Odia</button>
+		        <button type="button" class="btn btn-default btn-block button2" style="text-align:left;font-weight: bold;"><i class="glyphicon glyphicon-tags"></i>&nbsp&nbsp&nbsp&nbsp Punjabi</button>
+		        <button type="button" class="btn btn-default btn-block button2" style="text-align:left;font-weight: bold;"><i class="glyphicon glyphicon-tags"></i>&nbsp&nbsp&nbsp&nbsp Tamil</button>
+		        <button type="button" class="btn btn-default btn-block button2" style="text-align:left;font-weight: bold;"><i class="glyphicon glyphicon-tags"></i>&nbsp&nbsp&nbsp&nbsp Telugu</button>
+		        </ul>
+    	    </div>
+    	    <!-- Content -->
+    	    <div class="col-xs-6" style="width:80%">
+    	    	<h2>Unicode Text Rendering Reference System</h2>
+	        	<p>A system to compare a reference image of a text character, word or phrase with another image of the character, word or phrase that was rendered by a text rendering engine. Differences between the reference image and the rendered image may be recorded for subsequent analysis. Performance of a text rendering engine producing text according to typographical rules applicable to a natural language can be evaluated by one with no knowledge or ability to read the natural language.
+	        	</p>
+	        	<p>This Application Test for the Codepoints (Unicode Character set), GSUB and GPOS (Composed characters, that built with the combination of more than two codepoints in Indic Scripts).
+				</p>
+				<p>For latest information about the project, please do visit the <a href="https://fedorahosted.org/fuel/wiki/UTRRS">trac</a> page.</p>
+				<br/>
+    	    </div>
       	</div>
     </div>
 
 
     <!-- Footer -->
-    <div class="container-fluid" style="background-color:#EAFFFF;border-bottom:10px solid #337ACC;">
+    <div class="container-fluid" style="background-color:#FAD2C9;border-bottom:10px solid #337ACC;">
 		<div style="text-align:center;margin-bottom:30px;margin-top:10px">
 			© 2007-2013 Red Hat, Inc. and others. For comments or queries, please contact us.<br/>
 
