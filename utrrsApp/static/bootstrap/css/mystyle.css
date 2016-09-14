@@ -1,0 +1,32 @@
+#header{
+	background-color:#F1EFEF;
+	border-top:10px solid #337ACC;
+}
+
+#header > .row > .col-xs-1{
+	margin-top:5px;
+	margin-left:20px;
+	margin-bottom:5px;
+}
+
+#header > .row > .col-xs-6 > span{
+	margin-top:10px;
+}
+
+#body > .row > .col-xs-2 > ul{
+	margin-right:70px;
+}
+
+#body > .row > .col-xs-2 > ul > button{
+	text-align:left;font-weight: bold;
+}
+
+#footer{
+	background-color:#F1EFEF;
+	border-bottom:10px solid #337ACC;
+}
+#footer > div{
+	text-align:center;
+	margin-bottom:20px;
+	margin-top:10px
+}
