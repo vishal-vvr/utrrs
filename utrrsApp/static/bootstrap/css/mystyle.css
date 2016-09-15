@@ -1,6 +1,6 @@
 #header{
-	background-color:#F1EFEF;
-	border-top:10px solid #337ACC;
+	background-color:#4d96ce;
+	border-top:0px solid #337ACC;
 }
 
 #header > .row > .col-xs-1{
@@ -11,6 +11,34 @@
 
 #header > .row > .col-xs-6 > span{
 	margin-top:10px;
+	color:white;
+	font-weight: bold;
+	font-size: 25px;
+	text-shadow: 2px 2px #000000
+}
+
+#content{
+	text-align: justify;
+}
+
+#content > h2{
+	color: #666666;
+}
+
+#body{
+	background-image:url('/static/images/background.jpg');
+}
+
+.nav > li > a{
+	color:white;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus{
+    color: #333;
+    background-color: #e6e6e6;
+    border-top-left-radius:4px;
+    border-top-right-radius:4px;
 }
 
 #body > .row > .col-xs-2 > ul{
@@ -22,11 +50,37 @@
 }
 
 #footer{
-	background-color:#F1EFEF;
-	border-bottom:10px solid #337ACC;
+	background-color:#28303a;
+	border-bottom:0px solid #337ACC;
 }
-#footer > div{
+
+#footer > #footer_content{
 	text-align:center;
 	margin-bottom:20px;
-	margin-top:10px
+	margin-top:50px;
+	color: white;
+}
+
+#footer > #links > a{
+	margin-right: 0px;
+	margin-left: 0px;
+	font-weight: bold;
+	color: #8d9296;
+	display: block;
+	padding: 10px 50px;
+	padding-top: 10px;
+    padding-bottom: 10px;
+    float: left;
+
+}
+
+#footer > #links{
+	margin-left: 400px;
+}
+
+#footer > #links > a:hover,
+#footer > #links > a:focus{
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
 }
