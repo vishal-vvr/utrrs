@@ -57,30 +57,25 @@
 #footer > #footer_content{
 	text-align:center;
 	margin-bottom:20px;
-	margin-top:50px;
+	margin-top:30px;
 	color: white;
 }
 
-#footer > #links > a{
-	margin-right: 0px;
-	margin-left: 0px;
+#footer > #links > div > a{
+	text-align:center;
 	font-weight: bold;
 	color: #8d9296;
 	display: block;
-	padding: 10px 50px;
-	padding-top: 10px;
-    padding-bottom: 10px;
-    float: left;
-
+	padding-top: 20px;
+	font-size: 15px;
 }
 
 #footer > #links{
-	margin-left: 400px;
+	margin-left: 0px;
 }
 
-#footer > #links > a:hover,
-#footer > #links > a:focus{
+#footer > #links > div >a:hover,
+#footer > #links > div >a:focus{
 	color: white;
 	text-decoration: none;
-	font-weight: bold;
 }
