@@ -12,3 +12,7 @@ def history(request):
 
 def roadmap(request):
 	return render(request, 'roadmap.html')
+
+def hindi(request):
+	return render(request, 'hindi.html')
+
