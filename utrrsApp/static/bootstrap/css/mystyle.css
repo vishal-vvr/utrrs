@@ -29,12 +29,12 @@
 	background-image:url('/static/images/background.jpg');
 }
 
-.nav > li > a{
+.nav > .tray > a{
 	color:white;
 }
 
-.nav > li > a:hover,
-.nav > li > a:focus{
+.nav > .tray > a:hover,
+.nav > .tray > a:focus{
     color: #333;
     background-color: #e6e6e6;
     border-top-left-radius:4px;
@@ -78,4 +78,24 @@
 #footer > #links > div >a:focus{
 	color: white;
 	text-decoration: none;
+}
+
+.table-head{
+	color: #fff;
+    background-color: #28303a;
+}
+
+.table-row{
+	background-color: #fff;
+}
+
+.nav > li >a{
+	margin-top: 10px;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus{
+    color: #333;
+  	background-color: #d4d4d4;
+    border-color: #8c8c8c;
 }
