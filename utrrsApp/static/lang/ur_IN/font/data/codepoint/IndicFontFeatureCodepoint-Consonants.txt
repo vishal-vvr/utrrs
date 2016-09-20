@@ -1,0 +1,99 @@
+codepoint, imagepath, rawcode, desc
+
+U+0603, lang/ur_IN/image/0603.gif, ؃, ARABIC LETTER SAFHA	
+U+060c, lang/ur_IN/image/060C.gif, ،, ARABIC LETTER COMMA
+U+060d, lang/ur_IN/image/060d.gif, ؍, ARABIC LETTER DATE SEPARATOR 
+U+0610, lang/ur_IN/image/0610.gif, ؐ, ARABIC SIGN 	SALLALLAHOU ALAYHE WASSALLAM
+U+0611, lang/ur_IN/image/0611.gif, ؑ, ARABIC SIGN 	ALAYHE ASSALLAM
+U+0612, lang/ur_IN/image/0612.gif, ؒ, ARABIC SIGN 	RAHMATULLAH ALAYHE
+U+0613, lang/ur_IN/image/0613.gif, ؓ, ARABIC SIGN 	ALLAHOU ANHU	
+U+0614, lang/ur_IN/image/0614.gif, ؔ, ARABIC SIGN 	TAKHALLUS
+U+0615, lang/ur_IN/image/0615.gif, ؕ, ARABIC SMALL	HIGH TAH
+U+061B, lang/ur_IN/image/061B.gif, ؛, ARABIC SEMICOLON	(003B)
+U+061F, lang/ur_IN/image/061F.gif, ؟, ARABIC QUESTION MARK	(003F)
+U+0621, lang/ur_IN/image/0621.gif, ء, ARABIC LETTER HAMZA
+U+0622, lang/ur_IN/image/0622.gif, آ, ARABIC LETTER ALEF WITH MADDA ABOVE
+U+0623, lang/ur_IN/image/0623.gif, أ, ARABIC LETTER ALEF WITH HAMZA ABOVE
+U+0624, lang/ur_IN/image/0624.gif, ؤ, ARABIC LETTER WAW WITH HAMZA ABOVE
+U+0625, lang/ur_IN/image/0625.gif, إ, ARABIC LETTER ALEF WITH HAMZA BELOW
+U+0626, lang/ur_IN/image/0626.gif, ئ, ARABIC LETTER YEH WITH HAMZA ABOVE
+U+0627, lang/ur_IN/image/0627.gif, ا, ARABIC LETTER ALEF
+U+0628, lang/ur_IN/image/0628.gif, ب, ARABIC LETTER BEH
+U+0629, lang/ur_IN/image/0629.gif, ة, ARABIC LETTER TEH MARBUTA
+U+062A, lang/ur_IN/image/062A.gif, ت, ARABIC LETTER TEH MARBUTA
+U+062B, lang/ur_IN/image/062B.gif, ث, ARABIC LETTER THEH
+U+062C, lang/ur_IN/image/062C .gif, ج, ARABIC LETTER JEEM
+U+062D, lang/ur_IN/image/062D.gif, ح, ARABIC LETTER HAH
+U+062E, lang/ur_IN/image/062E.gif, خ, ARABIC LETTER KHAH
+U+062F, lang/ur_IN/image/062F.gif, د, ARABIC LETTER DAL
+U+0630, lang/ur_IN/image/0630.gif, ذ, ARABIC LETTER THAL
+U+0631, lang/ur_IN/image/0631.gif, ر, ARABIC LETTER REH
+U+0632, lang/ur_IN/image/0632.gif, ز, ARABIC LETTER ZAIN
+U+0633, lang/ur_IN/image/0633.gif, س, ARABIC LETTER SEEN
+U+0634, lang/ur_IN/image/0634.gif, ش, ARABIC LETTER SHEEN
+U+0635, lang/ur_IN/image/0635.gif, ص, ARABIC LETTER SAD
+U+0636, lang/ur_IN/image/0636.gif, ض, ARABIC LETTER DAD
+U+0637, lang/ur_IN/image/0637.gif, ط, ARABIC LETTER TAH
+U+0638, lang/ur_IN/image/0638.gif, ظ, ARABIC LETTER ZAH
+U+0639, lang/ur_IN/image/0639.gif, ع, ARABIC LETTER AIN
+U+063A, lang/ur_IN/image/063A.gif, غ, ARABIC LETTER GHAIN
+U+0640, lang/ur_IN/image/0640.gif, ـ, ARABIC TATWEEL
+U+0641, lang/ur_IN/image/0641.gif, ف, ARABIC LETTER FEH
+U+0642, lang/ur_IN/image/0642.gif, ق, ARABIC LETTER QAF
+U+0644, lang/ur_IN/image/0644.gif, ل, ARABIC LETTER LAM
+U+0645, lang/ur_IN/image/0645.gif, م, ARABIC LETTER MEEM
+U+0646, lang/ur_IN/image/0646.gif, ن, ARABIC LETTER NOON
+U+0647, lang/ur_IN/image/0647.gif, ه, ARABIC LETTER HEH
+U+0648, lang/ur_IN/image/0648.gif, و, ARABIC LETTER WAW
+U+0649, lang/ur_IN/image/0649.gif, ى, ARABIC LETTER ALEF MAKSURA
+U+064A, lang/ur_IN/image/064A.gif, ي, ARABIC LETTER YEH
+U+064B, lang/ur_IN/image/064B.gif, ً, ARABIC FATHATAN
+U+064C, lang/ur_IN/image/064C.gif, ٌ, ARABIC DAMMATAN
+U+064D, lang/ur_IN/image/064D.gif, ٍ, ARABIC KASRATAN
+U+064E, lang/ur_IN/image/064E.gif, َ, ARABIC FATHA
+U+064F, lang/ur_IN/image/064F.gif, ُ, ARABIC DAMMA
+U+0650, lang/ur_IN/image/0650.gif, ِ, ARABIC KASRA
+U+0651, lang/ur_IN/image/0651.gif, ّ, ARABIC SHADDA
+U+0652, lang/ur_IN/image/0652.gif, ْ, ARABIC SUKUN
+U+0653, lang/ur_IN/image/0653.gif, ٓ, ARABIC MADDAH	ABOVE	
+U+0654, lang/ur_IN/image/0654.gif, ٔ, ARABIC HAMZA	ABOVE	
+U+0655, lang/ur_IN/image/0655.gif, ٕ, ARABIC HAMZA	BELOW	
+U+0657, lang/ur_IN/image/0657.gif, ٗ, ARABIC INVERTED	DAMMA
+U+0658, lang/ur_IN/image/0658.gif, ٘, ARABIC MARK	NOON	GHUNNA	
+U+066A, lang/ur_IN/image/066A.gif, ٪, ARABIC SIGN 	PERCENT
+U+066B, lang/ur_IN/image/066B.gif, ٫, ARABIC DECIMAL	SEPARATOR 	
+U+066C, lang/ur_IN/image/066C.gif, ٬, ARABIC THOUSANDS	SEPARATOR 	
+U+066D, lang/ur_IN/image/066D.gif, ٭, ARABIC FIVE POINTED	STAR 	
+U+0670, lang/ur_IN/image/0670.gif, ٰ, ARABIC LETTER SUPERSCRIPT ALEF	
+U+0674, lang/ur_IN/image/0674.gif, ٴ, ARABIC LETTER HIGH 	HAMZA	
+U+0679, lang/ur_IN/image/0679.gif, ٹ, ARABIC LETTER TTEH
+U+067E, lang/ur_IN/image/067E.gif, پ, ARABIC LETTER PEH
+U+0686, lang/ur_IN/image/0686.gif, چ, ARABIC LETTER TCHEH
+U+0688, lang/ur_IN/image/0688.gif, ڈ, ARABIC LETTER DDAL
+U+068B, lang/ur_IN/image/068B.gif, ڋ, ARABIC LETTER DALWITH DOT BELOW	
+U+0690, lang/ur_IN/image/0690.gif, ڐ, ARABIC LETTER DAL WITH FOUR DOTS ABOVE	
+U+0691, lang/ur_IN/image/0691.gif, ڑ, ARABIC LETTER RREH
+U+0698, lang/ur_IN/image/0698.gif, ژ, ARABIC LETTER JEH
+U+06A9, lang/ur_IN/image/06A9.gif, ک, ARABIC LETTER KEHEH
+U+06AF, lang/ur_IN/image/06AF.gif, گ, ARABIC LETTER GAF
+U+06B0, lang/ur_IN/image/06B0.gif, ڰ, ARABIC LETTER GAF WITH RING	(lahnda)
+U+06BA, lang/ur_IN/image/06BA.gif, ں, ARABIC LETTER NOON GHUNNA	
+U+06BE, lang/ur_IN/image/06BE.gif, ھ, ARABIC LETTER HEH DOACHASHMEE	
+U+06C0, lang/ur_IN/image/06C0.gif, ۀ, ARABIC LETTER HEH WITH YEH ABOVE	(izafet)
+U+06C1, lang/ur_IN/image/06C1.gif, ہ, ARABIC LETTER HEH GOAL	
+U+06C2, lang/ur_IN/image/06C2.gif, ۂ, ARABIC LETTER HEH GOAL	WITH HAMZA
+U+06C3, lang/ur_IN/image/06C3.gif, ۃ, ARABIC LETTER TEH MARBUTA	GOAL
+U+06CC, lang/ur_IN/image/06CC .gif, ی, ARABIC LETTER FARSI YEH
+U+06D2, lang/ur_IN/image/06D2.gif, ے, ARABIC LETTER YEH BARRE	
+U+06D3, lang/ur_IN/image/06D3.gif, ۓ, ARABIC LETTER YEH BARRE WITH HAMZA
+U+06D4, lang/ur_IN/image/06D4.gif, ۔, ARABIC FULL STOP
+U+06F0, lang/ur_IN/image/06F0.gif, 0, ARABIC-INDIC DIGIT ONE
+U+06F1, lang/ur_IN/image/06F1.gif, 1, ARABIC-INDIC DIGIT ONE
+U+06F2, lang/ur_IN/image/06F2.gif, 2, ARABIC-INDIC DIGIT TWO
+U+06F3, lang/ur_IN/image/06F3.gif, 3, ARABIC-INDIC DIGIT THREE
+U+06F4, lang/ur_IN/image/06F4.gif, 4, ARABIC-INDIC DIGIT FOUR 	
+U+06F5, lang/ur_IN/image/06F5.gif, 5, ARABIC-INDIC DIGIT FIVE
+U+06F6, lang/ur_IN/image/06F6.gif, 6, ARABIC-INDIC DIGIT SIX
+U+06F7, lang/ur_IN/image/06F7.gif, 7, ARABIC-INDIC DIGIT SEVEN
+U+06F8, lang/ur_IN/image/06F8.gif, 8, ARABIC-INDIC DIGIT EIGHT
+U+06F9, lang/ur_IN/image/06F9.gif, 9, ARABIC-INDIC DIGIT NINE

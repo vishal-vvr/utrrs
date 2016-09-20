@@ -1,0 +1,15 @@
+codepoint, imagepath, rawcode, desc
+U+0CBE , image/0CBE.jpg,  ಾ, KANNADA VOWEL SIGN AA
+U+0CBF , image/0CBF.jpg,  ಿ, KANNADA VOWEL SIGN I
+U+0CC0 , image/0CC0.jpg,  ೀ, KANNADA VOWEL SIGN II
+U+0CC1 , image/0CC1.jpg,  ು, KANNADA VOWEL SIGN U
+U+0CC2 , image/0CC2.jpg,  ೂ, KANNADA VOWEL SIGN UU
+U+0CC3 , image/0CC3.jpg,  ೃ, KANNADA VOWEL SIGN VOCALIC R
+U+0CC4 , image/0CC4.jpg,  ೄ, KANNADA VOWEL SIGN VOCALIC RR
+U+0CC6 , image/0CC6.jpg,  ೆ, KANNADA VOWEL SIGN E
+U+0CC7 , image/0CC7.jpg,  ೇ, KANNADA VOWEL SIGN EE
+U+0CC8 , image/0CC8.jpg,  ೈ, KANNADA VOWEL SIGN AI
+U+0CCA , image/0CCA.jpg,  ೊ, KANNADA VOWEL SIGN O
+U+0CCB , image/0CCB.jpg,  ೋ, KANNADA VOWEL SIGN OO
+U+0CCC , image/0CCC.jpg,  ೌ, KANNADA VOWEL SIGN AU
+

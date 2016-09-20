@@ -1,0 +1,5 @@
+codepoint, imagepath, rawcode, desc
+U+0B95 U+0BCD U+0BB7 , image/0B95-0BCD-0BB7.jpg, க்ஷ ,	KA + VIRAMA + SSA
+U+0B95 U+0BCD U+0BB7 U+0BBF , image/0B95-0BCD-0BB7-0BBF.jpg,  க்ஷி, KA + VIRAMA + SSA + I
+U+0B95 U+0BCD U+0BB7 U+0BC0 , image/0B95-0BCD-0BB7-0BC0.jpg,  க்ஷீ, KA + VIRAMA + SSA + II
+U+0BB6 U+0BCD U+0BB0 U+0BC0 , image/0BB6-0BCD-0BB0-0BC0.jpg, ஶ்ரீ, SHA + HALANT + RA + Vowel Sign II

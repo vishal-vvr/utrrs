@@ -1,0 +1,4 @@
+codepoint, imagepath, rawcode, desc
+U+0BF0, image/0BF0.jpg,  ௰, TAMIL NUMBER TEN
+U+0BF1, image/0BF1.jpg,  ௱,  TAMIL NUMBER HUNDRED
+U+0BF2, image/0BF2.jpg,  ௲, TAMIL NUMBER THOUSAND

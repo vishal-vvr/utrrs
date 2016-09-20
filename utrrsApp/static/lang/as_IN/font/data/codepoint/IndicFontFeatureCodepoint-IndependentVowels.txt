@@ -1,0 +1,12 @@
+codepoint, imagepath, rawcode, desc
+U+0985 , image/0985.jpg, 	 অ,     ASSAMESE LETTER A
+U+0986 , image/0986.jpg, 	 আ,    ASSAMESE LETTER AA
+U+0987 , image/0987.jpg, 	 ই ,   	ASSAMESE LETTER I
+U+0988 , image/0988.jpg, 	 ঈ,	ASSAMESE LETTER II
+U+0989 , image/0989.jpg, 	 উ,	ASSAMESE LETTER U
+U+098A , image/098A.jpg, 	 ঊ,	ASSAMESE LETTER UU
+U+098B , image/098B.jpg, 	 ঋ,	ASSAMESE LETTER VOCALIC R
+U+098F , image/098F.jpg, 	 এ,	ASSAMESE LETTER E
+U+0990 , image/0990.jpg, 	 ঐ,	ASSAMESE LETTER AI
+U+0993 , image/0993.jpg, 	 ও,	ASSAMESE LETTER O
+U+0994 , image/0994.jpg, 	 ঔ,	ASSAMESE LETTER AU

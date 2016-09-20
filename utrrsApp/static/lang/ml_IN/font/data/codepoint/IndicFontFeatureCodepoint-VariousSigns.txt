@@ -1,0 +1,11 @@
+codepoint,  imagepath,  rawcode,  desc
+
+U+0D02,  image/0D02.jpg, ം,  MALAYALAM SIGN ANUSVARA
+U+0D03,  image/0D03.jpg, ഃ,  MALAYALAM SIGN VISARGA
+U+0D4D,  image/0D4D.jpg, ്,  MALAYALAM  SIGN VIRAMA
+U+0D57,  image/0D57.jpg, ൗ,  MALAYALAM AU SIGN LENGTH MARK (only a representation of the right half of 0D4C)
+U+0D3D, image/0D3D.jpg,  	ഽ,	MALAYALAM SIGN AVAGRAHA 	
+U+0D44, image/0D44.jpg,	ൄ,	MALAYALAM VOWEL SIGN VOCALIC RR
+U+0D29, image/0D29.jpg,	 ഩ,	MALAYALAM LETTER NNNA 
+U+0D3A, image/0D3A.jpg,	 ഺ,	MALAYALAM LETTER TTTA
+U+20B9, image/20B9.jpg,	₹,	India Rupee Sign

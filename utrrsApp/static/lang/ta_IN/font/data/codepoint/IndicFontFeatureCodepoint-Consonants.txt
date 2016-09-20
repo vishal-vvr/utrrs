@@ -1,0 +1,24 @@
+codepoint, imagepath, rawcode, desc
+U+0B95 , image/0B95.jpg,  க,	TAMIL LETTER KA
+U+0B99 , image/0B99.jpg,  ங,	TAMIL LETTER NGA
+U+0B9A , image/0B9A.jpg,  ச,	TAMIL LETTER CA
+U+0B9C , image/0B9C.jpg,  ஜ,	TAMIL LETTER JA
+U+0B9E , image/0B9E.jpg,  ஞ,	TAMIL LETTER NYA
+U+0B9F , image/0B9F.jpg,  ட,	TAMIL LETTER TTA
+U+0BA3 , image/0BA3.jpg,  ண,	TAMIL LETTER NNA
+U+0BA4 , image/0BA4.jpg,  த,	TAMIL LETTER TA
+U+0BA8 , image/0BA8.jpg,  ந,	TAMIL LETTER NA
+U+0BA9 , image/0BA9.jpg,  ன,	TAMIL LETTER NNNA
+U+0BAA , image/0BAA.jpg,  ப,	TAMIL LETTER PA
+U+0BAE , image/0BAE.jpg,  ம,	TAMIL LETTER MA
+U+0BAF , image/0BAF.jpg,  ய,	TAMIL LETTER YA
+U+0BB0 , image/0BB0.jpg,  ர,	TAMIL LETTER RA
+U+0BB1 , image/0BB1.jpg,  ற,	TAMIL LETTER RRA
+U+0BB2 , image/0BB2.jpg,  ல,	TAMIL LETTER LA
+U+0BB3 , image/0BB3.jpg,  ள,	TAMIL LETTER LLA
+U+0BB4 , image/0BB4.jpg,  ழ,	TAMIL LETTER LLLA
+U+0BB5 , image/0BB5.jpg,  வ,	TAMIL LETTER VA
+U+0BB6 , image/0BB6.jpg,  ஶ, TAMIL LETTER SHA
+U+0BB7 , image/0BB7.jpg,  ஷ,	TAMIL LETTER SSA
+U+0BB8 , image/0BB8.jpg,  ஸ,	TAMIL LETTER SA
+U+0BB9 , image/0BB9.jpg,  ஹ,	TAMIL LETTER HA

@@ -1,0 +1,38 @@
+codepoint, imagepath, rawcode, desc
+
+U+ 0D15, image/0D15.jpg, ക , MALAYALAM LETTER KA
+U+ 0D16, image/0D16.jpg, ഖ , MALAYALAM LETTER KHA
+U+ 0D17, image/0D17.jpg, ഗ , MALAYALAM LETTER GA
+U+ 0D18, image/0D18.jpg, ഘ , MALAYALAM LETTER GHA
+U+ 0D19, image/0D19.jpg, ങ , MALAYALAM LETTER NGA
+U+ 0D1A, image/0D1A.jpg, ച , MALAYALAM LETTER CA = cha
+U+ 0D1B, image/0D1B.jpg, ഛ , MALAYALAM LETTER CHA = chha
+U+ 0D1C, image/0D1C.jpg, ജ , MALAYALAM LETTER JA
+U+ 0D1D, image/0D1D.jpg, ഝ , MALAYALAM LETTER JHA
+U+ 0D1E, image/0D1E.jpg, ഞ , MALAYALAM LETTER NYA = nha
+U+ 0D1F, image/0D1F.jpg, ട , MALAYALAM LETTER TTA = ta
+U+ 0D20, image/0D20.jpg, ഠ , MALAYALAM LETTER TTHA = tta
+U+ 0D21, image/0D21.jpg, ഡ , MALAYALAM LETTER DDA = Hard da
+U+ 0D22, image/0D22.jpg, ഢ , MALAYALAM LETTER DDHA = Hard dda
+U+ 0D23, image/0D23.jpg, ണ , MALAYALAM LETTER NNA = Hard na
+U+ 0D24, image/0D24.jpg, ത , MALAYALAM LETTER TA = tha
+U+ 0D25, image/0D25.jpg, ഥ , MALAYALAM LETTER THA = ttha
+U+ 0D26, image/0D26.jpg, ദ , MALAYALAM LETTER DA = Soft da
+U+ 0D27, image/0D27.jpg, ധ , MALAYALAM LETTER DHA = Soft dda
+U+ 0D28, image/0D28.jpg, ന , MALAYALAM LETTER NA
+U+ 0D2A, image/0D2A.jpg, പ , MALAYALAM LETTER PA
+U+ 0D2B, image/0D2B.jpg, ഫ , MALAYALAM LETTER PHA
+U+ 0D2C, image/0D2C.jpg, ബ , MALAYALAM LETTER BA
+U+ 0D2D, image/0D2D.jpg, ഭ , MALAYALAM LETTER BHA
+U+ 0D2E, image/0D2E.jpg, മ , MALAYALAM LETTER MA
+U+ 0D2F, image/0D2F.jpg, യ , MALAYALAM LETTER YA
+U+ 0D30, image/0D30.jpg, ര , MALAYALAM LETTER RA
+U+ 0D31, image/0D31.jpg, റ , MALAYALAM LETTER RRA
+U+ 0D32, image/0D32.jpg, ല , MALAYALAM LETTER LA
+U+ 0D33, image/0D33.jpg, ള , MALAYALAM LETTER LLA
+U+ 0D34, image/0D34.jpg, ഴ , MALAYALAM LETTER LLLA = zha
+U+ 0D35, image/0D35.jpg, വ , MALAYALAM LETTER VA
+U+ 0D36, image/0D36.jpg, ശ , MALAYALAM LETTER SHA = Soft sha
+U+ 0D37, image/0D37.jpg, ഷ , MALAYALAM LETTER SSA = sha
+U+ 0D38, image/0D38.jpg, സ , MALAYALAM LETTER SA
+U+ 0D39, image/0D39.jpg, ഹ , MALAYALAM LETTER HA

@@ -1,0 +1,5 @@
+codepoint, imagepath, rawcode, desc
+U+0CE0, image/0CE0.jpg,  ೠ, KANNADA LETTER VOCALIC RR
+U+0CE1, image/0CE1.jpg,  ೡ, KANNADA LETTER VOCALIC LL
+U+0CE2, image/0CE2.jpg,  ೢ, KANNADA VOWEL SIGN VOCALIC L
+U+0CE3, image/0CE3.jpg,  ೣ, KANNADA VOWEL VOCALIC LL

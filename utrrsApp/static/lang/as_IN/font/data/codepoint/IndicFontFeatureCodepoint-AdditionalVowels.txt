@@ -1,0 +1,5 @@
+codepoint, imagepath, rawcode, desc
+U+09E0, image/09E0.jpg,  ৠ, ADDITIONAL LETTER VOCALIC RR
+U+09E1, image/09E1.jpg,  ৡ, ADDITIONAL LETTER VOCALIC LL
+U+09E2, image/09E2.jpg,  ৢ, ADDITIONAL VOWEL SIGN VOCALIC L
+U+09E3, image/09E3.jpg,  ৣ, ADDITIONAL VOWEL SIGN VOCALIC LL

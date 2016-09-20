@@ -1,0 +1,3 @@
+codepoint, imagepath, rawcode, desc
+
+U+0615, lang/ur_IN/image/0615.gif, ؕ, ARABIC SMALL HIGH TAH

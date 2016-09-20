@@ -1,0 +1,5 @@
+codepoint, imagepath, rawcode, desc
+U+0960, image/0960.jpg,  ॠ, DEVNAGARI LETTER VOCALIC RR
+U+0961, image/0961.jpg,  ॡ, DEVNAGARI LETTER VOCALIC LL
+U+0962, image/0962.jpg,  ॢ, DEVNAGARI VOWEL VOCALIC SIGN L 
+U+0963, image/0963.jpg,  ॣ, DEVNAGARI VOWEL SIGN VOCALIC LL

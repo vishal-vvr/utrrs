@@ -1,0 +1,11 @@
+codepoint, imagepath, rawcode, desc
+U+09E6, image/09E6.jpg,  ০,	BENGALI DIGIT 0
+U+09E7, image/09E7.jpg,  ১,	BENGALI DIGIT 1
+U+09E8, image/09E8.jpg,  ২,	BENGALI DIGIT 2
+U+09E9, image/09E9.jpg,  ৩,	BENGALI DIGIT 3
+U+09EA, image/09EA.jpg,  ৪,	BENGALI DIGIT 4
+U+09EB, image/09EB.jpg,  ৫,	BENGALI DIGIT 5
+U+09EC, image/09EC.jpg,  ৬,	BENGALI DIGIT 6
+U+09ED, image/09ED.jpg,  ৭,	BENGALI DIGIT 7
+U+09EE, image/09EE.jpg,  ৮,	BENGALI DIGIT 8
+U+09EF, image/09EF.jpg,  ৯,	BENGALI DIGIT 9

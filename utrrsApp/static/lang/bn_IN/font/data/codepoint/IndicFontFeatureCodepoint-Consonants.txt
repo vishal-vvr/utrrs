@@ -1,0 +1,37 @@
+codepoint, imagepath, rawcode, desc
+U+0995 , image/0995.jpg,  ক,	BENGALI LETTER KA
+U+0996 , image/0996.jpg,  খ,	BENGALI LETTER KHA
+U+0997 , image/0997.jpg,  গ,	BENGALI LETTER GA
+U+0998 , image/0998.jpg,  ঘ,	BENGALI LETTER GHA
+U+0999 , image/0999.jpg,  ঙ,	BENGALI LETTER NGA
+U+099A , image/099A.jpg,  চ,	BENGALI LETTER CA
+U+099B , image/099B.jpg,  ছ,	BENGALI LETTER CHA
+U+099C , image/099C.jpg,  জ,	BENGALI LETTER JA
+U+099D , image/099D.jpg,  ঝ,	BENGALI LETTER JHA
+U+099E , image/099E.jpg,  ঞ,	BENGALI LETTER NYA
+U+099F , image/099F.jpg,  ট,	BENGALI LETTER TTA
+U+09A0 , image/09A0.jpg,  ঠ,	BENGALI LETTER TTHA
+U+09A1 , image/09A1.jpg,  ড,	BENGALI LETTER DDA
+U+09A2 , image/09A2.jpg,  ঢ ,	BENGALI LETTER DDHA
+U+09A3 , image/09A3.jpg,  ণ,	BENGALI LETTER NNA
+U+09A4 , image/09A4.jpg,  ত,	BENGALI LETTER TA
+U+09A5 , image/09A5.jpg,  থ,	BENGALI LETTER THA
+U+09A6 , image/09A6.jpg,  দ,	BENGALI LETTER DA
+U+09A7 , image/09A7.jpg,  ধ,	BENGALI LETTER DHA
+U+09A8 , image/09A8.jpg,  ন,	BENGALI LETTER NA
+U+09AA , image/09AA.jpg,  প,	BENGALI LETTER PA
+U+09AB , image/09AB.jpg,  ফ,	BENGALI LETTER PHA
+U+09AC , image/09AC.jpg,  ব,	BENGALI LETTER BA
+U+09AD , image/09AD.jpg,  ভ,	BENGALI LETTER BHA
+U+09AE , image/09AE.jpg,  ম,	BENGALI LETTER MA
+U+09AF , image/09AF.jpg,  য,	BENGALI LETTER YA
+U+09B0 , image/09B0.jpg,  র,	BENGALI LETTER RA
+U+09B2 , image/09B2.jpg,  ল,	BENGALI LETTER LA
+U+09DC , image/09DC.jpg,  ড়,	BENGALI LETTER RRA
+U+09DD , image/09DD.jpg,  ঢ়,	BENGALI LETTER RHA
+U+09DF , image/09DF.jpg,  য়, BENGALI LETTER YYA
+U+09B6 , image/09B6.jpg,  শ,	BENGALI LETTER SHA
+U+09B7 , image/09B7.jpg,  ষ,	BENGALI LETTER SSA
+U+09B8 , image/09B8.jpg,  স,	BENGALI LETTER SA
+U+09B9 , image/09B9.jpg,  হ,	BENGALI LETTER HA
+U+09CE , image/09CE.jpg,  ৎ,	BENGALI LETTER KHANDA TA

@@ -1,0 +1,13 @@
+codepoint, imagepath, rawcode, desc
+U+0ABE , image/0ABE.jpg,  ા,	GUJARATI VOWEL SIGN AA
+U+0ABF , image/0ABF.jpg,  િ, GUJARATI VOWEL SIGN I
+U+0AC0 , image/0AC0.jpg,  ી, GUJARATI VOWEL SIGN II
+U+0AC1 , image/0AC1.jpg,  ુ, GUJARATI VOWEL SIGN U
+U+0AC2 , image/0AC2.jpg,  ૂ, GUJARATI VOWEL SIGN UU
+U+0AC3 , image/0AC3.jpg,  ૃ, GUJARATI VOWEL SIGN VOCALIC R
+U+0AC5 , image/0AC5.jpg,  ૅ, GUJARATI VOWEL SIGN CANDRA  E
+U+0AC7 , image/0AC7.jpg,  ે, GUJARATI VOWEL SIGN E
+U+0AC8 , image/0AC8.jpg,  ૈ, GUJARATI VOWEL SIGN AI
+U+0AC9 , image/0AC9.jpg,  ૉ, GUJARATI VOWEL SIGN CANDRA O
+U+0ACB , image/0ACB.jpg,  ો, GUJARATI VOWEL SIGN O
+U+0ACC , image/0ACC.jpg,  ૌ, GUJARATI VOWEL SIGN AU

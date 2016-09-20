@@ -1,0 +1,39 @@
+[% INCLUDE header.tmpl
+  title = 'Maithili (mai_IN) Indic Font Features Test Cases'
+%]
+
+[%# 
+  # Read the Global Index File (TOC) for GPOS - index-gpos.txt
+  #
+  # Usage: tpage IndicTestCase.tmpl > 
+  #             lang/{bn_IN|hi_IN|ta_IN}/IndicFontTestCase{Codepoint|GSUB|GPOS}-{Bengali|Hindi|Tamil}.html
+  #  
+  # Config File: lang/*_IN/index-codepoint.txt
+  #              lang/*_IN/index-GSUB.txt
+  #              lang/*_IN/index-GPOS.txt   
+  # Output File: lang/*_IN/IndicFontTestCaseCodepoint-{Bengali}
+  #              lang/*_IN/IndicFontTestCaseGSUB-{Bengali}       
+  #              lang/*_IN/IndicFontTestCaseGPOS-{Bengali}
+  #
+  # *** TODO: Edit the Locale Here!!!!! ***
+  #%]
+[% USE indexfile = datafile('../data/index-gpos.txt', delim =',') %]
+[% FOREACH index = indexfile %]
+    <h2><u>[% index.heading %]</u></h2>
+      <ol> 
+    [%#
+      # Read the contents of sub-section by following the filepath listed in the Global Index File
+      # lang/*_IN/data/codepoint/IndicFontFeatureCodepoint-{IndependentVowels}.txt
+      #%]
+    [% USE fileloc = datafile( index.location, delim =',') %]
+    [% FOREACH data = fileloc %]
+      <li> [% data.codepoint %] 
+           <img src="[% data.imagepath %]"> 
+           <text>[% data.rawcode %]</text> 
+           <input value=[% data.rawcode %] type="text" size=5>
+           <text>[% data.desc %]</text>
+    [% END %]    
+      </ol>
+[% END %]
+
+[% INCLUDE footer.tmpl %]

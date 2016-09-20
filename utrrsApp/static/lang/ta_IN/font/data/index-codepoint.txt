@@ -1,0 +1,11 @@
+heading, location
+Independent Vowels, ../data/codepoint/IndicFontFeatureCodepoint-IndependentVowels.txt
+Dependent Vowels, ../data/codepoint/IndicFontFeatureCodepoint-DependentVowels.txt
+Consonants, ../data/codepoint/IndicFontFeatureCodepoint-Consonants.txt
+Digits, ../data/codepoint/IndicFontFeatureCodepoint-Digits.txt
+Various Signs, ../data/codepoint/IndicFontFeatureCodepoint-VariousSigns.txt
+Numerics, ../data/codepoint/IndicFontFeatureCodepoint-Numerics.txt
+Symbols, ../data/codepoint/IndicFontFeatureCodepoint-Symbols.txt
+Currency Symbols, ../data/codepoint/IndicFontFeatureCodepoint-CurrencySymbols.txt
+Tamil Symbol, ../data/codepoint/IndicFontFeatureCodepoint-TamilSymbol.txt
+Reserved, ../data/codepoint/IndicFontFeatureCodepoint-Reserved.txt

@@ -1,0 +1,54 @@
+[% INCLUDE header.tmpl
+  title = 'Urdu (ur_IN) Indic Font Features Test Cases'
+%]
+
+
+[%# 
+  # Read the Global Index File (TOC) for GSUB - index-gsub.txt
+  #
+  # Usage: tpage IndicTestCase.tmpl > 
+  #             lang/{bn_IN|hi_IN|ta_IN}/IndicFontTestCase{Codepoint|GSUB|GPOS}-{Bengali|Hindi|Tamil}.html
+  #  
+  # Config File: lang/*_IN/index-codepoint.txt
+  #              lang/*_IN/index-GSUB.txt
+  #              lang/*_IN/index-GPOS.txt   
+  # Output File: lang/*_IN/IndicFontTestCaseCodepoint-{Bengali}
+  #              lang/*_IN/IndicFontTestCaseGSUB-{Bengali}       
+  #              lang/*_IN/IndicFontTestCaseGPOS-{Bengali}
+  #
+  # *** TODO: Edit the Locale Here!!!!! ***
+  #%]
+<table>
+<tr>
+  <th>Name</th>
+  <th>Codepoint</th>
+  <th>Final</th>
+  <th>Middle</th>
+  <th>Initial</th>
+  <th>Standalone</th>
+</tr>
+[% USE indexfile = datafile('../data/index-gsub.txt', delim =',') %]
+[% FOREACH index = indexfile %]
+[%#    <h2><u>[% index.heading %]</u></h2>
+#      <ol> 
+#%]
+    [%#
+      # Read the contents of sub-section by following the filepath listed in the Global Index File
+      # lang/*_IN/data/codepoint/IndicFontFeatureCodepoint-{IndependentVowels}.txt
+      #%]
+    [% USE fileloc = datafile( index.location, delim =',') %]
+    [% FOREACH data = fileloc %]
+      <tr>
+        <td>[% data.name %]</td>
+        <td>[% data.codepoint %]</td>
+        <td><img src="[% data.image-final %]"><text>[% data.rawcode-final %]</text></td>
+        <td><img src="[% data.image-middle %]"><text>[% data.rawcode-middle %]</text></td>
+        <td><img src="[% data.image-initial %]"><text>[% data.rawcode-inital %]</text></td>
+        <td><img src="[% data.image-standalone %]"><text>[% data.rawcode-standalone %]</text></td>
+      </tr>
+    [% END %]    
+[%#      </ol>
+#%]
+[% END %]
+
+[% INCLUDE footer.tmpl %]

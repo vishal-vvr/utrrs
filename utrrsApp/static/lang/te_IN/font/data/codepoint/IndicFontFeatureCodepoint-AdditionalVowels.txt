@@ -1,0 +1,3 @@
+codepoint, imagepath, rawcode, desc
+U+0C60, image/0C60.jpg,  ౠ, TELUGU LETTER VOCALIC RR
+U+0C61, image/0C61.jpg,  ౡ,  TELUGU LETTER VOCALIC LL

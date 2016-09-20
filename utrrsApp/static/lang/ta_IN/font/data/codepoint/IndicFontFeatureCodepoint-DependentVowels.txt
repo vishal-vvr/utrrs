@@ -1,0 +1,12 @@
+codepoint, imagepath, rawcode, desc
+U+0BBE , image/0BBE.jpg,  ா,		TAMIL VOWEL SIGN AA
+U+0BBF , image/0BBF.jpg,  ி,	TAMIL VOWEL SIGN I
+U+0BC0 , image/0BC0.jpg,  ீ,		TAMIL VOWEL SIGN II
+U+0BC1 , image/0BC1.jpg,  ு,		TAMIL VOWEL SIGN U
+U+0BC2 , image/0BC2.jpg,  ூ,	TAMIL VOWEL SIGN UU
+U+0BC6 , image/0BC6.jpg,  ெ,	TAMIL VOWEL SIGN E
+U+0BC7 , image/0BC7.jpg,  ே,	TAMIL VOWEL SIGN EE
+U+0BC8 , image/0BC8.jpg,  ை,	TAMIL VOWEL SIGN AI
+U+0BCA , image/0BCA.jpg,  ொ,	TAMIL VOWEL SIGN O
+U+0BCB , image/0BCB.jpg,  ோ,	TAMIL VOWEL SIGN OO
+U+0BCC , image/0BCC.jpg,  ௌ,	TAMIL VOWEL SIGN AU

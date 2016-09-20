@@ -1,0 +1,11 @@
+codepoint, imagepath, rawcode, desc
+U+0A05, image/0A05.jpg, ਅ, GURMUKHI LETTER A
+U+0A06, image/0A06.jpg, ਆ, GURMUKHI LETTER AA
+U+0A07, image/0A07.jpg, ਇ, GURMUKHI LETTER I
+U+0A08, image/0A08.jpg, ਈ, GURMUKHI LETTER II
+U+0A09, image/0A09.jpg, ਉ, GURMUKHI LETTER U
+U+0A0A, image/0A0A.jpg, ਊ, GURMUKHI LETTER UU
+U+0A0F, image/0A0F.jpg, ਏ, GURMUKHI LETTER EE
+U+0A10, image/0A10.jpg, ਐ, GURMUKHI LETTER AI
+U+0A13, image/0A13.jpg, ਓ, GURMUKHI LETTER OO
+U+0A14, image/0A14.jpg, ਔ, GURMUKHI LETTER AU

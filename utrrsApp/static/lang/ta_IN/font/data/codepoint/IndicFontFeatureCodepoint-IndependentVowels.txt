@@ -1,0 +1,13 @@
+codepoint, imagepath, rawcode, desc
+U+0B85 , image/0B85.jpg,  அ,	TAMIL LETTER A
+U+0B86 , image/0B86.jpg,  ஆ,	TAMIL LETTER AA
+U+0B87 , image/0B87.jpg,  இ,	TAMIL LETTER I
+U+0B88 , image/0B88.jpg,  ஈ,	TAMIL LETTER II
+U+0B89 , image/0B89.jpg,  உ,	TAMIL LETTER U
+U+0B8A , image/0B8A.jpg,  ஊ,	TAMIL LETTER UU
+U+0B8E , image/0B8E.jpg,  எ,	TAMIL LETTER E
+U+0B8F , image/0B8F.jpg,  ஏ,	TAMIL LETTER EE
+U+0B90 , image/0B90.jpg,  ஐ,	TAMIL LETTER AI
+U+0B92 , image/0B92.jpg,  ஒ,	TAMIL LETTER O
+U+0B93 , image/0B93.jpg,  ஓ,	TAMIL LETTER OO
+U+0B94 , image/0B94.jpg,  ஔ,	TAMIL LETTER AU

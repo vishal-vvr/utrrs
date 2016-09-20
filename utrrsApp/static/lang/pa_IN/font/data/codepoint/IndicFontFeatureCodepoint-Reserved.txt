@@ -1,0 +1,4 @@
+codepoint, imagepath, rawcode, desc
+
+U+0964, image/0964.jpg, ।, devanagari danda
+U+0965, image/0965.jpg, ॥, devanagari double danda

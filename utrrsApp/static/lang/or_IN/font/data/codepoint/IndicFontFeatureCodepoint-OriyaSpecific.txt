@@ -1,0 +1,4 @@
+codepoint, imagepath, rawcode, desc
+
+U+0B70, image/0B70.jpg, ୰, ORIYA LETTER ISSHAR
+U+0B71, image/0B71.jpg, ୱ, ORIYA LETTER WA

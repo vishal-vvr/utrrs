@@ -1,0 +1,3 @@
+codepoint, imagepath, rawcode, desc
+
+U+0603, lang/ur_IN/image/0603.gif, ؃, ARABIC LETTER SAFHA

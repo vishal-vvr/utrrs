@@ -1,0 +1,3 @@
+codepoint, imagepath, rawcode, desc
+
+U+0DF4, image/0DF4.jpg, ෴, SINHALA PUNCTUATION KUNDDALIYA

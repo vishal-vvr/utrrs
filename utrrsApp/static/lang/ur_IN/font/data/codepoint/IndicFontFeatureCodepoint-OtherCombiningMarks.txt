@@ -1,0 +1,4 @@
+codepoint, imagepath, rawcode, desc
+
+U+0657, lang/ur_IN/image0657.gif, ٗ, ARABIC INVERTED DAMMA
+U+0658, lang/ur_IN/image0658.gif, ٘, ARABIC MARK	NOON GHUNNA

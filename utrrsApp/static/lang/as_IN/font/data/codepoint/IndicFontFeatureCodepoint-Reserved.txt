@@ -1,0 +1,3 @@
+codepoint, imagepath, rawcode, desc
+U+0964, image/0964.jpg,  ।, DEVNAGARI DANDA(DANRI)
+U+0965, image/0965.jpg,  ॥, DEVNAGARI DOUBLE DANDA(DANRI)

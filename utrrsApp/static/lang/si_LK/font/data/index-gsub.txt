@@ -1,0 +1,5 @@
+heading, location
+GUSB with Rakaaraansaya, ../data/gsub/IndicFontFeatureGSUB-Rakaaraansaya.txt
+GUSB with Repaya, ../data/gsub/IndicFontFeatureGSUB-Repaya.txt
+GUSB with Yanasaya, ../data/gsub/IndicFontFeatureGSUB-Yansaya.txt
+GSUB with Special Cases, ../data/gsub/IndicFontFeatureGSUB-Special-Cases.txt

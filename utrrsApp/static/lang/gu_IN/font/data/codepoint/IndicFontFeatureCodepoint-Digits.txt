@@ -1,0 +1,11 @@
+codepoint, imagepath, rawcode, desc
+U+0AE6, image/0AE6.jpg,  ૦, GUJARATI DIGIT ZERO
+U+0AE7, image/0AE7.jpg,  ૧, GUJARATI DIGIT ONE
+U+0AE8, image/0AE8.jpg,  ૨, GUJARATI DIGIT TWO
+U+0AE9, image/0AE9.jpg,  ૩, GUJARATI DIGIT THREE
+U+0AEA, image/0AEA.jpg,  ૪, GUJARATI DIGIT FOUR
+U+0AEB, image/0AEB.jpg,  ૫, GUJARATI DIGIT FIVE
+U+0AEC, image/0AEC.jpg,  ૬, GUJARATI DIGIT SIX
+U+0AED, image/0AED.jpg,  ૭, GUJARATI DIGIT SEVEN
+U+0AEE, image/0AEE.jpg,  ૮, GUJARATI DIGIT EIGHT
+U+0AEF, image/0AEF.jpg,  ૯, GUJARATI DIGIT NINE

@@ -1,0 +1,3 @@
+codepoint, imagepath, rawcode, desc
+
+U+0670, lang/ur_IN/image0670.gif, ٰ, ARABIC LETTER SUPERSCRIPT ALEF

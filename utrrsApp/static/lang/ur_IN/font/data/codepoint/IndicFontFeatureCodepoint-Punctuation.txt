@@ -1,0 +1,10 @@
+codepoint, imagepath, rawcode, desc
+
+U+060C, lang/ur_IN/image/060C.gif, ،, ARABIC COMMA
+U+061B, lang/ur_IN/image/061B.gif, ؛, ARABIC SEMICOLON (003B)
+U+061F, lang/ur_IN/image/061F.gif, ؟, ARABIC QUESTION MARK (003F)
+U+066A, lang/ur_IN/image/066A.gif, ٪, ARABIC SIGN PERCENT
+U+066B, lang/ur_IN/image/066B.gif, ٫, ARABIC DECIMAL SEPARATOR
+U+066C, lang/ur_IN/image/066C .gif, ٬, ARABIC THOUSANDS SEPARATOR
+U+066D, lang/ur_IN/image/066D.gif, ٭, ARABIC FIVE POINTED STAR
+U+06D4, lang/ur_IN/image/06D4.gif, ۔, ARABIC FULL STOP

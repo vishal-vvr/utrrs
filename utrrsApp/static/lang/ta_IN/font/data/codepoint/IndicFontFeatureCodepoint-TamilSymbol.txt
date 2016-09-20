@@ -1,0 +1,2 @@
+codepoint, imagepath, rawcode, desc
+U+0BFA, image/0BFA.jpg,  ௺, TAMIL NUMBER SIGN

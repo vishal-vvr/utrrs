@@ -1,0 +1,4 @@
+heading, location
+GPOS-AboveBase, ../data/gpos/IndicFontFeatureGPOS-AboveBase.txt
+GPOS-BelowBase, ../data/gpos/IndicFontFeatureGPOS-BelowBase.txt
+GPOS-SideBase, ../data/gpos/IndicFontFeatureGPOS-SideBase.txt

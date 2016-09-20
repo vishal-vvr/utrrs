@@ -1,0 +1,186 @@
+codepoint, imagepath, rawcode, desc
+U+0915 U+0945 , image/0915-0945.jpg,  कॅ,	KA + CANDRA E
+U+0916 U+0945 , image/0916-0945.jpg,  खॅ, 	KHA + CANDRA E
+U+0917 U+0945 , image/0917-0945.jpg,  गॅ,	GA + CANDRA E
+U+0918 U+0945 , image/0918-0945.jpg,  घॅ,	GHA + CANDRA E
+U+0919 U+0945 , image/0919-0945.jpg,  ङॅ,	NGA + CANDRA E
+U+091A U+0945 , image/091A-0945.jpg,  चॅ,	CA + CANDRA E
+U+091B U+0945 , image/091B-0945.jpg,  छॅ,	CHA + CANDRA E
+U+091C U+0945 , image/091C-0945.jpg,  जॅ,	JA + CANDRA E
+U+091D U+0945 , image/091D-0945.jpg,  झॅ,	JHA + CANDRA E
+U+091E U+0945 , image/091E-0945.jpg,  ञॅ,	NYA + CANDRA E
+U+091F U+0945 , image/091F-0945.jpg,  टॅ,	TTA + CANDRA E
+U+0920 U+0945 , image/0920-0945.jpg,  ठॅ,	TTHA + CANDRA E
+U+0921 U+0945 , image/0921-0945.jpg,  डॅ,	DDA + CANDRA E
+U+0922 U+0945 , image/0922-0945.jpg,  ढॅ,	DDHA + CANDRA E
+U+0923 U+0945 , image/0923-0945.jpg,  णॅ,	NNA + CANDRA E
+U+0924 U+0945 , image/0924-0945.jpg,  तॅ,	TA + CANDRA E
+U+0925 U+0945 , image/0925-0945.jpg,  थॅ,	THA + CANDRA E
+U+0926 U+0945 , image/0926-0945.jpg,  दॅ,	DA + CANDRA E
+U+0927 U+0945 , image/0927-0945.jpg,  धॅ,	DHA + CANDRA E
+U+0928 U+0945 , image/0928-0945.jpg,  नॅ,	NA + CANDRA E
+U+0929 U+0945 , image/0929-0945.jpg,  ऩॅ,	NNNA + CANDRA E
+U+092A U+0945 , image/092A-0945.jpg,  पॅ,	PA + CANDRA E
+U+092B U+0945 , image/092B-0945.jpg,  फॅ,	PHA + CANDRA E
+U+092C U+0945 , image/092C-0945.jpg,  बॅ,	BA + CANDRA E
+U+092D U+0945 , image/092D-0945.jpg,  भॅ,	BHA + CANDRA E
+U+092E U+0945 , image/092E-0945.jpg,  मॅ,	MA + CANDRA E
+U+092F U+0945 , image/092F-0945.jpg,  यॅ,	YA + CANDRA E
+U+0930 U+0945 , image/0930-0945.jpg,  रॅ,	RA + CANDRA E
+U+0931 U+0945 , image/0931-0945.jpg,  ऱॅ,	RRA + CANDRA E
+U+0932 U+0945 , image/0932-0945.jpg,  लॅ,	LA + CANDRA E
+U+0933 U+0945 , image/0933-0945.jpg,  ळॅ,	LLA + CANDRA E
+U+0934 U+0945 , image/0934-0945.jpg,  ऴॅ,	LLLA + CANDRA E
+U+0935 U+0945 , image/0935-0945.jpg,  वॅ,	VA + CANDRA E
+U+0936 U+0945 , image/0936-0945.jpg,  शॅ,	SHA + CANDRA E
+U+0937 U+0945 , image/0937-0945.jpg,  षॅ,	SSA + CANDRA E
+U+0938 U+0945 , image/0938-0945.jpg,  सॅ,	SA + CANDRA E
+U+0939 U+0945 , image/0939-0945.jpg,  हॅ,	HA + CANDRA E
+U+0915 U+0946 , image/0915-0946.jpg,  कॆ,	KA + SHORT E
+U+0916 U+0946 , image/0916-0946.jpg,  खॆ,	KHA + SHORT E
+U+0917 U+0946 , image/0917-0946.jpg,  गॆ,	GA + SHORT E
+U+0918 U+0946 , image/0918-0946.jpg,  घॆ,	GHA + SHORT E
+U+0919 U+0946 , image/0919-0946.jpg,  ङॆ,	NGA + SHORT E
+U+091A U+0946 , image/091A-0946.jpg,  चॆ,	CA + SHORT E
+U+091B U+0946 , image/091B-0946.jpg,  छॆ,	CHA + SHORT E
+U+091C U+0946 , image/091C-0946.jpg,  जॆ,	JA + SHORT E
+U+091D U+0946 , image/091D-0946.jpg,  झॆ,	JHA + SHORT E
+U+091E U+0946 , image/091E-0946.jpg,  ञॆ,	NYA + SHORT E
+U+091F U+0946 , image/091F-0946.jpg,  टॆ,	TTA + SHORT E
+U+0920 U+0946 , image/0920-0946.jpg,  ठॆ,	TTHA + SHORT E
+U+0921 U+0946 , image/0921-0946.jpg,  डॆ,	DDA + SHORT E
+U+0922 U+0946 , image/0922-0946.jpg,  ढॆ,	DDHA + SHORT E
+U+0923 U+0946 , image/0923-0946.jpg,  णॆ,	NNA + SHORT E
+U+0924 U+0946 , image/0924-0946.jpg,  तॆ,	TA + SHORT E
+U+0925 U+0946 , image/0925-0946.jpg,  थॆ,	THA + SHORT E
+U+0926 U+0946 , image/0926-0946.jpg,  दॆ,	DA + SHORT E
+U+0927 U+0946 , image/0927-0946.jpg,  धॆ,	DHA + SHORT E
+U+0928 U+0946 , image/0928-0946.jpg,  नॆ,	NA + SHORT E
+U+0929 U+0946 , image/0929-0946.jpg,  ऩॆ,	NNNA + SHORT E
+U+092A U+0946 , image/092A-0946.jpg,  पॆ,	PA + SHORT E
+U+092B U+0946 , image/092B-0946.jpg,  फॆ,	PHA + SHORT E
+U+092C U+0946 , image/092C-0946.jpg,  बॆ,	BA + SHORT E
+U+092D U+0946 , image/092D-0946.jpg,  भॆ,	BHA + SHORT E
+U+092E U+0946 , image/092E-0946.jpg,  मॆ,	MA + SHORT E
+U+092F U+0946 , image/092F-0946.jpg,  यॆ,	YA + SHORT E
+U+0930 U+0946 , image/0930-0946.jpg,  रॆ,	RA + SHORT E
+U+0931 U+0946 , image/0931-0946.jpg,  ऱॆ,	RRA + SHORT E
+U+0932 U+0946 , image/0932-0946.jpg,  लॆ,	LA + SHORT E
+U+0933 U+0946 , image/0933-0946.jpg,  ळॆ,	LLA + SHORT E
+U+0934 U+0946 , image/0934-0946.jpg,  ऴॆ,	LLLA + SHORT E
+U+0935 U+0946 , image/0935-0946.jpg,  वॆ,	VA + SHORT E
+U+0936 U+0946 , image/0936-0946.jpg,  शॆ,	SHA + SHORT E
+U+0937 U+0946 , image/0937-0946.jpg,  षॆ,	SSA + SHORT E
+U+0938 U+0946 , image/0938-0946.jpg,  सॆ,	SA + SHORT E
+U+0939 U+0946 , image/0939-0946.jpg,  हॆ,	HA + SHORT E
+U+0915 U+0947 , image/0915-0947.jpg,  के,	KA + E
+U+0916 U+0947 , image/0916-0947.jpg,  खे,	KHA + E
+U+0917 U+0947 , image/0917-0947.jpg,  गे,	GA + E
+U+0918 U+0947 , image/0918-0947.jpg,  घे,	GHA + E
+U+0919 U+0947 , image/0919-0947.jpg,  ङे,	NGA + E
+U+091A U+0947 , image/091A-0947.jpg,  चे,	CA + E
+U+091B U+0947 , image/091B-0947.jpg,  छे,	CHA + E
+U+091C U+0947 , image/091C-0947.jpg,  जे,	JA + E
+U+091D U+0947 , image/091D-0947.jpg,  झे,	JHA + E
+U+091E U+0947 , image/091E-0947.jpg,  ञे,	NYA + E
+U+091F U+0947 , image/091F-0947.jpg,  टे,	TTA + E
+U+0920 U+0947 , image/0920-0947.jpg,  ठे,	TTHA + E
+U+0921 U+0947 , image/0921-0947.jpg,  डे,	DDA + E
+U+0922 U+0947 , image/0922-0947.jpg,  ढे,	DDHA + E
+U+0923 U+0947 , image/0923-0947.jpg,  णे,	NNA + E
+U+0924 U+0947 , image/0924-0947.jpg,  ते,	TA + E
+U+0925 U+0947 , image/0925-0947.jpg,  थे,	THA + E
+U+0926 U+0947 , image/0926-0947.jpg,  दे,	DA + E
+U+0927 U+0947 , image/0927-0947.jpg,  धे,	DHA + E
+U+0928 U+0947 , image/0928-0947.jpg,  ने,	NA + E
+U+0929 U+0947 , image/0929-0947.jpg,  ऩे,	NNNA + E
+U+092A U+0947 , image/092A-0947.jpg,  पे,	PA + E
+U+092B U+0947 , image/092B-0947.jpg,  फे,	PHA + E
+U+092C U+0947 , image/092C-0947.jpg,  बे,	BA + E
+U+092D U+0947 , image/092D-0947.jpg,  भे,	BHA + E
+U+092E U+0947 , image/092E-0947.jpg,  मे,	MA + E
+U+092F U+0947 , image/092F-0947.jpg,  ये,	YA + E
+U+0930 U+0947 , image/0930-0947.jpg,  रे,	RA + E
+U+0931 U+0947 , image/0931-0947.jpg,  ऱे,	RRA + E
+U+0932 U+0947 , image/0932-0947.jpg,  ले,	LA + E
+U+0933 U+0947 , image/0933-0947.jpg,  ळे,	LLA + E
+U+0934 U+0947 , image/0934-0947.jpg,  ऴे,	LLLA + E
+U+0935 U+0947 , image/0935-0947.jpg,  वे,	VA + E
+U+0936 U+0947 , image/0936-0947.jpg,  शे,	SHA + E
+U+0937 U+0947 , image/0937-0947.jpg,  षे,	SSA + E
+U+0938 U+0947 , image/0938-0947.jpg,  से,	SA + E
+U+0939 U+0947 , image/0939-0947.jpg,  हे,	HA + E
+U+0915 U+0948 , image/0915-0948.jpg,  कै,	KA + AI
+U+0916 U+0948 , image/0916-0948.jpg,  खै,	KHA + AI
+U+0917 U+0948 , image/0917-0948.jpg,  गै,	GA + AI
+U+0918 U+0948 , image/0918-0948.jpg,  घै,	GHA + AI
+U+0919 U+0948 , image/0919-0948.jpg,  ङै,	NGA + AI
+U+091A U+0948 , image/091A-0948.jpg,  चै,	CA + AI
+U+091B U+0948 , image/091B-0948.jpg,  छै,	CHA + AI
+U+091C U+0948 , image/091C-0948.jpg,  जै,	JA + AI
+U+091D U+0948 , image/091D-0948.jpg,  झै,	JHA + AI
+U+091E U+0948 , image/091E-0948.jpg,  ञै,	NYA + AI
+U+091F U+0948 , image/091F-0948.jpg,  टै,	TTA + AI
+U+0920 U+0948 , image/0920-0948.jpg,  ठै,	TTHA + AI
+U+0921 U+0948 , image/0921-0948.jpg,  डै,	DDA + AI
+U+0922 U+0948 , image/0922-0948.jpg,  ढै,	DDHA + AI
+U+0923 U+0948 , image/0923-0948.jpg,  णै,	NNA + AI
+U+0924 U+0948 , image/0924-0948.jpg,  तै,	TA + AI
+U+0925 U+0948 , image/0925-0948.jpg,  थै,	THA + AI
+U+0926 U+0948 , image/0926-0948.jpg,  दै,	DA + AI
+U+0927 U+0948 , image/0927-0948.jpg,  धै,	DHA + AI
+U+0928 U+0948 , image/0928-0948.jpg,  नै,	NA + AI
+U+0929 U+0948 , image/0929-0948.jpg,  ऩै,	NNNA + AI
+U+092A U+0948 , image/092A-0948.jpg,  पै,	PA + AI
+U+092B U+0948 , image/092B-0948.jpg,  फै,	PHA + AI
+U+092C U+0948 , image/092C-0948.jpg,  बै,	BA + AI
+U+092D U+0948 , image/092D-0948.jpg,  भै,	BHA + AI
+U+092E U+0948 , image/092E-0948.jpg,  मै,	MA + AI
+U+092F U+0948 , image/092F-0948.jpg,  यै,	YA + AI
+U+0930 U+0948 , image/0930-0948.jpg,  रै,	RA + AI
+U+0931 U+0948 , image/0931-0948.jpg,  ऱै,	RRA + AI
+U+0932 U+0948 , image/0932-0948.jpg,  लै,	LA + AI
+U+0933 U+0948 , image/0933-0948.jpg,  ळै,	LLA + AI
+U+0934 U+0948 , image/0934-0948.jpg,  ऴै,	LLLA + AI
+U+0935 U+0948 , image/0935-0948.jpg,  वै,	VA + AI
+U+0936 U+0948 , image/0936-0948.jpg,  शै,	SHA + AI
+U+0937 U+0948 , image/0937-0948.jpg,  षै,	SSA + AI
+U+0938 U+0948 , image/0938-0948.jpg,  सै,	SA + AI
+U+0939 U+0948 , image/0939-0948.jpg,  है,	HA + AI
+U+0915 U+0901 , image/0915-0901.jpg,  कँ,	KA + CHANDRABINDU
+U+0916 U+0901 , image/0916-0901.jpg,  खँ,	KHA + CHANDRABINDU
+U+0917 U+0901 , image/0917-0901.jpg,  गँ,	GA + CHANDRABINDU
+U+0918 U+0901 , image/0918-0901.jpg,  घँ,	GHA + CHANDRABINDU
+U+0919 U+0901 , image/0919-0901.jpg,  ङँ,	NGA + CHANDRABINDU
+U+091A U+0901 , image/091A-0901.jpg,  चँ,	CA + CHANDRABINDU
+U+091B U+0901 , image/091B-0901.jpg,  छँ,	CHA + CHANDRABINDU
+U+091C U+0901 , image/091C-0901.jpg,  जँ,	JA + CHANDRABINDU
+U+091D U+0901 , image/091D-0901.jpg,  झँ,	JHA + CHANDRABINDU
+U+091E U+0901 , image/091E-0901.jpg,  ञँ,	NYA + CHANDRABINDU
+U+091F U+0901 , image/091F-0901.jpg,  टँ,	TTA + CHANDRABINDU
+U+0920 U+0901 , image/0920-0901.jpg,  ठँ,	TTHA + CHANDRABINDU
+U+0921 U+0901 , image/0921-0901.jpg,  डँ,	DDA + CHANDRABINDU
+U+0922 U+0901 , image/0922-0901.jpg,  ढँ,	DDHA + CHANDRABINDU
+U+0923 U+0901 , image/0923-0901.jpg,  णँ,	NNA + CHANDRABINDU
+U+0924 U+0901 , image/0924-0901.jpg,  तँ,	TA + CHANDRABINDU
+U+0925 U+0901 , image/0925-0901.jpg,  थँ,	THA + CHANDRABINDU
+U+0926 U+0901 , image/0926-0901.jpg,  दँ,	DA + CHANDRABINDU
+U+0927 U+0901 , image/0927-0901.jpg,  धँ,	DHA + CHANDRABINDU
+U+0928 U+0901 , image/0928-0901.jpg,  नँ,	NA + CHANDRABINDU
+U+0929 U+0901 , image/0929-0901.jpg,  ऩँ,	NNNA + CHANDRABINDU
+U+092A U+0901 , image/092A-0901.jpg,  पँ,	PA + CHANDRABINDU
+U+092B U+0901 , image/092B-0901.jpg,  फँ,	PHA + CHANDRABINDU
+U+092C U+0901 , image/092C-0901.jpg,  बँ,	BA + CHANDRABINDU
+U+092D U+0901 , image/092D-0901.jpg,  भँ,	BHA + CHANDRABINDU
+U+092E U+0901 , image/092E-0901.jpg,  मँ,	MA + CHANDRABINDU
+U+092F U+0901 , image/092F-0901.jpg,  यँ,	YA + CHANDRABINDU
+U+0930 U+0901 , image/0930-0901.jpg,  रँ,	RA + CHANDRABINDU
+U+0931 U+0901 , image/0931-0901.jpg,  ऱँ,	RRA + CHANDRABINDU
+U+0932 U+0901 , image/0932-0901.jpg,  लँ,	LA + CHANDRABINDU
+U+0933 U+0901 , image/0933-0901.jpg,  ळँ,	LLA + CHANDRABINDU
+U+0934 U+0901 , image/0934-0901.jpg,  ऴँ,	LLLA + CHANDRABINDU
+U+0935 U+0901 , image/0935-0901.jpg,  वँ,	VA + CHANDRABINDU
+U+0936 U+0901 , image/0936-0901.jpg,  शँ,	SHA + CHANDRABINDU
+U+0937 U+0901 , image/0937-0901.jpg,  षँ,	SSA + CHANDRABINDU
+U+0938 U+0901 , image/0938-0901.jpg,  सँ,	SA + CHANDRABINDU
+U+0939 U+0901 , image/0939-0901.jpg,  हँ,	HA + CHANDRABINDU

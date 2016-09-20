@@ -1,0 +1,14 @@
+codepoint, imagepath, rawcode, desc
+
+U+0B3E, image/0B3E.jpg, ା, ORIYA VOWEL AA
+U+0B3F, image/0B3F.jpg, ି, ORIYA VOWEL I
+U+0B40, image/0B40.jpg, ୀ, ORIYA VOWEL I
+U+0B41, image/0B41.jpg, ୁ, ORIYA VOWEL U
+U+0B42, image/0B42.jpg, ୂ, ORIYA VOWEL UU
+U+0B43, image/0B43.jpg, ୃ, ORIYA VOWEL VOCALIC R
+U+0B47, image/0B47.jpg, େ, ORIYA VOWEL E
+U+0B48, image/0B48.jpg, ୈ, ORIYA VOWEL AI
+U+0B4B, image/0B4B.jpg, ୋ, ORIYA VOWEL O
+U+0B4C, image/0B4C.jpg, ୌ, ORIYA VOWEL AU
+U+0B56, image/0B56.jpg, ୖ, ORIYA VOWEL AI LENGTH MARK
+U+0B57, image/0B57.jpg, ୗ, ORIYA VOWEL AU LENGTH MARK

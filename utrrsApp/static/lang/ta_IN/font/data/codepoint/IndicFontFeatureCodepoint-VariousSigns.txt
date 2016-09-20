@@ -1,0 +1,5 @@
+codepoint, imagepath, rawcode, desc
+U+0B82, image/0B82.jpg,  ஂ, TAMIL SIGN ANUSVARA (not used in Tamil)
+U+0B83, image/0B83.jpg,  ஃ, TAMIL SIGN VISARGA
+U+0BCD, image/0BCD.jpg,  ், TAMIL SIGN VIRAMA (HALANT)
+U+0BD7, image/0BD7.jpg,  ௗ, TAMIL AU LENGTH MARK

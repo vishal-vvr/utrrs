@@ -1,0 +1,11 @@
+codepoint, imagepath, rawcode, desc
+U+0966, image/0966.jpg,  ०, DEVNAGARI DIGIT ZERO
+U+0967, image/0967.jpg,  १, DEVNAGARI DIGIT ONE
+U+0968, image/0968.jpg,  २, DEVNAGARI DIGIT TWO
+U+0969, image/0969.jpg,  ३, DEVNAGARI DIGIT THREE
+U+096A, image/096A.jpg,  ४, DEVNAGARI DIGIT FOUR
+U+096B, image/096B.jpg,  ५, DEVNAGARI DIGIT FIVE
+U+096C, image/096C.jpg,  ६, DEVNAGARI DIGIT SIX
+U+096D, image/096D.jpg,  ७, DEVNAGARI DIGIT SEVEN
+U+096E, image/096E.jpg,  ८, DEVNAGARI DIGIT EIGHT
+U+096F, image/096F.jpg,  ९, DEVNAGARI DIGIT NINE

@@ -1,0 +1,8 @@
+heading, location
+Independent Vowels, ../data/codepoint/IndicFontFeatureCodepoint-IndependentVowels.txt
+Dependent Vowels, ../data/codepoint/IndicFontFeatureCodepoint-DependentVowels.txt
+Consonants, ../data/codepoint/IndicFontFeatureCodepoint-Consonants.txt
+Various Sign, ../data/codepoint/IndicFontFeatureCodepoint-VariousSigns.txt
+Gurmukhi Specific, ../data/codepoint/IndicFontFeatureCodepoint-GurmukhiSpecific.txt
+Digit, ../data/codepoint/IndicFontFeatureCodepoint-Digits.txt
+Reserved, ../data/codepoint/IndicFontFeatureCodepoint-Reserved.txt

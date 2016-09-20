@@ -1,0 +1,3 @@
+codepoint, imagepath, rawcode, desc
+//cons+200d+0dca+cons//‍්
+

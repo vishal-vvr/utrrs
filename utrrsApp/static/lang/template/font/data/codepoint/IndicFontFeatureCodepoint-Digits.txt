@@ -1,0 +1,2 @@
+codepoint, imagepath, rawcode, desc
+U+0966, image/0966.jpg,  ०, DEVNAGARI DIGIT ZERO

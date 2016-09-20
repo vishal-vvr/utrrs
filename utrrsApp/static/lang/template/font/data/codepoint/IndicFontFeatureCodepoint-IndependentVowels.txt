@@ -1,0 +1,2 @@
+codepoint, imagepath, rawcode, desc
+U+0905, image/0905.jpg,  अ,	DEVNAGARI LETTER A

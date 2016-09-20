@@ -1,0 +1,4 @@
+codepoint, imagepath, rawcode, desc
+
+U+0D60, image/0D60.jpg, ൠ, MALAYALAM LETTER VOCALIC RR
+U+0D61, image/0D61.jpg, ൡ, MALAYALAM LETTER VOCALIC LL

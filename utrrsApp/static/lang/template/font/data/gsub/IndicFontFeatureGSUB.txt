@@ -1,0 +1,2 @@
+codepoint, imagepath, rawcode, desc
+U+0915 U+094D U+0915 , image/0915-094D-0915.jpg,  क्क,	KA + HALANT + KA

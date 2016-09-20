@@ -1,0 +1,15 @@
+codepoint, imagepath, rawcode, desc
+U+0C05 , image/0C05.jpg,  అ,	TELUGU  LETTER  A
+U+0C06 , image/0C06.jpg,  ఆ,	TELUGU  LETTER  AA
+U+0C07 , image/0C07.jpg,  ఇ,	TELUGU  LETTER  I
+U+0C08 , image/0C08.jpg,  ఈ, TELUGU  LETTER  II
+U+0C09 , image/0C09.jpg,  ఉ,	TELUGU  LETTER  U
+U+0C0A , image/0C0A.jpg,  ఊ, TELUGU LETTER UU
+U+0C0B , image/0C0B.jpg,  ఋ,	TELUGU  LETTER  VOCALIC  R
+U+0C0C , image/0C0C.jpg,  ఌ,	TELUGU  LETTER  VOCALIC  RR
+U+0C0E , image/0C0E.jpg,  ఎ, 	TELUGU  LETTER  E
+U+0C0F , image/0C0F.jpg,  ఏ, TELUGU  LETTER  EE
+U+0C10 , image/0C10.jpg,  ఐ,	TELUGU  LETTER  AI
+U+0C12 , image/0C12.jpg,  ఒ,	TELUGU  LETTER  O
+U+0C13 , image/0C13.jpg,  ఓ,	TELUGU  LETTER  OO
+U+0C14 , image/0C14.jpg,  ఔ,	TELUGU  LETTER  AU
