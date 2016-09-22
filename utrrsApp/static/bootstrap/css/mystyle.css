@@ -3,10 +3,17 @@
 	border-top:0px solid #337ACC;
 }
 
-#header > .row > .col-xs-1{
-	margin-top:5px;
-	margin-left:20px;
-	margin-bottom:5px;
+#brand{
+	margin-top:20px;
+	margin-left:40px
+}
+
+.logo{
+	float:left; 
+	padding-right:15px;
+    padding-left:80px;
+    padding-top:10px;
+    padding-bottom:10px;
 }
 
 #header > .row > .col-xs-6 > span{
@@ -17,7 +24,7 @@
 	text-shadow: 2px 2px #000000
 }
 
-#content{
+#content > p{
 	text-align: justify;
 }
 
@@ -41,12 +48,14 @@
     border-top-right-radius:4px;
 }
 
-#body > .row > .col-xs-2 > ul{
-	margin-right:70px;
+#sidebar {
+	white-space: nowrap;
+	width: auto;
 }
 
-#body > .row > .col-xs-2 > ul > button{
-	text-align:left;font-weight: bold;
+#sidebar > ul > button{
+	text-align:left;
+	font-weight: bold;
 }
 
 #footer{
@@ -56,8 +65,8 @@
 
 #footer > #footer_content{
 	text-align:center;
-	margin-bottom:20px;
-	margin-top:30px;
+	margin-bottom:10px;
+	margin-top:20px;
 	color: white;
 }
 
@@ -68,10 +77,6 @@
 	display: block;
 	padding-top: 20px;
 	font-size: 15px;
-}
-
-#footer > #links{
-	margin-left: 0px;
 }
 
 #footer > #links > div >a:hover,
