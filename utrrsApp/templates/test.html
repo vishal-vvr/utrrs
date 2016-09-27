@@ -40,8 +40,8 @@
 	      {% for x in data %}
 	      <tr class="table-row">
 	        <td>{{ forloop.counter }}</td>
-			<td><label>{{ x.1 }}</label></td>
-			<td><img src="{% static 'lang/hi_IN/font/image/090A.jpg' %}"></td>
+			<td><label>{{ x.0 }}</label></td>
+			<td><img src="{% static 'lang/hi_IN/font/' %}{{ x.1 }}"></td>
 			<td><label style="font-size:20px">  {{ x.2 }}</label></td>
 			<td><input style="font-size:20px;text-align:center" type="text" value={{x.2}} size=3 title="Text"></td>
 			<td><label> {{x.3}}</label></td>
