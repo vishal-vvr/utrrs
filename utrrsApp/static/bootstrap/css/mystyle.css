@@ -131,8 +131,8 @@
 .back-to-top {
     cursor: pointer;
     position: fixed;
-    bottom: 120px;
-    right: 20px;
+    bottom: 350px;
+    right: 15px;
     display:none;
 }
 
