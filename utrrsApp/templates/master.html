@@ -36,7 +36,7 @@
                     <li class="tray"><a href="/about"><i
                             class="glyphicon glyphicon-question-sign"></i>&nbsp&nbspAbout</a>
                     </li>
-                    <li class="tray"><a href="#checkfont"><i
+                    <li class="tray"><a href="#checkfont" data-toggle="modal" data-target="#modal-transparent"><i
                             class="glyphicon glyphicon-check"></i>&nbsp&nbspCheck
                         Font</a></li>
                     <li class="tray"><a href="#search"><i
@@ -155,5 +155,46 @@
         not responsible for content. <br/>
     </div>
 </div>
+
+<!-- Modal transparent -->
+<div class="modal modal-transparent fade" id="modal-transparent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Check Fonts</h4>
+            </div>
+            <div class="modal-body">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Languages <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Assamese</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Bengali</a></li>
+                    <li><a href="#">German</a></li>
+                    <li><a href="#">Gujarati</a></li>
+                    <li><a href="#">Hindi</a></li>
+                    <li><a href="#">Kannada</a></li>
+                    <li><a href="#">Maithili</a></li>
+                    <li><a href="#">Malayalam</a></li>
+                    <li><a href="#">Marathi</a></li>
+                    <li><a href="#">Odia</a></li>
+                    <li><a href="#">Punjabi</a></li>
+                    <li><a href="#">Tamil</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Telegu</a></li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+  
+<!-- include jQuery -->
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
 </body>
 </html>
