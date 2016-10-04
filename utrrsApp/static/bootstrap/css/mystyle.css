@@ -161,3 +161,17 @@
   line-height: 1.33;
   border-radius: 35px;
 }
+
+.modal-transparent {
+  background: transparent;
+}
+.modal-transparent .modal-content {
+  background: white;
+}
+.modal-backdrop.modal-backdrop-transparent {
+  background: #ffffff;
+}
+.modal-backdrop.modal-backdrop-transparent.in {
+  opacity: .9;
+  filter: alpha(opacity=90);
+}
