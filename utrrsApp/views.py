@@ -326,6 +326,54 @@ def kannada(request):
 		data.append(sp)
 	return render(request, 'kannada.html', {'data': data[1:]})
 
+def kannada_codepoint(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/kn_IN/font/data/codepoint/master_kn_IN.txt')
+	file = open(file_path)
+	c = file.read()
+	length = c.count('\n')
+	file.close()
+	file = open(file_path)
+	data = []
+	for i in range(length):
+		line = file.readline()
+		st = line.strip('\n')
+		sp = st.split(',')
+		data.append(sp)
+	return render(request, 'kannada.html', {'data': data[1:]})
+
+def kannada_gsub(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/kn_IN/font/data/gsub/master_gsub_kn_IN.txt')
+	file = open(file_path)
+	c = file.read()
+	length = c.count('\n')
+	file.close()
+	file = open(file_path)
+	data = []
+	for i in range(length):
+		line = file.readline()
+		st = line.strip('\n')
+		sp = st.split(',')
+		data.append(sp)
+	return render(request, 'kn_gsub.html', {'data': data[1:]})
+
+def kannada_gpos(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/kn_IN/font/data/gpos/master_gpos_kn_IN.txt')
+	file = open(file_path)
+	c = file.read()
+	length = c.count('\n')
+	file.close()
+	file = open(file_path)
+	data = []
+	for i in range(length):
+		line = file.readline()
+		st = line.strip('\n')
+		sp = st.split(',')
+		data.append(sp)
+	return render(request, 'kn_gpos.html', {'data': data[1:]})
+
 def maithili(request):
 	module_dir = os.path.dirname(__file__)
 	file_path = os.path.join(module_dir, 'static/lang/mai_IN/font/data/codepoint/master_mai_IN.txt')
@@ -342,6 +390,54 @@ def maithili(request):
 		data.append(sp)
 	return render(request, 'maithili.html', {'data': data[1:]})
 
+def maithili_codepoint(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/mai_IN/font/data/codepoint/master_mai_IN.txt')
+	file = open(file_path)
+	c = file.read()
+	length = c.count('\n')
+	file.close()
+	file = open(file_path)
+	data = []
+	for i in range(length):
+		line = file.readline()
+		st = line.strip('\n')
+		sp = st.split(',')
+		data.append(sp)
+	return render(request, 'maithili.html', {'data': data[1:]})
+
+def maithili_gsub(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/mai_IN/font/data/gsub/master_gsub_mai_IN.txt')
+	file = open(file_path)
+	c = file.read()
+	length = c.count('\n')
+	file.close()
+	file = open(file_path)
+	data = []
+	for i in range(length):
+		line = file.readline()
+		st = line.strip('\n')
+		sp = st.split(',')
+		data.append(sp)
+	return render(request, 'mai_gsub.html', {'data': data[1:]})
+
+def maithili_gpos(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/mai_IN/font/data/gpos/master_gpos_mai_IN.txt')
+	file = open(file_path)
+	c = file.read()
+	length = c.count('\n')
+	file.close()
+	file = open(file_path)
+	data = []
+	for i in range(length):
+		line = file.readline()
+		st = line.strip('\n')
+		sp = st.split(',')
+		data.append(sp)
+	return render(request, 'mai_gpos.html', {'data': data[1:]})
+
 def malayalam(request):
 	module_dir = os.path.dirname(__file__)
 	file_path = os.path.join(module_dir, 'static/lang/ml_IN/font/data/codepoint/master_ml_IN.txt')
@@ -357,6 +453,41 @@ def malayalam(request):
 		sp = st.split(',')
 		data.append(sp)
 	return render(request, 'malayalam.html', {'data': data[1:]})
+
+def malayalam_codepoint(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/ml_IN/font/data/codepoint/master_ml_IN.txt')
+	file = open(file_path)
+	c = file.read()
+	length = c.count('\n')
+	file.close()
+	file = open(file_path)
+	data = []
+	for i in range(length):
+		line = file.readline()
+		st = line.strip('\n')
+		sp = st.split(',')
+		data.append(sp)
+	return render(request, 'malayalam.html', {'data': data[1:]})
+
+def malayalam_gsub(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/ml_IN/font/data/gsub/master_gsub_ml_IN.txt')
+	file = open(file_path)
+	c = file.read()
+	length = c.count('\n')
+	file.close()
+	file = open(file_path)
+	data = []
+	for i in range(length):
+		line = file.readline()
+		st = line.strip('\n')
+		sp = st.split(',')
+		data.append(sp)
+	return render(request, 'ml_gsub.html', {'data': data[1:]})
+
+def malayalam_gpos(request):
+	return render(request, 'ml_gpos.html')
 
 def marathi(request):
 	module_dir = os.path.dirname(__file__)
