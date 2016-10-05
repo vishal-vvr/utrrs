@@ -46,12 +46,21 @@ urlpatterns = [
 
 
     url(r'^kannada/$', views.kannada, name='kannada'),
+    url(r'^kannada/codepoint$', views.kannada_codepoint, name='kannada_codepoint'),
+    url(r'^kannada/gsub$', views.kannada_gsub, name='kannada_gsub'),
+    url(r'^kannada/gpos$', views.kannada_gpos, name='kannada_gpos'),
 
 
     url(r'^maithili/$', views.maithili, name='maithili'),
+    url(r'^maithili/codepoint$', views.maithili_codepoint, name='maithili_codepoint'),
+    url(r'^maithili/gsub$', views.maithili_gsub, name='maithili_gsub'),
+    url(r'^maithili/gpos$', views.maithili_gpos, name='maithili_gpos'),
 
 
     url(r'^malayalam/$', views.malayalam, name='malayalam'),
+    url(r'^malayalam/codepoint$', views.malayalam_codepoint, name='malayalam_codepoint'),
+    url(r'^malayalam/gsub$', views.malayalam_gsub, name='malayalam_gsub'),
+    url(r'^malayalam/gpos$', views.malayalam_gpos, name='malayalam_gpos'),
 
 
     url(r'^marathi/$', views.marathi, name='marathi'),
