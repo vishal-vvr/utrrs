@@ -505,6 +505,54 @@ def marathi(request):
 		data.append(sp)
 	return render(request, 'marathi.html', {'data': data[1:]})
 
+def marathi_codepoint(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/mr_IN/font/data/codepoint/master_mr_IN.txt')
+	file = open(file_path)
+	c = file.read()
+	length = c.count('\n')
+	file.close()
+	file = open(file_path)
+	data = []
+	for i in range(length):
+		line = file.readline()
+		st = line.strip('\n')
+		sp = st.split(',')
+		data.append(sp)
+	return render(request, 'marathi.html', {'data': data[1:]})
+
+def marathi_gsub(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/mr_IN/font/data/gsub/master_gsub_mr_IN.txt')
+	file = open(file_path)
+	c = file.read()
+	length = c.count('\n')
+	file.close()
+	file = open(file_path)
+	data = []
+	for i in range(length):
+		line = file.readline()
+		st = line.strip('\n')
+		sp = st.split(',')
+		data.append(sp)
+	return render(request, 'mr_gsub.html', {'data': data[1:]})
+
+def marathi_gpos(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/mr_IN/font/data/gpos/master_gpos_mr_IN.txt')
+	file = open(file_path)
+	c = file.read()
+	length = c.count('\n')
+	file.close()
+	file = open(file_path)
+	data = []
+	for i in range(length):
+		line = file.readline()
+		st = line.strip('\n')
+		sp = st.split(',')
+		data.append(sp)
+	return render(request, 'mr_gpos.html', {'data': data[1:]})
+
 def odia(request):
 	module_dir = os.path.dirname(__file__)
 	file_path = os.path.join(module_dir, 'static/lang/or_IN/font/data/codepoint/master_or_IN.txt')
@@ -568,6 +616,54 @@ def telugu(request):
 		sp = st.split(',')
 		data.append(sp)
 	return render(request, 'telugu.html', {'data': data[1:]})
+
+def telugu_codepoint(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/te_IN/font/data/codepoint/master_te_IN.txt')
+	file = open(file_path)
+	c = file.read()
+	length = c.count('\n')
+	file.close()
+	file = open(file_path)
+	data = []
+	for i in range(length):
+		line = file.readline()
+		st = line.strip('\n')
+		sp = st.split(',')
+		data.append(sp)
+	return render(request, 'telugu.html', {'data': data[1:]})
+
+def telugu_gsub(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/te_IN/font/data/gsub/master_gsub_te_IN.txt')
+	file = open(file_path)
+	c = file.read()
+	length = c.count('\n')
+	file.close()
+	file = open(file_path)
+	data = []
+	for i in range(length):
+		line = file.readline()
+		st = line.strip('\n')
+		sp = st.split(',')
+		data.append(sp)
+	return render(request, 'te_gsub.html', {'data': data[1:]})
+
+def telugu_gpos(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/te_IN/font/data/gpos/master_gpos_te_IN.txt')
+	file = open(file_path)
+	c = file.read()
+	length = c.count('\n')
+	file.close()
+	file = open(file_path)
+	data = []
+	for i in range(length):
+		line = file.readline()
+		st = line.strip('\n')
+		sp = st.split(',')
+		data.append(sp)
+	return render(request, 'te_gpos.html', {'data': data[1:]})
 
 def check_fonts():
 	command = 'fc-match sans-serif:lang=te'
