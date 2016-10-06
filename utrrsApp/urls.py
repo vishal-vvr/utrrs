@@ -64,6 +64,9 @@ urlpatterns = [
 
 
     url(r'^marathi/$', views.marathi, name='marathi'),
+    url(r'^marathi/codepoint$', views.marathi_codepoint, name='marathi_codepoint'),
+    url(r'^marathi/gsub$', views.marathi_gsub, name='marathi_gsub'),
+    url(r'^marathi/gpos$', views.marathi_gpos, name='marathi_gpos'),
 
 
     url(r'^odia/$', views.odia, name='odia'),
@@ -76,4 +79,7 @@ urlpatterns = [
 
 
     url(r'^telugu/$', views.telugu, name='telugu'),
+    url(r'^telugu/codepoint$', views.telugu_codepoint, name='telugu_codepoint'),
+    url(r'^telugu/gsub$', views.telugu_gsub, name='telugu_gsub'),
+    url(r'^telugu/gpos$', views.telugu_gpos, name='telugu_gpos'),
 ]
