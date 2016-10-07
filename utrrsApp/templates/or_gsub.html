@@ -1,0 +1,56 @@
+{% extends "master.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="col-xs-10" id="content">
+
+	<div class="container-fluid">
+		<ul class="nav nav-tabs">
+  			<li role="presentation"><a href="/odia/codepoint">code point</a></li>
+  			<li role="presentation"><a href="/odia/gsub">gsub</a></li>
+  			<li role="presentation"><a href="/odia/gpos">gpos</a></li>
+		</ul>
+    	<h2>Odia</h2>
+		Oriya, officially spelled as Odia, is an Indian language, belonging to the Indo-Aryan branch of the Indo-European language family. It is mainly spoken in the Indian states of Orissa and West Bengal. Oriya is one of the many official languages in India; it is the official language of Orissa and the second official language of Jharkhand.<br>
+		<small><i>More information - wikipedia: <a href=https://en.wikipedia.org/wiki/Odia_language>https://en.wikipedia.org/wiki/Odia_language</a></i></small> <br><br>
+		<b>Unicode-Range: </b>
+		U+0B00 – U+0B7F <br><br>
+		<b>Unicode Chart: </b>
+		<a href="http://www.unicode.org/charts/PDF/U0B00.pdf">http://www.unicode.org/charts/PDF/U0B00.pdf</a> <br><br>
+		<b>Font: </b>
+		Lohit <small><i>- used for generating reference images</i></small> <br><br>
+		<b>Rendering Engine: </b>
+		Pango <small><i>- used for generating reference images</i></small> <br><br><br>
+	</div>
+
+	<div class="container-fluid">
+	  <table class="table table-bordered">
+	    <thead class="table-head">
+	      <tr>
+	        <th>No</th>
+	        <th>Code Point</th>
+	        <th>Reference</th>
+	        <th>Character</th>
+			<th>Text</th>
+			<th>Description</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      {% for x in data %}
+	      <tr class="table-row">
+	        <td>{{ forloop.counter }}</td>
+			<td><label>{{ x.0 }}</label></td>
+			<td><img src="{% static 'lang/or_IN/font/' %}{{ x.1 }}"></td>
+			<td><label id="codepoint_label">  {{ x.2 }}</label></td>
+			<td><input id="codepoint_input" type="text" value={{x.2}} size=3 title="Text"></td>
+			<td><label> {{x.3}}</label></td>
+	      </tr>
+	      {% endfor %}
+	    </tbody>
+	  </table>
+	</div>
+
+</div>
+
+{% endblock %}
