@@ -70,9 +70,15 @@ urlpatterns = [
 
 
     url(r'^odia/$', views.odia, name='odia'),
+    url(r'^odia/codepoint$', views.odia_codepoint, name='odia_codepoint'),
+    url(r'^odia/gsub$', views.odia_gsub, name='odia_gsub'),
+    url(r'^odia/gpos$', views.odia_gpos, name='odia_gpos'),
 
 
     url(r'^punjabi/$', views.punjabi, name='punjabi'),
+    url(r'^punjabi/codepoint$', views.punjabi_codepoint, name='punjabi_codepoint'),
+    url(r'^punjabi/gsub$', views.punjabi_gsub, name='punjabi_gsub'),
+    url(r'^punjabi/gpos$', views.punjabi_gpos, name='punjabi_gpos'),
 
 
     url(r'^tamil/$', views.tamil, name='tamil'),
