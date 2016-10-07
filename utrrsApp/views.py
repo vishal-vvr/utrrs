@@ -569,6 +569,54 @@ def odia(request):
 		data.append(sp)
 	return render(request, 'odia.html', {'data': data[1:]})
 
+def odia_codepoint(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/or_IN/font/data/codepoint/master_or_IN.txt')
+	file = open(file_path)
+	c = file.read()
+	length = c.count('\n')
+	file.close()
+	file = open(file_path)
+	data = []
+	for i in range(length):
+		line = file.readline()
+		st = line.strip('\n')
+		sp = st.split(',')
+		data.append(sp)
+	return render(request, 'odia.html', {'data': data[1:]})
+
+def odia_gsub(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/or_IN/font/data/gsub/master_gsub_or_IN.txt')
+	file = open(file_path)
+	c = file.read()
+	length = c.count('\n')
+	file.close()
+	file = open(file_path)
+	data = []
+	for i in range(length):
+		line = file.readline()
+		st = line.strip('\n')
+		sp = st.split(',')
+		data.append(sp)
+	return render(request, 'or_gsub.html', {'data': data[1:]})
+
+def odia_gpos(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/or_IN/font/data/gpos/master_gpos_or_IN.txt')
+	file = open(file_path)
+	c = file.read()
+	length = c.count('\n')
+	file.close()
+	file = open(file_path)
+	data = []
+	for i in range(length):
+		line = file.readline()
+		st = line.strip('\n')
+		sp = st.split(',')
+		data.append(sp)
+	return render(request, 'or_gpos.html', {'data': data[1:]})
+
 def punjabi(request):
 	module_dir = os.path.dirname(__file__)
 	file_path = os.path.join(module_dir, 'static/lang/pa_IN/font/data/codepoint/master_pa_IN.txt')
@@ -584,6 +632,54 @@ def punjabi(request):
 		sp = st.split(',')
 		data.append(sp)
 	return render(request, 'punjabi.html', {'data': data[1:]})
+
+def punjabi_codepoint(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/pa_IN/font/data/codepoint/master_pa_IN.txt')
+	file = open(file_path)
+	c = file.read()
+	length = c.count('\n')
+	file.close()
+	file = open(file_path)
+	data = []
+	for i in range(length):
+		line = file.readline()
+		st = line.strip('\n')
+		sp = st.split(',')
+		data.append(sp)
+	return render(request, 'punjabi.html', {'data': data[1:]})
+
+def punjabi_gsub(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/pa_IN/font/data/gsub/master_gsub_pa_IN.txt')
+	file = open(file_path)
+	c = file.read()
+	length = c.count('\n')
+	file.close()
+	file = open(file_path)
+	data = []
+	for i in range(length):
+		line = file.readline()
+		st = line.strip('\n')
+		sp = st.split(',')
+		data.append(sp)
+	return render(request, 'pa_gsub.html', {'data': data[1:]})
+
+def punjabi_gpos(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/pa_IN/font/data/gpos/master_gpos_pa_IN.txt')
+	file = open(file_path)
+	c = file.read()
+	length = c.count('\n')
+	file.close()
+	file = open(file_path)
+	data = []
+	for i in range(length):
+		line = file.readline()
+		st = line.strip('\n')
+		sp = st.split(',')
+		data.append(sp)
+	return render(request, 'pa_gpos.html', {'data': data[1:]})
 
 def tamil(request):
 	module_dir = os.path.dirname(__file__)
