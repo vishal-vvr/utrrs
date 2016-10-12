@@ -82,6 +82,9 @@ urlpatterns = [
 
 
     url(r'^tamil/$', views.tamil, name='tamil'),
+    url(r'^tamil/codepoint$', views.tamil_codepoint, name='tamil_codepoint'),
+    url(r'^tamil/gsub$', views.tamil_gsub, name='tamil_gsub'),
+    url(r'^tamil/gpos$', views.tamil_gpos, name='tamil_gpos'),
 
 
     url(r'^telugu/$', views.telugu, name='telugu'),
