@@ -697,6 +697,54 @@ def tamil(request):
 		data.append(sp)
 	return render(request, 'tamil.html', {'data': data[1:]})
 
+def tamil_codepoint(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/ta_IN/font/data/codepoint/master_ta_IN.txt')
+	file = open(file_path)
+	c = file.read()
+	length = c.count('\n')
+	file.close()
+	file = open(file_path)
+	data = []
+	for i in range(length):
+		line = file.readline()
+		st = line.strip('\n')
+		sp = st.split(',')
+		data.append(sp)
+	return render(request, 'tamil.html', {'data': data[1:]})
+
+def tamil_gsub(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/ta_IN/font/data/gsub/master_gsub_ta_IN.txt')
+	file = open(file_path)
+	c = file.read()
+	length = c.count('\n')
+	file.close()
+	file = open(file_path)
+	data = []
+	for i in range(length):
+		line = file.readline()
+		st = line.strip('\n')
+		sp = st.split(',')
+		data.append(sp)
+	return render(request, 'ta_gsub.html', {'data': data[1:]})
+
+def tamil_gpos(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/ta_IN/font/data/gpos/master_gpos_ta_IN.txt')
+	file = open(file_path)
+	c = file.read()
+	length = c.count('\n')
+	file.close()
+	file = open(file_path)
+	data = []
+	for i in range(length):
+		line = file.readline()
+		st = line.strip('\n')
+		sp = st.split(',')
+		data.append(sp)
+	return render(request, 'ta_gpos.html', {'data': data[1:]})
+
 def telugu(request):
 	module_dir = os.path.dirname(__file__)
 	file_path = os.path.join(module_dir, 'static/lang/te_IN/font/data/codepoint/master_te_IN.txt')
