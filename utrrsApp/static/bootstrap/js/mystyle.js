@@ -12,6 +12,7 @@ $(document).ready(function(){
         }, 1000);
         return false;
     });
+    $('.datatable').dataTable();
 });
 
 $(".modal-transparent").on('show.bs.modal', function () {
