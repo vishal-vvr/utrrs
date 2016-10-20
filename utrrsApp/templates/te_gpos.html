@@ -7,9 +7,9 @@
 
 	<div class="container-fluid">
 		<ul class="nav nav-tabs">
-  			<li role="presentation"><a href="/telugu/codepoint">code point</a></li>
-  			<li role="presentation"><a href="/telugu/gsub">gsub</a></li>
-  			<li role="presentation"><a href="/telugu/gpos">gpos</a></li>
+  			<li><a href="/telugu/codepoint">Codepoint</a></li>
+  			<li><a href="/telugu/gsub">GSUB</a></li>
+  			<li class="active"><a href="/telugu/gpos">GPOS</a></li>
 		</ul>
     	<h2>Telugu</h2>
 		elugu is a Central Dravidian language primarily spoken in the state of Andhra Pradesh, India, where it is an official language. It is also spoken in the neighbouring states of Chattisgarh, Karnataka, Maharashtra, Orissa and Tamil Nadu, and is spoken in the bordering city of Yanam, in the neighboring territory of Pondicherry.<br>
@@ -37,7 +37,7 @@
 	      </tr>
 	    </thead>
 	    <tbody>
-	      {% for x in data %}
+	      {% for x in data_gpos %}
 	      <tr class="table-row">
 	        <td>{{ forloop.counter }}</td>
 			<td><label>{{ x.0 }}</label></td>

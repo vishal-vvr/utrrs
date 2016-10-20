@@ -7,9 +7,9 @@
 
 	<div class="container-fluid">
 		<ul class="nav nav-tabs">
-  			<li role="presentation"><a href="/german/codepoint">code point</a></li>
-  			<li role="presentation"><a href="/german/gsub">gsub</a></li>
-  			<li role="presentation"><a href="/german/gpos">gpos</a></li>
+  			<li><a href="/german/codepoint">Codepoint</a></li>
+  			<li><a href="/german/gsub">GSUB</a></li>
+  			<li class="active"><a href="/german/gpos">GPOS</a></li>
 		</ul>
     	<h2>German</h2>
 		German is a West Germanic language that derives most of its vocabulary from the Germanic branch of the Indo-European language family.<br>
@@ -37,7 +37,7 @@
 	      </tr>
 	    </thead>
 	    <tbody>
-	      {% for x in data %}
+	      {% for x in data_gpos %}
 	      <tr class="table-row">
 	        <td>{{ forloop.counter }}</td>
 			<td><label>{{ x.0 }}</label></td>

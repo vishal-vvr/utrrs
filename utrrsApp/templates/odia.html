@@ -7,9 +7,9 @@
 
 	<div class="container-fluid">
 		<ul class="nav nav-tabs">
-  			<li role="presentation"><a href="/odia/codepoint">code point</a></li>
-  			<li role="presentation"><a href="/odia/gsub">gsub</a></li>
-  			<li role="presentation"><a href="/odia/gpos">gpos</a></li>
+  			<li><a href="/odia/codepoint">Codepoint</a></li>
+  			<li><a href="/odia/gsub">GSUB</a></li>
+  			<li><a href="/odia/gpos">GPOS</a></li>
 		</ul>
     	<h2>Odia</h2>
 		Oriya, officially spelled as Odia, is an Indian language, belonging to the Indo-Aryan branch of the Indo-European language family. It is mainly spoken in the Indian states of Orissa and West Bengal. Oriya is one of the many official languages in India; it is the official language of Orissa and the second official language of Jharkhand.<br>
@@ -37,7 +37,27 @@
 	      </tr>
 	    </thead>
 	    <tbody>
-	      {% for x in data %}
+	      {% for x in data_code %}
+	      <tr class="table-row">
+	        <td>{{ forloop.counter }}</td>
+			<td><label>{{ x.0 }}</label></td>
+			<td><img src="{% static 'lang/or_IN/font/' %}{{ x.1 }}"></td>
+			<td><label id="codepoint_label">  {{ x.2 }}</label></td>
+			<td><input id="codepoint_input" type="text" value={{x.2}} size=3 title="Text"></td>
+			<td><label> {{x.3}}</label></td>
+	      </tr>
+	      {% endfor %}
+	      {% for x in data_gsub %}
+	      <tr class="table-row">
+	        <td>{{ forloop.counter }}</td>
+			<td><label>{{ x.0 }}</label></td>
+			<td><img src="{% static 'lang/or_IN/font/' %}{{ x.1 }}"></td>
+			<td><label id="codepoint_label">  {{ x.2 }}</label></td>
+			<td><input id="codepoint_input" type="text" value={{x.2}} size=3 title="Text"></td>
+			<td><label> {{x.3}}</label></td>
+	      </tr>
+	      {% endfor %}
+	      {% for x in data_gpos %}
 	      <tr class="table-row">
 	        <td>{{ forloop.counter }}</td>
 			<td><label>{{ x.0 }}</label></td>

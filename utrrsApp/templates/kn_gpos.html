@@ -7,9 +7,9 @@
 
 	<div class="container-fluid">
 		<ul class="nav nav-tabs">
-  			<li role="presentation"><a href="/kannada/codepoint">code point</a></li>
-  			<li role="presentation"><a href="/kannada/gsub">gsub</a></li>
-  			<li role="presentation"><a href="/kannada/gpos">gpos</a></li>
+  			<li><a href="/kannada/codepoint">Codepoint</a></li>
+  			<li><a href="/kannada/gsub">GSUB</a></li>
+  			<li class="active"><a href="/kannada/gpos">GPOS</a></li>
 		</ul>
     	<h2>Kannada</h2>
 		Kannada is a language spoken in India predominantly in the state of Karnataka.<br>
@@ -37,7 +37,7 @@
 	      </tr>
 	    </thead>
 	    <tbody>
-	      {% for x in data %}
+	      {% for x in data_gpos %}
 	      <tr class="table-row">
 	        <td>{{ forloop.counter }}</td>
 			<td><label>{{ x.0 }}</label></td>

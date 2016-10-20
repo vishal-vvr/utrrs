@@ -7,9 +7,9 @@
 
 	<div class="container-fluid">
 		<ul class="nav nav-tabs">
-  			<li role="presentation"><a href="/hindi/codepoint">code point</a></li>
-  			<li role="presentation"><a href="/hindi/gsub">gsub</a></li>
-  			<li role="presentation"><a href="/hindi/gpos">gpos</a></li>
+  			<li><a href="/hindi/codepoint">Codepoint</a></li>
+  			<li class="active"><a href="/hindi/gsub">GSUB</a></li>
+  			<li><a href="/hindi/gpos">GPOS</a></li>
 		</ul>
     	<h2>Hindi</h2>
 		Hindi is the name given to an Indo-Aryan language, or a dialect 	continuum of languages, spoken in northern and central India (the Hindi belt)<br>
@@ -37,7 +37,7 @@
 	      </tr>
 	    </thead>
 	    <tbody>
-	      {% for x in data %}
+	      {% for x in data_gsub %}
 	      <tr class="table-row">
 	        <td>{{ forloop.counter }}</td>
 			<td><label>{{ x.0 }}</label></td>

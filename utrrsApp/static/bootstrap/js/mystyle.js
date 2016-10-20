@@ -12,7 +12,21 @@ $(document).ready(function(){
         }, 1000);
         return false;
     });
-    $('.datatable').dataTable();
+    $('.datatable').dataTable({
+        "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]]
+    });
+
+    if(location.hash) {
+        $('a[href=' + location.hash + ']').tab('show');
+    }
+    $(document.body).on("click", "a[data-toggle]", function(event) {
+        location.hash = this.getAttribute("href");
+    });
+});
+
+$(window).on('popstate', function() {
+    var anchor = location.hash || $("a[data-toggle=tab]").first().attr("href");
+    $('a[href=' + anchor + ']').tab('show');
 });
 
 $(".modal-transparent").on('show.bs.modal', function () {

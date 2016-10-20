@@ -7,9 +7,9 @@
 
 	<div class="container-fluid">
 		<ul class="nav nav-tabs">
-  			<li role="presentation"><a href="/malayalam/codepoint">code point</a></li>
-  			<li role="presentation"><a href="/malayalam/gsub">gsub</a></li>
-  			<li role="presentation"><a href="/malayalam/gpos">gpos</a></li>
+  			<li><a href="/malayalam/codepoint">Codepoint</a></li>
+  			<li><a href="/malayalam/gsub">GSUB</a></li>
+  			<li class="active"><a href="/malayalam/gpos">GPOS</a></li>
 		</ul>
     	<h2>Malayalam</h2>
 		Malayalam is a language spoken in India predominantly in the state of Kerala.<br>
@@ -37,7 +37,7 @@
 	      </tr>
 	    </thead>
 	    <tbody>
-	      {% for x in data %}
+	      {% for x in data_gpos %}
 	      <tr class="table-row">
 	        <td>{{ forloop.counter }}</td>
 			<td><label>{{ x.0 }}</label></td>

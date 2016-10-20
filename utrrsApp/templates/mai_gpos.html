@@ -7,9 +7,9 @@
 
 	<div class="container-fluid">
 		<ul class="nav nav-tabs">
-  			<li role="presentation"><a href="/maithili/codepoint">code point</a></li>
-  			<li role="presentation"><a href="/maithili/gsub">gsub</a></li>
-  			<li role="presentation"><a href="/maithili/gpos">gpos</a></li>
+  			<li><a href="/maithili/codepoint">Codepoint</a></li>
+  			<li><a href="/maithili/gsub">GSUB</a></li>
+  			<li class="active"><a href="/maithili/gpos">GPOS</a></li>
 		</ul>
     	<h2>Maithili</h2>
 		Maithili is an Indo-Aryan language spoken in Nepal and northern India .<br>
@@ -37,7 +37,7 @@
 	      </tr>
 	    </thead>
 	    <tbody>
-	      {% for x in data %}
+	      {% for x in data_gpos %}
 	      <tr class="table-row">
 	        <td>{{ forloop.counter }}</td>
 			<td><label>{{ x.0 }}</label></td>
