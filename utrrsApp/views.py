@@ -18,7 +18,7 @@ def roadmap(request):
 
 def assamese(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/as_IN/font/data/codepoint/master_as_IN.txt')
+	file_path = os.path.join(module_dir, 'static/lang/as_IN/font/data/master_as.txt')
 	file = open(file_path)
 	data = file.read()
 	length = data.count('\n')
@@ -30,34 +30,7 @@ def assamese(request):
 		st = line.strip('\n')
 		sp = st.split(',')
 		data_code.append(sp)
-	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/as_IN/font/data/gsub/master_gsub_as_IN.txt')
-	file = open(file_path)
-	data = file.read()
-	length = data.count('\n')
-	file.close()
-	file = open(file_path)
-	data_gsub = []
-	for i in range(length):
-		line = file.readline()
-		st = line.strip('\n')
-		sp = st.split(',')
-		data_gsub.append(sp)
-	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/as_IN/font/data/gpos/master_gpos_as_IN.txt')
-	file = open(file_path)
-	data = file.read()
-	length = data.count('\n')
-	file.close()
-	file = open(file_path)
-	data_gpos = []
-	for i in range(length):
-		line = file.readline()
-		st = line.strip('\n')
-		sp = st.split(',')
-		data_gpos.append(sp)
-	return render(request, 'assamese.html', {'data_code': data_code[1:], 
-		'data_gsub': data_gsub[1:], 'data_gpos': data_gpos[1:]})
+	return render(request, 'assamese.html', {'data_code': data_code[1:]})
 
 def assamese_codepoint(request):
 	module_dir = os.path.dirname(__file__)
@@ -109,7 +82,7 @@ def assamese_gpos(request):
 
 def bengali(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/bn_IN/font/data/codepoint/master_bn_IN.txt')
+	file_path = os.path.join(module_dir, 'static/lang/bn_IN/font/data/master_bn.txt')
 	file = open(file_path)
 	data = file.read()
 	length = data.count('\n')
@@ -122,33 +95,7 @@ def bengali(request):
 		sp = st.split(',')
 		data_code.append(sp)
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/bn_IN/font/data/gsub/master_gsub_bn_IN.txt')
-	file = open(file_path)
-	data = file.read()
-	length = data.count('\n')
-	file.close()
-	file = open(file_path)
-	data_gsub = []
-	for i in range(length):
-		line = file.readline()
-		st = line.strip('\n')
-		sp = st.split(',')
-		data_gsub.append(sp)
-	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/bn_IN/font/data/gpos/master_gpos_bn_IN.txt')
-	file = open(file_path)
-	data = file.read()
-	length = data.count('\n')
-	file.close()
-	file = open(file_path)
-	data_gpos = []
-	for i in range(length):
-		line = file.readline()
-		st = line.strip('\n')
-		sp = st.split(',')
-		data_gpos.append(sp)
-	return render(request, 'bengali.html', {'data_code': data_code[1:], 
-		'data_gsub': data_gsub[1:], 'data_gpos': data_gpos[1:]})
+	return render(request, 'bengali.html', {'data_code': data_code[1:]})
 
 def bengali_codepoint(request):
 	module_dir = os.path.dirname(__file__)
@@ -238,7 +185,7 @@ def german_gpos(request):
 
 def gujarati(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/gu_IN/font/data/codepoint/master_gu_IN.txt')
+	file_path = os.path.join(module_dir, 'static/lang/gu_IN/font/data/master_gu.txt')
 	file = open(file_path)
 	data = file.read()
 	length = data.count('\n')
@@ -250,34 +197,7 @@ def gujarati(request):
 		st = line.strip('\n')
 		sp = st.split(',')
 		data_code.append(sp)
-	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/gu_IN/font/data/gsub/master_gsub_gu_IN.txt')
-	file = open(file_path)
-	data = file.read()
-	length = data.count('\n')
-	file.close()
-	file = open(file_path)
-	data_gsub = []
-	for i in range(length):
-		line = file.readline()
-		st = line.strip('\n')
-		sp = st.split(',')
-		data_gsub.append(sp)
-	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/gu_IN/font/data/gpos/master_gpos_gu_IN.txt')
-	file = open(file_path)
-	data = file.read()
-	length = data.count('\n')
-	file.close()
-	file = open(file_path)
-	data_gpos = []
-	for i in range(length):
-		line = file.readline()
-		st = line.strip('\n')
-		sp = st.split(',')
-		data_gpos.append(sp)
-	return render(request, 'gujarati.html', {'data_code': data_code[1:], 
-		'data_gsub': data_gsub[1:], 'data_gpos': data_gpos[1:]})
+	return render(request, 'gujarati.html', {'data_code': data_code[1:]})
 
 def gujarati_codepoint(request):
 	module_dir = os.path.dirname(__file__)
@@ -329,7 +249,7 @@ def gujarati_gpos(request):
 
 def hindi(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/hi_IN/font/data/codepoint/master_hi_IN.txt')
+	file_path = os.path.join(module_dir, 'static/lang/hi_IN/font/data/master_hi.txt')
 	file = open(file_path)
 	data = file.read()
 	length = data.count('\n')
@@ -341,34 +261,7 @@ def hindi(request):
 		st = line.strip('\n')
 		sp = st.split(',')
 		data_code.append(sp)
-	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/hi_IN/font/data/gsub/master_gsub_hi_IN.txt')
-	file = open(file_path)
-	data = file.read()
-	length = data.count('\n')
-	file.close()
-	file = open(file_path)
-	data_gsub = []
-	for i in range(length):
-		line = file.readline()
-		st = line.strip('\n')
-		sp = st.split(',')
-		data_gsub.append(sp)
-	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/hi_IN/font/data/gpos/master_gpos_hi_IN.txt')
-	file = open(file_path)
-	data = file.read()
-	length = data.count('\n')
-	file.close()
-	file = open(file_path)
-	data_gpos = []
-	for i in range(length):
-		line = file.readline()
-		st = line.strip('\n')
-		sp = st.split(',')
-		data_gpos.append(sp)
-	return render(request, 'hindi.html', {'data_code': data_code[1:], 
-		'data_gsub': data_gsub[1:], 'data_gpos': data_gpos[1:]})
+	return render(request, 'hindi.html', {'data_code': data_code[1:]})
 
 def hindi_codepoint(request):
 	module_dir = os.path.dirname(__file__)
@@ -420,7 +313,7 @@ def hindi_gpos(request):
 
 def kannada(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/kn_IN/font/data/codepoint/master_kn_IN.txt')
+	file_path = os.path.join(module_dir, 'static/lang/kn_IN/font/data/master_kn.txt')
 	file = open(file_path)
 	data = file.read()
 	length = data.count('\n')
@@ -432,34 +325,7 @@ def kannada(request):
 		st = line.strip('\n')
 		sp = st.split(',')
 		data_code.append(sp)
-	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/kn_IN/font/data/gsub/master_gsub_kn_IN.txt')
-	file = open(file_path)
-	data = file.read()
-	length = data.count('\n')
-	file.close()
-	file = open(file_path)
-	data_gsub = []
-	for i in range(length):
-		line = file.readline()
-		st = line.strip('\n')
-		sp = st.split(',')
-		data_gsub.append(sp)
-	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/kn_IN/font/data/gpos/master_gpos_kn_IN.txt')
-	file = open(file_path)
-	data = file.read()
-	length = data.count('\n')
-	file.close()
-	file = open(file_path)
-	data_gpos = []
-	for i in range(length):
-		line = file.readline()
-		st = line.strip('\n')
-		sp = st.split(',')
-		data_gpos.append(sp)
-	return render(request, 'kannada.html', {'data_code': data_code[1:], 
-		'data_gsub': data_gsub[1:], 'data_gpos': data_gpos[1:]})
+	return render(request, 'kannada.html', {'data_code': data_code[1:]})
 
 def kannada_codepoint(request):
 	module_dir = os.path.dirname(__file__)
@@ -511,7 +377,7 @@ def kannada_gpos(request):
 
 def maithili(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/mai_IN/font/data/codepoint/master_mai_IN.txt')
+	file_path = os.path.join(module_dir, 'static/lang/mai_IN/font/data/master_mai.txt')
 	file = open(file_path)
 	data = file.read()
 	length = data.count('\n')
@@ -523,34 +389,7 @@ def maithili(request):
 		st = line.strip('\n')
 		sp = st.split(',')
 		data_code.append(sp)
-	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/mai_IN/font/data/gsub/master_gsub_mai_IN.txt')
-	file = open(file_path)
-	data = file.read()
-	length = data.count('\n')
-	file.close()
-	file = open(file_path)
-	data_gsub = []
-	for i in range(length):
-		line = file.readline()
-		st = line.strip('\n')
-		sp = st.split(',')
-		data_gsub.append(sp)
-	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/mai_IN/font/data/gpos/master_gpos_mai_IN.txt')
-	file = open(file_path)
-	data = file.read()
-	length = data.count('\n')
-	file.close()
-	file = open(file_path)
-	data_gpos = []
-	for i in range(length):
-		line = file.readline()
-		st = line.strip('\n')
-		sp = st.split(',')
-		data_gpos.append(sp)
-	return render(request, 'maithili.html', {'data_code': data_code[1:], 
-		'data_gsub': data_gsub[1:], 'data_gpos': data_gpos[1:]})
+	return render(request, 'maithili.html', {'data_code': data_code[1:]})
 
 def maithili_codepoint(request):
 	module_dir = os.path.dirname(__file__)
@@ -602,7 +441,7 @@ def maithili_gpos(request):
 
 def malayalam(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/ml_IN/font/data/codepoint/master_ml_IN.txt')
+	file_path = os.path.join(module_dir, 'static/lang/ml_IN/font/data/master_ml.txt')
 	file = open(file_path)
 	data = file.read()
 	length = data.count('\n')
@@ -614,22 +453,7 @@ def malayalam(request):
 		st = line.strip('\n')
 		sp = st.split(',')
 		data_code.append(sp)
-	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/ml_IN/font/data/gsub/master_gsub_ml_IN.txt')
-	file = open(file_path)
-	data = file.read()
-	length = data.count('\n')
-	file.close()
-	file = open(file_path)
-	data_gsub = []
-	for i in range(length):
-		line = file.readline()
-		st = line.strip('\n')
-		sp = st.split(',')
-		data_gsub.append(sp)
-	module_dir = os.path.dirname(__file__)
-	return render(request, 'malayalam.html', {'data_code': data_code[1:], 
-		'data_gsub': data_gsub[1:]})
+	return render(request, 'malayalam.html', {'data_code': data_code[1:]})
 
 def malayalam_codepoint(request):
 	module_dir = os.path.dirname(__file__)
@@ -668,7 +492,7 @@ def malayalam_gpos(request):
 
 def marathi(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/mr_IN/font/data/codepoint/master_mr_IN.txt')
+	file_path = os.path.join(module_dir, 'static/lang/mr_IN/font/data/master_mr.txt')
 	file = open(file_path)
 	data = file.read()
 	length = data.count('\n')
@@ -680,34 +504,7 @@ def marathi(request):
 		st = line.strip('\n')
 		sp = st.split(',')
 		data_code.append(sp)
-	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/mr_IN/font/data/gsub/master_gsub_mr_IN.txt')
-	file = open(file_path)
-	data = file.read()
-	length = data.count('\n')
-	file.close()
-	file = open(file_path)
-	data_gsub = []
-	for i in range(length):
-		line = file.readline()
-		st = line.strip('\n')
-		sp = st.split(',')
-		data_gsub.append(sp)
-	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/mr_IN/font/data/gpos/master_gpos_mr_IN.txt')
-	file = open(file_path)
-	data = file.read()
-	length = data.count('\n')
-	file.close()
-	file = open(file_path)
-	data_gpos = []
-	for i in range(length):
-		line = file.readline()
-		st = line.strip('\n')
-		sp = st.split(',')
-		data_gpos.append(sp)
-	return render(request, 'marathi.html', {'data_code': data_code[1:], 
-		'data_gsub': data_gsub[1:], 'data_gpos': data_gpos[1:]})
+	return render(request, 'marathi.html', {'data_code': data_code[1:]})
 
 def marathi_codepoint(request):
 	module_dir = os.path.dirname(__file__)
@@ -759,7 +556,7 @@ def marathi_gpos(request):
 
 def odia(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/or_IN/font/data/codepoint/master_or_IN.txt')
+	file_path = os.path.join(module_dir, 'static/lang/or_IN/font/data/master_or.txt')
 	file = open(file_path)
 	data = file.read()
 	length = data.count('\n')
@@ -771,34 +568,7 @@ def odia(request):
 		st = line.strip('\n')
 		sp = st.split(',')
 		data_code.append(sp)
-	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/or_IN/font/data/gsub/master_gsub_or_IN.txt')
-	file = open(file_path)
-	data = file.read()
-	length = data.count('\n')
-	file.close()
-	file = open(file_path)
-	data_gsub = []
-	for i in range(length):
-		line = file.readline()
-		st = line.strip('\n')
-		sp = st.split(',')
-		data_gsub.append(sp)
-	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/or_IN/font/data/gpos/master_gpos_or_IN.txt')
-	file = open(file_path)
-	data = file.read()
-	length = data.count('\n')
-	file.close()
-	file = open(file_path)
-	data_gpos = []
-	for i in range(length):
-		line = file.readline()
-		st = line.strip('\n')
-		sp = st.split(',')
-		data_gpos.append(sp)
-	return render(request, 'odia.html', {'data_code': data_code[1:], 
-		'data_gsub': data_gsub[1:], 'data_gpos': data_gpos[1:]})
+	return render(request, 'odia.html', {'data_code': data_code[1:]})
 
 def odia_codepoint(request):
 	module_dir = os.path.dirname(__file__)
@@ -850,7 +620,7 @@ def odia_gpos(request):
 
 def punjabi(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/pa_IN/font/data/codepoint/master_pa_IN.txt')
+	file_path = os.path.join(module_dir, 'static/lang/pa_IN/font/data/master_pa.txt')
 	file = open(file_path)
 	data = file.read()
 	length = data.count('\n')
@@ -862,34 +632,7 @@ def punjabi(request):
 		st = line.strip('\n')
 		sp = st.split(',')
 		data_code.append(sp)
-	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/pa_IN/font/data/gsub/master_gsub_pa_IN.txt')
-	file = open(file_path)
-	data = file.read()
-	length = data.count('\n')
-	file.close()
-	file = open(file_path)
-	data_gsub = []
-	for i in range(length):
-		line = file.readline()
-		st = line.strip('\n')
-		sp = st.split(',')
-		data_gsub.append(sp)
-	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/pa_IN/font/data/gpos/master_gpos_pa_IN.txt')
-	file = open(file_path)
-	data = file.read()
-	length = data.count('\n')
-	file.close()
-	file = open(file_path)
-	data_gpos = []
-	for i in range(length):
-		line = file.readline()
-		st = line.strip('\n')
-		sp = st.split(',')
-		data_gpos.append(sp)
-	return render(request, 'punjabi.html', {'data_code': data_code[1:], 
-		'data_gsub': data_gsub[1:], 'data_gpos': data_gpos[1:]})
+	return render(request, 'punjabi.html', {'data_code': data_code[1:]})
 
 def punjabi_codepoint(request):
 	module_dir = os.path.dirname(__file__)
@@ -941,7 +684,7 @@ def punjabi_gpos(request):
 
 def tamil(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/ta_IN/font/data/codepoint/master_ta_IN.txt')
+	file_path = os.path.join(module_dir, 'static/lang/ta_IN/font/data/master_ta.txt')
 	file = open(file_path)
 	data = file.read()
 	length = data.count('\n')
@@ -953,34 +696,7 @@ def tamil(request):
 		st = line.strip('\n')
 		sp = st.split(',')
 		data_code.append(sp)
-	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/ta_IN/font/data/gsub/master_gsub_ta_IN.txt')
-	file = open(file_path)
-	data = file.read()
-	length = data.count('\n')
-	file.close()
-	file = open(file_path)
-	data_gsub = []
-	for i in range(length):
-		line = file.readline()
-		st = line.strip('\n')
-		sp = st.split(',')
-		data_gsub.append(sp)
-	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/ta_IN/font/data/gpos/master_gpos_ta_IN.txt')
-	file = open(file_path)
-	data = file.read()
-	length = data.count('\n')
-	file.close()
-	file = open(file_path)
-	data_gpos = []
-	for i in range(length):
-		line = file.readline()
-		st = line.strip('\n')
-		sp = st.split(',')
-		data_gpos.append(sp)
-	return render(request, 'tamil.html', {'data_code': data_code[1:], 
-		'data_gsub': data_gsub[1:], 'data_gpos': data_gpos[1:]})
+	return render(request, 'tamil.html', {'data_code': data_code[1:]})
 
 def tamil_codepoint(request):
 	module_dir = os.path.dirname(__file__)
@@ -1032,7 +748,7 @@ def tamil_gpos(request):
 
 def telugu(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/te_IN/font/data/codepoint/master_te_IN.txt')
+	file_path = os.path.join(module_dir, 'static/lang/te_IN/font/data/master_te.txt')
 	file = open(file_path)
 	data = file.read()
 	length = data.count('\n')
@@ -1044,34 +760,7 @@ def telugu(request):
 		st = line.strip('\n')
 		sp = st.split(',')
 		data_code.append(sp)
-	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/te_IN/font/data/gsub/master_gsub_te_IN.txt')
-	file = open(file_path)
-	data = file.read()
-	length = data.count('\n')
-	file.close()
-	file = open(file_path)
-	data_gsub = []
-	for i in range(length):
-		line = file.readline()
-		st = line.strip('\n')
-		sp = st.split(',')
-		data_gsub.append(sp)
-	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/te_IN/font/data/gpos/master_gpos_te_IN.txt')
-	file = open(file_path)
-	data = file.read()
-	length = data.count('\n')
-	file.close()
-	file = open(file_path)
-	data_gpos = []
-	for i in range(length):
-		line = file.readline()
-		st = line.strip('\n')
-		sp = st.split(',')
-		data_gpos.append(sp)
-	return render(request, 'telugu.html', {'data_code': data_code[1:], 
-		'data_gsub': data_gsub[1:], 'data_gpos': data_gpos[1:]})
+	return render(request, 'telugu.html', {'data_code': data_code[1:]})
 
 def telugu_codepoint(request):
 	module_dir = os.path.dirname(__file__)
@@ -1121,9 +810,10 @@ def telugu_gpos(request):
 		data_gpos.append(sp)
 	return render(request, 'te_gpos.html', {'data_gpos': data_gpos[1:]})
 
-def check_fonts():
-	command = 'fc-match sans-serif:lang=te'
+def checkfont(request):
+	"""command = 'fc-match sans-serif:lang=te'
 	command = shlex.split(c)
 	res = subprocess.check_output(x)
-	Counter(z) == Counter(q)
+	Counter(z) == Counter(q)"""
+	return render(request, 'check_font.html')
 
