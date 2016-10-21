@@ -14,6 +14,8 @@ urlpatterns = [
 
     url(r'^roadmap/$', views.roadmap, name='roadmap'),
 
+    url(r'^checkfont/$', views.checkfont, name='checkfont'),
+
 
     url(r'^assamese/$', views.assamese, name='assamese'),
     url(r'^assamese/codepoint$', views.assamese_codepoint, name='assamese_codepoint'),
