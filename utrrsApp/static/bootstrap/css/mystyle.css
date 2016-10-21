@@ -34,6 +34,7 @@
 
 #body{
 	background-image:url('/static/images/background.jpg');
+  /*background-color:#e5e7e8;*/
 }
 
 .nav > .tray > a{
@@ -53,11 +54,11 @@
 	width: auto;
 }
 
-#sidebar > ul > p{
-  	font-size: 18px;
-  	margin-left: 10px;
-  	margin-bottom: 10px;
-  	margin-top: 10px;
+#sidebar > ul > h5{
+  color:#737d84;
+  font-size:18px;
+  margin-top:22px;
+  margin-left: 8px;
 }
 
 #sidebar > ul > a > button{
@@ -69,7 +70,6 @@
 #sidebar > ul > a:hover,
 #sidebar > ul > a:focus{
 	text-decoration: none;
-
 }
 
 #footer{
@@ -178,4 +178,12 @@
 
 .active{
   font-weight: bold;
+}
+
+.literal-block{
+  background-color: #e5e7e8;
+}
+
+#content > strong{
+  font-size: 20px;
 }

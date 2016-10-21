@@ -16,6 +16,9 @@
           href="{% static 'bootstrap/css/mystyle.css' %}"/>
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
+    <link rel="stylesheet"
+          type="text/css"
+          href="{% static 'bootstrap/css/font-awesome.min.css' %}"/>
     <script type="text/javascript" src="{% static 'bootstrap/js/mystyle.js' %}"></script>
 </head>
 <body>
@@ -36,17 +39,12 @@
                 <ul class="nav navbar-nav">
                     <li class="tray"><a href="/"><i class="glyphicon glyphicon-home"></i>&nbsp&nbspHome
                     </a></li>
-                    <li class="tray"><a href="/about"><i
-                            class="glyphicon glyphicon-question-sign"></i>&nbsp&nbspAbout</a>
+                    <li class="tray"><a href="/about"><i class="glyphicon glyphicon-question-sign"></i>&nbsp&nbspAbout</a>
                     </li>
-                    <li class="tray"><a href="#checkfont" data-toggle="modal" data-target="#modal-transparent"><i
-                            class="glyphicon glyphicon-check"></i>&nbsp&nbspCheck
-                        Font</a></li>
-                    <li class="tray"><a href="#search"><i
-                            class="glyphicon glyphicon-search"></i>&nbsp&nbspSearch</a>
+                    <li class="tray"><a href="/checkfont"><i class="glyphicon glyphicon-check"></i>&nbsp&nbspCheck Font</a>
                     </li>
-                    <li class="tray"><a href="#feedback"><i
-                            class="glyphicon glyphicon-pencil"></i>&nbsp&nbspFeedback</a>
+                    <!--<li class="tray"><a href="#checkfont" data-toggle="modal" data-target="#modal-transparent"><i class="glyphicon glyphicon-check"></i>&nbsp&nbspCheck Font</a></li>-->
+                    <li class="tray"><a href="#feedback"><i class="glyphicon glyphicon-pencil"></i>&nbsp&nbspFeedback</a>
                     </li>
                 </ul>
             </div>
@@ -62,79 +60,27 @@
         <!-- Sidebar -->
         <div class="col-xs-1" id="sidebar">
             <ul>
-                <p>LANGUAGES</p>
-                <a href="/assamese"><button type="button"
-                        class="btn btn-default btn-block"><i
-                        class="glyphicon glyphicon-tags"></i>&nbsp&nbsp
-                    Assamese
-                </button></a>
-                <a href="/bengali"><button type="button"
-                        class="btn btn-default btn-block"><i
-                        class="glyphicon glyphicon-tags"></i>&nbsp&nbsp
-                    Bengali
-                </button></a>
-                <a href="/german"><button type="button"
-                        class="btn btn-default btn-block"><i
-                        class="glyphicon glyphicon-tags"></i>&nbsp&nbsp
-                    German
-                </button></a>
-                <a href="/gujarati"><button type="button"
-                        class="btn btn-default btn-block"><i
-                        class="glyphicon glyphicon-tags"></i>&nbsp&nbsp
-                    Gujarati
-                </button></a>
-                <a href="/hindi"><button type="button"
-                        class="btn btn-default btn-block"><i
-                        class="glyphicon glyphicon-tags"></i>&nbsp&nbsp
-                    Hindi
-                </button></a>
-                <a href="/kannada"><button type="button"
-                        class="btn btn-default btn-block"><i
-                        class="glyphicon glyphicon-tags"></i>&nbsp&nbsp
-                    Kannada
-                </button></a>
-                <a href="/maithili"><button type="button"
-                        class="btn btn-default btn-block"><i
-                        class="glyphicon glyphicon-tags"></i>&nbsp&nbsp
-                    Maithili
-                </button></a>
-                <a href="/malayalam"><button type="button"
-                        class="btn btn-default btn-block"><i
-                        class="glyphicon glyphicon-tags"></i>&nbsp&nbsp
-                    Malayalam
-                </button></a>
-                <a href="/marathi"><button type="button"
-                        class="btn btn-default btn-block"><i
-                        class="glyphicon glyphicon-tags"></i>&nbsp&nbsp
-                    Marathi
-                </button></a>
-                <a href="/odia"><button type="button"
-                        class="btn btn-default btn-block"><i
-                        class="glyphicon glyphicon-tags"></i>&nbsp&nbsp
-                    Odia
-                </button></a>
-                <a href="/punjabi"><button type="button"
-                        class="btn btn-default btn-block"><i
-                        class="glyphicon glyphicon-tags"></i>&nbsp&nbsp
-                    Punjabi
-                </button></a>
-                <a href="/tamil"><button type="button"
-                        class="btn btn-default btn-block"><i
-                        class="glyphicon glyphicon-tags"></i>&nbsp&nbsp
-                    Tamil
-                </button></a>
-                <a href="/telugu"><button type="button"
-                        class="btn btn-default btn-block"><i
-                        class="glyphicon glyphicon-tags"></i>&nbsp&nbsp
-                    Telugu
-                </button></a>
+                <h5 style=""><b> LANGUAGES</b></h5>
+                <a href="/assamese"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Assamese</button></a>
+                <a href="/bengali"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Bengali</button></a>
+                <a href="/german"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp German</button></a>
+                <a href="/gujarati"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Gujarati</button></a>
+                <a href="/hindi"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Hindi</button></a>
+                <a href="/kannada"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Kannada</button></a>
+                <a href="/maithili"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Maithili</button></a>
+                <a href="/malayalam"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Malayalam</button></a>
+                <a href="/marathi"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Marathi</button></a>
+                <a href="/odia"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Odia</button></a>
+                <a href="/punjabi"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Punjabi</button></a>
+                <a href="/tamil"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Tamil</button></a>
+                <a href="/telugu"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Telugu</button></a>
             </ul>
         </div>
 
         <!-- Content -->
         {% block content %}{% endblock %}
     </div>
-    <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Back to top"><span class="glyphicon glyphicon-chevron-up"></span></a>
+    <a id="back-to-top" class="btn btn-primary btn-lg back-to-top" role="button" title="Back to top"><span class="glyphicon glyphicon-chevron-up"></span></a>
 </div>
 
 <!-- Footer -->
@@ -149,13 +95,10 @@
 	</div>
 
     <div id="footer_content">
-        © 2007-2013 Red Hat, Inc. and others. For comments or queries, please
+        © 2007-2016 Red Hat, Inc. and others. For comments or queries, please
         contact us.<br/>
 
-        The Unicode Text Rendering Reference System Project is maintained and
-        driven by FUEL Project community and
-        sponsored by Red Hat. This is a community maintained site. Red Hat is
-        not responsible for content. <br/>
+        The Unicode Text Rendering Reference System Project is maintained and sponsored by Red Hat. This is a community maintained site. Red Hat is not responsible for content. <br/>
     </div>
 </div>
 
