@@ -67,6 +67,7 @@ U+0BAF U+0BCD,image/0BAF-0BCD.jpg,ய்,YA + HALANT
 U+0BB0 U+0BBF,image/0BB0-0BBF.jpg,ரி,RA + I
 U+0BB0 U+0BC0,image/0BB0-0BC0.jpg,ரீ,RA + II
 U+0BB0 U+0BC1,image/0BB0-0BC1.jpg,ரு,RA + U
+U+0BB0 U+0BC2,image/0BB0-0BC2.jpg,ரூ,RA + UU
 U+0BB0 U+0BCD,image/0BB0-0BCD.jpg,ர்,RA + HALANT
 U+0BB1 U+0BBF,image/0BB1-0BBF.jpg,றி,RRA + I
 U+0BB1 U+0BC0,image/0BB1-0BC0.jpg,றீ,RRA + II

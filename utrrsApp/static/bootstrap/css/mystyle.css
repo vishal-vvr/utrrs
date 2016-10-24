@@ -132,7 +132,7 @@
     cursor: pointer;
     position: fixed;
     bottom: 350px;
-    right: 15px;
+    right: 0px;
     display:none;
 }
 
