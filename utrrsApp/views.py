@@ -94,7 +94,6 @@ def bengali(request):
 		st = line.strip('\n')
 		sp = st.split(',')
 		data_code.append(sp)
-	module_dir = os.path.dirname(__file__)
 	return render(request, 'bengali.html', {'data_code': data_code[1:]})
 
 def bengali_codepoint(request):

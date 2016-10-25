@@ -47,26 +47,6 @@
 			<td><label> {{x.3}}</label></td>
 	      </tr>
 	      {% endfor %}
-	      {% for x in data_gsub %}
-	      <tr class="table-row">
-	        <td>{{ forloop.counter }}</td>
-			<td><label>{{ x.0 }}</label></td>
-			<td><img src="{% static 'lang/hi_IN/font/' %}{{ x.1 }}"></td>
-			<td><label id="codepoint_label">  {{ x.2 }}</label></td>
-			<td><input id="codepoint_input" type="text" value={{x.2}} size=3 title="Text"></td>
-			<td><label> {{x.3}}</label></td>
-	      </tr>
-	      {% endfor %}
-	      {% for x in data_gpos %}
-	      <tr class="table-row">
-	        <td>{{ forloop.counter }}</td>
-			<td><label>{{ x.0 }}</label></td>
-			<td><img src="{% static 'lang/hi_IN/font/' %}{{ x.1 }}"></td>
-			<td><label id="codepoint_label">  {{ x.2 }}</label></td>
-			<td><input id="codepoint_input" type="text" value={{x.2}} size=3 title="Text"></td>
-			<td><label> {{x.3}}</label></td>
-	      </tr>
-	      {% endfor %}
 	    </tbody>
 	  </table>
 	</div>
