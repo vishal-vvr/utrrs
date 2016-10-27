@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="177.25pt" height="507.5pt" viewBox="0 0 177.25 507.5" version="1.1">
+<defs>
+<g>
+<symbol overflow="visible" id="glyph0-0">
+<path style="stroke:none;" d="M 50 -16.75 L 216.5 -16.75 L 216.5 -216.5 L 50 -216.5 Z M 33.25 0 L 33.25 -233 L 233 -233 L 233 0 Z M 33.25 0 "/>
+</symbol>
+<symbol overflow="visible" id="glyph0-1">
+<path style="stroke:none;" d="M 44 -96.5 L 103.75 -96.5 L 103.75 -151.5 L 44 -151.5 Z M 5.75 -88.25 C 5.75 -90.414062 6.582031 -92.332031 8.25 -94 C 9.914062 -95.664062 11.832031 -96.5 14 -96.5 L 27.25 -96.5 L 27.25 -151.5 L -3.25 -151.5 L -3.25 -166.5 L 148.75 -166.5 L 148.75 -151.5 L 120.5 -151.5 L 120.5 0 L 103.75 0 L 103.75 -39.5 L 29 1.75 L 20.75 -11.75 L 103.75 -55 L 103.75 -80 L 45.5 -80 L 45.5 -68.25 C 45.5 -65.582031 44.832031 -63.25 43.5 -61.25 C 42.164062 -59.25 40.664062 -58.25 39 -58.25 C 35.164062 -58.25 28.664062 -62.414062 19.5 -70.75 C 10.332031 -79.082031 5.75 -84.914062 5.75 -88.25 Z M 5.75 -88.25 "/>
+</symbol>
+</g>
+</defs>
+<g id="surface1">
+<rect x="0" y="0" width="177.25" height="507.5" style="fill:rgb(100%,100%,100%);fill-opacity:1;stroke:none;"/>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-1" x="16" y="296.25"/>
+</g>
+</g>
+</svg>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1896.242188pt" height="593.5pt" viewBox="0 0 1896.242188 593.5" version="1.1">
+<defs>
+<g>
+<symbol overflow="visible" id="glyph0-0">
+<path style="stroke:none;" d="M 33.296875 -233.03125 L 233.03125 -233.03125 L 233.03125 0 L 33.296875 0 Z M 216.390625 -16.640625 L 216.390625 -216.390625 L 49.9375 -216.390625 L 49.9375 -16.640625 Z M 216.390625 -16.640625 "/>
+</symbol>
+</g>
+</defs>
+<g id="surface1">
+<rect x="0" y="0" width="1896.242188" height="593.5" style="fill:rgb(100%,100%,100%);fill-opacity:1;stroke:none;"/>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-0" x="16" y="331.5"/>
+  <use xlink:href="#glyph0-0" x="282.320312" y="331.5"/>
+  <use xlink:href="#glyph0-0" x="548.640625" y="331.5"/>
+  <use xlink:href="#glyph0-0" x="814.960938" y="331.5"/>
+  <use xlink:href="#glyph0-0" x="1081.28125" y="331.5"/>
+  <use xlink:href="#glyph0-0" x="1347.601562" y="331.5"/>
+  <use xlink:href="#glyph0-0" x="1613.921875" y="331.5"/>
+</g>
+</g>
+</svg>

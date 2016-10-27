@@ -1,143 +1,145 @@
-{% extends "master.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unicode Text Rendering Reference System</title>
+    <link rel="stylesheet"
+          type="text/css"
+          href="{% static 'bootstrap/css/bootstrap.css' %}"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+          type="text/css"
+          href="{% static 'bootstrap/css/jquery.dataTables.css' %}"/>
+    <link rel="stylesheet"
+          type="text/css"
+          href="{% static 'bootstrap/css/mystyle.css' %}"/>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
+    <link rel="stylesheet"
+          type="text/css"
+          href="{% static 'bootstrap/css/font-awesome.min.css' %}"/>
+    <script type="text/javascript" src="{% static 'bootstrap/js/mystyle.js' %}"></script>
+</head>
+<body>
 
-{% block content %}
+<!-- Header -->
+<div class="container-fluid" id="header">
+    <div class="row">
+        <div class="logo">
+            <a href="/"><img height="30px" src="{% static 'images/a.svg' %}"></a>
+        </div>
 
-<div class="col-xs-10" id="content">
-<h2 class="title">Check Font</h2>
+        <div class="col-xs-6" id="brand">
+            <span >Unicode Text Rendering Reference System</span>
+        </div>
 
-<p>If you want to check that the following fonts is installed in your system or not run the below commands according to the locales:</p><br>
-<strong>Assamese:</strong>
-<p>The locale code for Assamese is <strong>as</strong></p>
-<pre class="literal-block">
-fc-match sans-serif:lang=as
-</pre>
-<p>Your <strong>Output</strong> should be like</p>
-<pre class="literal-block">
-Lohit-Assamese.ttf: &quot;Lohit Assamese&quot; &quot;Regular&quot;
-</pre>
-<br>
-<strong>Bengali:</strong>
-<p>The locale code for Bengali is <strong>bn</strong></p>
-<pre class="literal-block">
-fc-match sans-serif:lang=bn
-</pre>
-<p>Your <strong>Output</strong> should be like</p>
-<pre class="literal-block">
-Lohit-Bengali.ttf: &quot;Lohit Bengali&quot; &quot;Regular&quot;
-</pre>
-<br>
-<strong>German:</strong>
-<p>The locale code for German is <strong>ge</strong></p>
-<pre class="literal-block">
-fc-match sans-serif:lang=ge
-</pre>
-<p>Your <strong>Output</strong> should be like</p>
-<pre class="literal-block">
-DejaVuSans.ttf: &quot;DejaVu Sans&quot; &quot;Book&quot;
-</pre>
-<br>
-<strong>Gujarati:</strong>
-<p>The locale code for Gujarati is <strong>gu</strong></p>
-<pre class="literal-block">
-fc-match sans-serif:lang=gu
-</pre>
-<p>Your <strong>Output</strong> should be like</p>
-<pre class="literal-block">
-Lohit-Gujarati.ttf: &quot;Lohit Gujarati&quot; &quot;Regular&quot;
-</pre>
-<br>
-<strong>Hindi:</strong>
-<p>The locale code for Hindi is <strong>hi</strong></p>
-<pre class="literal-block">
-fc-match sans-serif:lang=hi
-</pre>
-<p>Your <strong>Output</strong> should be like</p>
-<pre class="literal-block">
-Lohit-Devanagari.ttf: &quot;Lohit Devanagari&quot; &quot;Regular&quot;
-</pre>
-<br>
-<strong>Kannada:</strong>
-<p>The locale code for Kannada is <strong>kn</strong></p>
-<pre class="literal-block">
-fc-match sans-serif:lang=kn
-</pre>
-<p>Your <strong>Output</strong> should be like</p>
-<pre class="literal-block">
-Lohit-Kannada.ttf: &quot;Lohit Kannada&quot; &quot;Regular&quot;
-</pre>
-<br>
-<strong>Maithili:</strong>
-<p>The locale code for Maithili is <strong>mai</strong></p>
-<pre class="literal-block">
-fc-match sans-serif:lang=mai
-</pre>
-<p>Your <strong>Output</strong> should be like</p>
-<pre class="literal-block">
-Lohit-Devanagari.ttf: &quot;Lohit Devanagari&quot; &quot;Regular&quot;
-</pre>
-<br>
-<strong>Malayalam:</strong>
-<p>The locale code for Malayalam is <strong>ml</strong></p>
-<pre class="literal-block">
-fc-match sans-serif:lang=ml
-</pre>
-<p>Your <strong>Output</strong> should be like</p>
-<pre class="literal-block">
-Meera.ttf: &quot;Meera&quot; &quot;Regular&quot;
-</pre>
-<br>
-<strong>Marathi:</strong>
-<p>The locale code for Marathi is <strong>mr</strong></p>
-<pre class="literal-block">
-fc-match sans-serif:lang=mr
-</pre>
-<p>Your <strong>Output</strong> should be like</p>
-<pre class="literal-block">
-Lohit-Devanagari.ttf: &quot;Lohit Devanagari&quot; &quot;Regular&quot;
-</pre>
-<br>
-<strong>Odia:</strong>
-<p>The locale code for Odia is <strong>or</strong></p>
-<pre class="literal-block">
-fc-match sans-serif:lang=or
-</pre>
-<p>Your <strong>Output</strong> should be like</p>
-<pre class="literal-block">
-Lohit-Odia.ttf: &quot;Lohit Odia&quot; &quot;Regular&quot;
-</pre>
-<br>
-<strong>Punjabi:</strong>
-<p>The locale code for Punjabi is <strong>pa</strong></p>
-<pre class="literal-block">
-fc-match sans-serif:lang=pa
-</pre>
-<p>Your <strong>Output</strong> should be like</p>
-<pre class="literal-block">
-Lohit-Gurmukhi.ttf: &quot;Lohit Gurmukhi&quot; &quot;Regular&quot;
-</pre>
-<br>
-<strong>Tamil:</strong>
-<p>The locale code for Tamil is <strong>ta</strong></p>
-<pre class="literal-block">
-fc-match sans-serif:lang=ta
-</pre>
-<p>Your <strong>Output</strong> should be like</p>
-<pre class="literal-block">
-Lohit-Tamil.ttf: &quot;Lohit Tamil&quot; &quot;Regular&quot;
-</pre>
-<br>
-<strong>Telugu:</strong>
-<p>The locale code for Telugu is <strong>te</strong></p>
-<pre class="literal-block">
-fc-match sans-serif:lang=te
-</pre>
-<p>Your <strong>Output</strong> should be like</p>
-<pre class="literal-block">
-Lohit-Telugu.ttf: &quot;Lohit Telugu&quot; &quot;Regular&quot;
-</pre>
-<br>
-<p><strong>NOTE :- These commands will work in Linux Operating System.</strong></p>
-<br>
+        <div class="col-xs-6" style="margin-left:30px">
+            <div id="navbar">
+                <ul class="nav navbar-nav">
+                    <li class="tray"><a href="/"><i class="glyphicon glyphicon-home"></i>&nbsp&nbspHome
+                    </a></li>
+                    <li class="tray"><a href="/about"><i class="glyphicon glyphicon-question-sign"></i>&nbsp&nbspAbout</a>
+                    </li>
+                    <li class="tray"><a href="/checkfont"><i class="glyphicon glyphicon-check"></i>&nbsp&nbspCheck Font</a>
+                    </li>
+                    <!--<li class="tray"><a href="#checkfont" data-toggle="modal" data-target="#modal-transparent"><i class="glyphicon glyphicon-check"></i>&nbsp&nbspCheck Font</a></li>-->
+                    <li class="tray"><a href="#feedback"><i class="glyphicon glyphicon-pencil"></i>&nbsp&nbspFeedback</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
 
-{% endblock %}
+<!-- Body -->
+<div class="container-fluid"
+     id="body">
+    <div class="row">
+
+        <!-- Sidebar -->
+        <div class="col-xs-1" id="sidebar">
+            <ul>
+                <h5 style=""><b> LANGUAGES</b></h5>
+                <a href="/assamese"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Assamese</button></a>
+                <a href="/bengali"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Bengali (IN)</button></a>
+                <a href="/german"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp German</button></a>
+                <a href="/gujarati"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Gujarati</button></a>
+                <a href="/hindi"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Hindi</button></a>
+                <a href="/kannada"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Kannada</button></a>
+                <a href="/maithili"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Maithili</button></a>
+                <a href="/malayalam"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Malayalam</button></a>
+                <a href="/marathi"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Marathi</button></a>
+                <a href="/odia"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Odia</button></a>
+                <a href="/punjabi"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Punjabi</button></a>
+                <a href="/tamil"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Tamil</button></a>
+                <a href="/telugu"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Telugu</button></a>
+            </ul>
+        </div>
+
+        <!-- Content -->
+        {% block content %}{% endblock %}
+    </div>
+    <a id="back-to-top" class="btn btn-primary btn-lg back-to-top" role="button" title="Back to top"><span class="glyphicon glyphicon-chevron-up"></span></a>
+</div>
+
+<!-- Footer -->
+<div class="container-fluid" id="footer">
+
+    <div class="row" id="links">
+        <div class="col-md-3"><a href="/history"><i class="glyphicon glyphicon-hourglass"></i>&nbsp&nbspHistory</a></div>
+        <div class="col-md-3"><a href="/roadmap"><i class="glyphicon 
+        glyphicon-road"></i>&nbsp&nbspRoadMaps</a></div>
+        <div class="col-md-3"><a href="https://fedorahosted.org/fuel/" target="_blank"><i class="glyphicon glyphicon-wrench"></i>&nbsp&nbspDevelopment</a></div>
+        <div class="col-md-3"><a href="#"><i class="glyphicon glyphicon-envelope"></i>&nbsp&nbspContactUs</a></div>
+    </div>
+
+    <div id="footer_content">
+        © 2007-2016 Red Hat, Inc. and others. For comments or queries, please
+        contact us.<br/>
+
+        The Unicode Text Rendering Reference System Project is maintained and sponsored by Red Hat. This is a community maintained site. Red Hat is not responsible for content. <br/>
+    </div>
+</div>
+
+<!-- Modal transparent -->
+<div class="modal modal-transparent fade" id="modal-transparent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Check Fonts</h4>
+            </div>
+            <div class="modal-body">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Languages <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Assamese</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Bengali</a></li>
+                    <li><a href="#">German</a></li>
+                    <li><a href="#">Gujarati</a></li>
+                    <li><a href="#">Hindi</a></li>
+                    <li><a href="#">Kannada</a></li>
+                    <li><a href="#">Maithili</a></li>
+                    <li><a href="#">Malayalam</a></li>
+                    <li><a href="#">Marathi</a></li>
+                    <li><a href="#">Odia</a></li>
+                    <li><a href="#">Punjabi</a></li>
+                    <li><a href="#">Tamil</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Telegu</a></li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="{% static 'bootstrap/js/jquery.dataTables.js' %}"></script>
+<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
+</body>
+</html>
