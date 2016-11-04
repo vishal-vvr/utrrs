@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-import os
+import os, filecmp
 import shlex, subprocess
 from collections import Counter
 
@@ -16,20 +16,35 @@ def history(request):
 def roadmap(request):
 	return render(request, 'roadmap.html')
 
+def checkfont(request):
+	return render(request, 'check_font.html')
+
 def assamese(request):
 	module_dir = os.path.dirname(__file__)
 	file_path = os.path.join(module_dir, 'static/lang/as_IN/font/data/master_as.txt')
+	img_path = os.path.join(module_dir, 'static/lang/as_IN/font/')
+	font_path = os.path.join(module_dir, 'static/fonts/lohit-assamese/Lohit-Assamese.ttf')
 	file = open(file_path)
 	data = file.read()
 	length = data.count('\n')
 	file.close()
 	file = open(file_path)
 	data_code = []
+	os.chdir(img_path)
 	for i in range(length):
 		line = file.readline()
 		st = line.strip('\n')
 		sp = st.split(',')
+		name = sp[1].strip('image/').strip(".svg")
+		os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
+		img1 = os.path.join(module_dir, 'static/lang/as_IN/font/%s' % sp[1])
+		img2 = os.path.join(module_dir, 'static/lang/as_IN/font/%s.svg' % name)
+		if filecmp.cmp(img1,img2)==True:
+			sp.append('Matched')
+		else:
+			sp.append('Not Matched')
 		data_code.append(sp)
+		os.remove('%s.svg' % name)
 	return render(request, 'assamese.html', {'data_code': data_code[1:]})
 
 def assamese_codepoint(request):
@@ -808,11 +823,4 @@ def telugu_gpos(request):
 		sp = st.split(',')
 		data_gpos.append(sp)
 	return render(request, 'te_gpos.html', {'data_gpos': data_gpos[1:]})
-
-def checkfont(request):
-	"""command = 'fc-match sans-serif:lang=te'
-	command = shlex.split(c)
-	res = subprocess.check_output(x)
-	Counter(z) == Counter(q)"""
-	return render(request, 'check_font.html')
 
