@@ -187,3 +187,10 @@
 #content > strong{
   font-size: 20px;
 }
+
+.modal-lg{
+  overflow-y: scroll; 
+  max-height:90%;  
+  margin-top: 50px; 
+  margin-bottom:50px;
+}

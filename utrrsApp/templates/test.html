@@ -1,105 +1,64 @@
+{% extends "master.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Unicode Text Rendering Reference System</title>
-    <link rel="stylesheet"
-          type="text/css"
-          href="{% static 'bootstrap/css/bootstrap.css' %}"/>
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1">
-    <link rel="stylesheet"
-          type="text/css"
-          href="{% static 'bootstrap/css/jquery.dataTables.css' %}"/>
-    <link rel="stylesheet"
-          type="text/css"
-          href="{% static 'bootstrap/css/mystyle.css' %}"/>
-    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
-    <link rel="stylesheet"
-          type="text/css"
-          href="{% static 'bootstrap/css/font-awesome.min.css' %}"/>
-    <script type="text/javascript" src="{% static 'bootstrap/js/mystyle.js' %}"></script>
-</head>
-<body>
 
-<!-- Header -->
-<div class="container-fluid" id="header">
-    <div class="row">
-        <div class="logo">
-            <a href="/"><img height="30px" src="{% static 'images/a.svg' %}"></a>
-        </div>
+{% block navitem %}
+<a href="javascript:var tablestring = $('form').serialize();$.post( '/assamese', tablestring );document.MyForm.submit();" data-toggle="modal" data-target="#modal-transparent"><i class="glyphicon glyphicon-duplicate"></i>&nbsp&nbspCompare</a>
+{% endblock %}
 
-        <div class="col-xs-6" id="brand">
-            <span >Unicode Text Rendering Reference System</span>
-        </div>
+{% block content %}
 
-        <div class="col-xs-6" style="margin-left:30px">
-            <div id="navbar">
-                <ul class="nav navbar-nav">
-                    <li class="tray"><a href="/"><i class="glyphicon glyphicon-home"></i>&nbsp&nbspHome
-                    </a></li>
-                    <li class="tray"><a href="/about"><i class="glyphicon glyphicon-question-sign"></i>&nbsp&nbspAbout</a>
-                    </li>
-                    <li class="tray"><a href="/checkfont"><i class="glyphicon glyphicon-check"></i>&nbsp&nbspCheck Font</a>
-                    </li>
-                    <!--<li class="tray"><a href="#checkfont" data-toggle="modal" data-target="#modal-transparent"><i class="glyphicon glyphicon-check"></i>&nbsp&nbspCheck Font</a></li>-->
-                    <li class="tray"><a href="#feedback"><i class="glyphicon glyphicon-pencil"></i>&nbsp&nbspFeedback</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
+<div class="col-xs-10" id="content">
 
-<!-- Body -->
-<div class="container-fluid"
-     id="body">
-    <div class="row">
-
-        <!-- Sidebar -->
-        <div class="col-xs-1" id="sidebar">
-            <ul>
-                <h5 style=""><b> LANGUAGES</b></h5>
-                <a href="/assamese"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Assamese</button></a>
-                <a href="/bengali"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Bengali (IN)</button></a>
-                <a href="/german"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp German</button></a>
-                <a href="/gujarati"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Gujarati</button></a>
-                <a href="/hindi"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Hindi</button></a>
-                <a href="/kannada"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Kannada</button></a>
-                <a href="/maithili"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Maithili</button></a>
-                <a href="/malayalam"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Malayalam</button></a>
-                <a href="/marathi"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Marathi</button></a>
-                <a href="/odia"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Odia</button></a>
-                <a href="/punjabi"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Punjabi</button></a>
-                <a href="/tamil"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Tamil</button></a>
-                <a href="/telugu"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Telugu</button></a>
-            </ul>
-        </div>
-
-        <!-- Content -->
-        {% block content %}{% endblock %}
-    </div>
-    <a id="back-to-top" class="btn btn-primary btn-lg back-to-top" role="button" title="Back to top"><span class="glyphicon glyphicon-chevron-up"></span></a>
-</div>
-
-<!-- Footer -->
-<div class="container-fluid" id="footer">
-
-    <div class="row" id="links">
-        <div class="col-md-3"><a href="/history"><i class="glyphicon glyphicon-hourglass"></i>&nbsp&nbspHistory</a></div>
-        <div class="col-md-3"><a href="/roadmap"><i class="glyphicon 
-        glyphicon-road"></i>&nbsp&nbspRoadMaps</a></div>
-        <div class="col-md-3"><a href="https://fedorahosted.org/fuel/" target="_blank"><i class="glyphicon glyphicon-wrench"></i>&nbsp&nbspDevelopment</a></div>
-        <div class="col-md-3"><a href="#"><i class="glyphicon glyphicon-envelope"></i>&nbsp&nbspContactUs</a></div>
+    <div class="container-fluid">
+        <ul class="nav nav-tabs">
+            <li><a href="/assamese/codepoint">Codepoint</a></li>
+            <li><a href="/assamese/gsub">GSUB</a></li>
+            <li><a href="/assamese/gpos">GPOS</a></li>
+        </ul>
+        <h2>Assamese</h2>
+        Assamese is the easternmost Indo-Aryan language. It is used mainly in the state of Assam in North-East India. It is the official language of Assam.<br>
+        <small><i>More information - wikipedia: <a href=https://en.wikipedia.org/wiki/Assamese_language>https://en.wikipedia.org/wiki/Assamese_language</a></i></small> <br><br>
+        <b>Unicode-Range: </b>
+        U+0980 - U+09FF <br><br>
+        <b>Unicode Chart: </b>
+        <a href="http://www.unicode.org/charts/PDF/U0980.pdf">http://www.unicode.org/charts/PDF/U0980.pdf</a> <br><br>
+        <b>Font: </b>
+        Lohit <small><i>- used for generating reference images</i></small> <br><br>
+        <b>Rendering Engine: </b>
+        Pango <small><i>- used for generating reference images</i></small> <br><br><br>
     </div>
 
-    <div id="footer_content">
-        © 2007-2016 Red Hat, Inc. and others. For comments or queries, please
-        contact us.<br/>
+    <div class="container-fluid">
+      <table class="table table-bordered datatable">
+        <thead class="table-head">
+          <tr>
+            <th>No</th>
+            <th>Code Point</th>
+            <th>Reference</th>
+            <th>Character</th>
+            <th>Text</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for x in data_code %}
+          <tr class="table-row">
+            <td>{{ forloop.counter }}</td>
+            <td><label>{{ x.0 }}</label></td>
+            <td><img height="40px" src="{% static 'lang/as_IN/font/' %}{{ x.1 }}"></td>
+            <td><label id="codepoint_label">  {{ x.2 }}</label></td>
 
-        The Unicode Text Rendering Reference System Project is maintained and sponsored by Red Hat. This is a community maintained site. Red Hat is not responsible for content. <br/>
+            <form name="MyForm" action="/assamese" method="POST">
+            <td><input id="codepoint_input" type="text" value={{x.2}} size=3 title="Text"></td>
+            </form>
+
+            <td><label> {{x.3}}</label></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
     </div>
+
 </div>
 
 <!-- Modal transparent -->
@@ -108,38 +67,18 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="myModalLabel">Check Fonts</h4>
+                <h4 class="modal-title" id="myModalLabel">Compare In</h4>
             </div>
             <div class="modal-body">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Languages <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Assamese</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">Bengali</a></li>
-                    <li><a href="#">German</a></li>
-                    <li><a href="#">Gujarati</a></li>
-                    <li><a href="#">Hindi</a></li>
-                    <li><a href="#">Kannada</a></li>
-                    <li><a href="#">Maithili</a></li>
-                    <li><a href="#">Malayalam</a></li>
-                    <li><a href="#">Marathi</a></li>
-                    <li><a href="#">Odia</a></li>
-                    <li><a href="#">Punjabi</a></li>
-                    <li><a href="#">Tamil</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">Telegu</a></li>
-                </ul>
+                    <button class="btn btn-primary">Browser</button>
+                    <button class="btn btn-primary">Libre Office</button>
+                    <button class="btn btn-primary">gedit</button>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
 </div>
-<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<script type="text/javascript" src="{% static 'bootstrap/js/jquery.dataTables.js' %}"></script>
-<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
-</body>
-</html>
+
+{% endblock %}

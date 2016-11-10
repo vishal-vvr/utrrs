@@ -5,6 +5,7 @@ import shlex, subprocess
 from collections import Counter
 
 def home(request):
+	
 	return render(request, 'home.html')
 
 def about(request):
@@ -45,7 +46,7 @@ def assamese(request):
 			sp.append('Not Matched')
 		data_code.append(sp)
 		os.remove('%s.svg' % name)
-	return render(request, 'assamese.html', {'data_code': data_code[1:]})
+	return render(request, 'assamese.html', {'data_code': data_code})
 
 def assamese_codepoint(request):
 	module_dir = os.path.dirname(__file__)
