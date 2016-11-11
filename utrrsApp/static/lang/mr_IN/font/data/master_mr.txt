@@ -1,4 +1,3 @@
-codepoint,imagepath,rawcode,desc
 U+0901,image/0901.svg,ँ,DEVNAGARI SIGN CHANDRABINDU
 U+0902,image/0902.svg,ं,DEVNAGARI SIGN ANUSVARA
 U+0903,image/0903.svg,ः,DEVNAGARI SIGN VISARGA

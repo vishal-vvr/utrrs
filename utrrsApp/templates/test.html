@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block navitem %}
-<a href="javascript:var tablestring = $('form').serialize();$.post( '/assamese', tablestring );document.MyForm.submit();" data-toggle="modal" data-target="#modal-transparent"><i class="glyphicon glyphicon-duplicate"></i>&nbsp&nbspCompare</a>
+<a href="" data-toggle="modal" data-target="#modal-transparent"><i class="glyphicon glyphicon-duplicate"></i>&nbsp&nbspCompare</a>
 {% endblock %}
 
 {% block content %}
@@ -47,11 +47,7 @@
             <td><label>{{ x.0 }}</label></td>
             <td><img height="40px" src="{% static 'lang/as_IN/font/' %}{{ x.1 }}"></td>
             <td><label id="codepoint_label">  {{ x.2 }}</label></td>
-
-            <form name="MyForm" action="/assamese" method="POST">
             <td><input id="codepoint_input" type="text" value={{x.2}} size=3 title="Text"></td>
-            </form>
-
             <td><label> {{x.3}}</label></td>
           </tr>
           {% endfor %}
@@ -70,9 +66,10 @@
                 <h4 class="modal-title" id="myModalLabel">Compare In</h4>
             </div>
             <div class="modal-body">
-                    <button class="btn btn-primary">Browser</button>
-                    <button class="btn btn-primary">Libre Office</button>
-                    <button class="btn btn-primary">gedit</button>
+                <a class="btn btn-primary" href="" data-dismiss="modal" data-toggle="modal" data-target="#modal-transparent_two">Browser</a>
+                <button class="btn btn-primary">Libre Office</button>
+                <button class="btn btn-primary">gedit</button>
+                <a class="btn btn-primary" href="" onclick="move()"data-dismiss="modal" data-toggle="modal" data-target="#modal-transparent_three">Progress Bar</a>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -80,5 +77,87 @@
         </div>
     </div>
 </div>
+
+<div class="modal modal-transparent fade" id="modal-transparent_two" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Compared in Browser</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered datatable">
+        <thead class="table-head">
+          <tr>
+            <th>No</th>
+            <th>Code Point</th>
+            <th>Reference</th>
+            <th>Character</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for x in data_code %}
+          <tr class="table-row">
+            <td>{{ forloop.counter }}</td>
+            <td><label>{{ x.0 }}</label></td>
+            <td><img height="40px" src="{% static 'lang/as_IN/font/' %}{{ x.1 }}"></td>
+            <td><label id="codepoint_label">  {{ x.2 }}</label></td>
+            <td><label> {{x.4}}</label></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-transparent fade" id="modal-transparent_three" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+               <div class="progress skill-bar ">
+                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                </div>
+            </div>
+            <div class="modal-body">
+
+                
+
+                <!--Different-->
+                <div id="myProgress" style="position: relative;width: 100%;height: 30px;background-color: #ddd;">
+                    <div id="myBar" style="position: absolute;width: 0%;height: 100%;background-color: #4CAF50;">
+                        <div id="label" style="text-align: center;line-height: 30px;color: white;">0%</div>
+                    </div>
+                </div>
+
+                <br>
+                <button onclick="move()">Click Me</button>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function move() {
+  var elem = document.getElementById("myBar");
+  var width = 10;
+  var id = setInterval(frame, 200);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width++;
+      elem.style.width = width + '%';
+      document.getElementById("label").innerHTML = width * 1  + '%';
+    }
+  }
+}
+</script>
 
 {% endblock %}

@@ -1,4 +1,3 @@
-codepoint,imagepath,rawcode,desc
 U+0D02,image/0D02.svg,ം,MALAYALAM SIGN ANUSVARA
 U+0D03,image/0D03.svg,ഃ,MALAYALAM SIGN VISARGA
 U+0D15,image/0D15.svg,ക,MALAYALAM LETTER KA

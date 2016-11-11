@@ -1,4 +1,3 @@
-codepoint,imagepath,rawcode,desc
 U+0C82,image/0C82.svg,ಂ,KANNADA SIGN ANUSVARA
 U+0C83,image/0C83.svg,ಃ,KANNADA SIGN VISARGA
 U+0C85,image/0C85.svg,ಅ,KANNADA LETTER A

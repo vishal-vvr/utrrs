@@ -1,4 +1,3 @@
-codepoint,imagepath,rawcode,desc
 U+0041,image/0041.svg,A,LATIN CAPITAL LETTER A
 U+0042,image/0042.svg,B,LATIN CAPITAL LETTER B
 U+0043,image/0043.svg,C,LATIN CAPITAL LETTER C

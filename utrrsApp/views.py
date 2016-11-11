@@ -99,18 +99,30 @@ def assamese_gpos(request):
 def bengali(request):
 	module_dir = os.path.dirname(__file__)
 	file_path = os.path.join(module_dir, 'static/lang/bn_IN/font/data/master_bn.txt')
+	img_path = os.path.join(module_dir, 'static/lang/bn_IN/font/')
+	font_path = os.path.join(module_dir, 'static/fonts/lohit-bengali/Lohit-Bengali.ttf')
 	file = open(file_path)
 	data = file.read()
 	length = data.count('\n')
 	file.close()
 	file = open(file_path)
 	data_code = []
+	os.chdir(img_path)
 	for i in range(length):
 		line = file.readline()
 		st = line.strip('\n')
 		sp = st.split(',')
+		name = sp[1].strip('image/').strip(".svg")
+		os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
+		img1 = os.path.join(module_dir, 'static/lang/bn_IN/font/%s' % sp[1])
+		img2 = os.path.join(module_dir, 'static/lang/bn_IN/font/%s.svg' % name)
+		if filecmp.cmp(img1,img2)==True:
+			sp.append('Matched')
+		else:
+			sp.append('Not Matched')
 		data_code.append(sp)
-	return render(request, 'bengali.html', {'data_code': data_code[1:]})
+		os.remove('%s.svg' % name)
+	return render(request, 'bengali.html', {'data_code': data_code})
 
 def bengali_codepoint(request):
 	module_dir = os.path.dirname(__file__)
@@ -163,18 +175,30 @@ def bengali_gpos(request):
 def german(request):
 	module_dir = os.path.dirname(__file__)
 	file_path = os.path.join(module_dir, 'static/lang/de_DE/font/data/codepoint/master_de_DE.txt')
+	img_path = os.path.join(module_dir, 'static/lang/de_DE/font/')
+	font_path = os.path.join(module_dir, 'static/fonts/dejavu/DejaVuSans.ttf')
 	file = open(file_path)
 	data = file.read()
 	length = data.count('\n')
 	file.close()
 	file = open(file_path)
 	data_code = []
+	os.chdir(img_path)
 	for i in range(length):
 		line = file.readline()
 		st = line.strip('\n')
 		sp = st.split(',')
+		name = sp[1].strip('image/').strip(".svg")
+		os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
+		img1 = os.path.join(module_dir, 'static/lang/de_DE/font/%s' % sp[1])
+		img2 = os.path.join(module_dir, 'static/lang/de_DE/font/%s.svg' % name)
+		if filecmp.cmp(img1,img2)==True:
+			sp.append('Matched')
+		else:
+			sp.append('Not Matched')
 		data_code.append(sp)
-	return render(request, 'german.html', {'data_code': data_code[1:]})
+		os.remove('%s.svg' % name)
+	return render(request, 'german.html', {'data_code': data_code})
 
 def german_codepoint(request):
 	module_dir = os.path.dirname(__file__)
@@ -190,7 +214,7 @@ def german_codepoint(request):
 		st = line.strip('\n')
 		sp = st.split(',')
 		data_code.append(sp)
-	return render(request, 'de_codepoint.html', {'data_code': data_code[1:]})
+	return render(request, 'de_codepoint.html', {'data_code': data_code})
 
 def german_gsub(request):
 	return render(request, 'de_gsub.html')
@@ -201,18 +225,30 @@ def german_gpos(request):
 def gujarati(request):
 	module_dir = os.path.dirname(__file__)
 	file_path = os.path.join(module_dir, 'static/lang/gu_IN/font/data/master_gu.txt')
+	img_path = os.path.join(module_dir, 'static/lang/gu_IN/font/')
+	font_path = os.path.join(module_dir, 'static/fonts/lohit-gujarati/Lohit-Gujarati.ttf')
 	file = open(file_path)
 	data = file.read()
 	length = data.count('\n')
 	file.close()
 	file = open(file_path)
 	data_code = []
+	os.chdir(img_path)
 	for i in range(length):
 		line = file.readline()
 		st = line.strip('\n')
 		sp = st.split(',')
+		name = sp[1].strip('image/').strip(".svg")
+		os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
+		img1 = os.path.join(module_dir, 'static/lang/gu_IN/font/%s' % sp[1])
+		img2 = os.path.join(module_dir, 'static/lang/gu_IN/font/%s.svg' % name)
+		if filecmp.cmp(img1,img2)==True:
+			sp.append('Matched')
+		else:
+			sp.append('Not Matched')
 		data_code.append(sp)
-	return render(request, 'gujarati.html', {'data_code': data_code[1:]})
+		os.remove('%s.svg' % name)
+	return render(request, 'gujarati.html', {'data_code': data_code})
 
 def gujarati_codepoint(request):
 	module_dir = os.path.dirname(__file__)
@@ -265,18 +301,30 @@ def gujarati_gpos(request):
 def hindi(request):
 	module_dir = os.path.dirname(__file__)
 	file_path = os.path.join(module_dir, 'static/lang/hi_IN/font/data/master_hi.txt')
+	img_path = os.path.join(module_dir, 'static/lang/hi_IN/font/')
+	font_path = os.path.join(module_dir, 'static/fonts/lohit-devanagari/Lohit-Devanagari.ttf')
 	file = open(file_path)
 	data = file.read()
 	length = data.count('\n')
 	file.close()
 	file = open(file_path)
 	data_code = []
+	os.chdir(img_path)
 	for i in range(length):
 		line = file.readline()
 		st = line.strip('\n')
 		sp = st.split(',')
+		name = sp[1].strip('image/').strip(".svg")
+		os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
+		img1 = os.path.join(module_dir, 'static/lang/hi_IN/font/%s' % sp[1])
+		img2 = os.path.join(module_dir, 'static/lang/hi_IN/font/%s.svg' % name)
+		if filecmp.cmp(img1,img2)==True:
+			sp.append('Matched')
+		else:
+			sp.append('Not Matched')
 		data_code.append(sp)
-	return render(request, 'hindi.html', {'data_code': data_code[1:]})
+		os.remove('%s.svg' % name)
+	return render(request, 'hindi.html', {'data_code': data_code})
 
 def hindi_codepoint(request):
 	module_dir = os.path.dirname(__file__)
@@ -329,18 +377,30 @@ def hindi_gpos(request):
 def kannada(request):
 	module_dir = os.path.dirname(__file__)
 	file_path = os.path.join(module_dir, 'static/lang/kn_IN/font/data/master_kn.txt')
+	img_path = os.path.join(module_dir, 'static/lang/kn_IN/font/')
+	font_path = os.path.join(module_dir, 'static/fonts/lohit-kannada/Lohit-Kannada.ttf')
 	file = open(file_path)
 	data = file.read()
 	length = data.count('\n')
 	file.close()
 	file = open(file_path)
 	data_code = []
+	os.chdir(img_path)
 	for i in range(length):
 		line = file.readline()
 		st = line.strip('\n')
 		sp = st.split(',')
+		name = sp[1].strip('image/').strip(".svg")
+		os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
+		img1 = os.path.join(module_dir, 'static/lang/kn_IN/font/%s' % sp[1])
+		img2 = os.path.join(module_dir, 'static/lang/kn_IN/font/%s.svg' % name)
+		if filecmp.cmp(img1,img2)==True:
+			sp.append('Matched')
+		else:
+			sp.append('Not Matched')
 		data_code.append(sp)
-	return render(request, 'kannada.html', {'data_code': data_code[1:]})
+		os.remove('%s.svg' % name)
+	return render(request, 'kannada.html', {'data_code': data_code})
 
 def kannada_codepoint(request):
 	module_dir = os.path.dirname(__file__)
@@ -393,18 +453,30 @@ def kannada_gpos(request):
 def maithili(request):
 	module_dir = os.path.dirname(__file__)
 	file_path = os.path.join(module_dir, 'static/lang/mai_IN/font/data/master_mai.txt')
+	img_path = os.path.join(module_dir, 'static/lang/mai_IN/font/')
+	font_path = os.path.join(module_dir, 'static/fonts/lohit-devanagari/Lohit-Devanagari.ttf')
 	file = open(file_path)
 	data = file.read()
 	length = data.count('\n')
 	file.close()
 	file = open(file_path)
 	data_code = []
+	os.chdir(img_path)
 	for i in range(length):
 		line = file.readline()
 		st = line.strip('\n')
 		sp = st.split(',')
+		name = sp[1].strip('image/').strip(".svg")
+		os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
+		img1 = os.path.join(module_dir, 'static/lang/mai_IN/font/%s' % sp[1])
+		img2 = os.path.join(module_dir, 'static/lang/mai_IN/font/%s.svg' % name)
+		if filecmp.cmp(img1,img2)==True:
+			sp.append('Matched')
+		else:
+			sp.append('Not Matched')
 		data_code.append(sp)
-	return render(request, 'maithili.html', {'data_code': data_code[1:]})
+		os.remove('%s.svg' % name)
+	return render(request, 'maithili.html', {'data_code': data_code})
 
 def maithili_codepoint(request):
 	module_dir = os.path.dirname(__file__)
@@ -457,18 +529,30 @@ def maithili_gpos(request):
 def malayalam(request):
 	module_dir = os.path.dirname(__file__)
 	file_path = os.path.join(module_dir, 'static/lang/ml_IN/font/data/master_ml.txt')
+	img_path = os.path.join(module_dir, 'static/lang/ml_IN/font/')
+	font_path = os.path.join(module_dir, 'static/fonts/smc/Meera.ttf')
 	file = open(file_path)
 	data = file.read()
 	length = data.count('\n')
 	file.close()
 	file = open(file_path)
 	data_code = []
+	os.chdir(img_path)
 	for i in range(length):
 		line = file.readline()
 		st = line.strip('\n')
 		sp = st.split(',')
+		name = sp[1].strip('image/').strip(".svg")
+		os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
+		img1 = os.path.join(module_dir, 'static/lang/ml_IN/font/%s' % sp[1])
+		img2 = os.path.join(module_dir, 'static/lang/ml_IN/font/%s.svg' % name)
+		if filecmp.cmp(img1,img2)==True:
+			sp.append('Matched')
+		else:
+			sp.append('Not Matched')
 		data_code.append(sp)
-	return render(request, 'malayalam.html', {'data_code': data_code[1:]})
+		os.remove('%s.svg' % name)
+	return render(request, 'malayalam.html', {'data_code': data_code})
 
 def malayalam_codepoint(request):
 	module_dir = os.path.dirname(__file__)
@@ -508,18 +592,30 @@ def malayalam_gpos(request):
 def marathi(request):
 	module_dir = os.path.dirname(__file__)
 	file_path = os.path.join(module_dir, 'static/lang/mr_IN/font/data/master_mr.txt')
+	img_path = os.path.join(module_dir, 'static/lang/mr_IN/font/')
+	font_path = os.path.join(module_dir, 'static/fonts/lohit-devanagari/Lohit-Devanagari.ttf')
 	file = open(file_path)
 	data = file.read()
 	length = data.count('\n')
 	file.close()
 	file = open(file_path)
 	data_code = []
+	os.chdir(img_path)
 	for i in range(length):
 		line = file.readline()
 		st = line.strip('\n')
 		sp = st.split(',')
+		name = sp[1].strip('image/').strip(".svg")
+		os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
+		img1 = os.path.join(module_dir, 'static/lang/mr_IN/font/%s' % sp[1])
+		img2 = os.path.join(module_dir, 'static/lang/mr_IN/font/%s.svg' % name)
+		if filecmp.cmp(img1,img2)==True:
+			sp.append('Matched')
+		else:
+			sp.append('Not Matched')
 		data_code.append(sp)
-	return render(request, 'marathi.html', {'data_code': data_code[1:]})
+		os.remove('%s.svg' % name)
+	return render(request, 'marathi.html', {'data_code': data_code})
 
 def marathi_codepoint(request):
 	module_dir = os.path.dirname(__file__)
@@ -572,18 +668,30 @@ def marathi_gpos(request):
 def odia(request):
 	module_dir = os.path.dirname(__file__)
 	file_path = os.path.join(module_dir, 'static/lang/or_IN/font/data/master_or.txt')
+	img_path = os.path.join(module_dir, 'static/lang/or_IN/font/')
+	font_path = os.path.join(module_dir, 'static/fonts/lohit-odia/Lohit-Odia.ttf')
 	file = open(file_path)
 	data = file.read()
 	length = data.count('\n')
 	file.close()
 	file = open(file_path)
 	data_code = []
+	os.chdir(img_path)
 	for i in range(length):
 		line = file.readline()
 		st = line.strip('\n')
 		sp = st.split(',')
+		name = sp[1].strip('image/').strip(".svg")
+		os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
+		img1 = os.path.join(module_dir, 'static/lang/or_IN/font/%s' % sp[1])
+		img2 = os.path.join(module_dir, 'static/lang/or_IN/font/%s.svg' % name)
+		if filecmp.cmp(img1,img2)==True:
+			sp.append('Matched')
+		else:
+			sp.append('Not Matched')
 		data_code.append(sp)
-	return render(request, 'odia.html', {'data_code': data_code[1:]})
+		os.remove('%s.svg' % name)
+	return render(request, 'odia.html', {'data_code': data_code})
 
 def odia_codepoint(request):
 	module_dir = os.path.dirname(__file__)
@@ -636,18 +744,30 @@ def odia_gpos(request):
 def punjabi(request):
 	module_dir = os.path.dirname(__file__)
 	file_path = os.path.join(module_dir, 'static/lang/pa_IN/font/data/master_pa.txt')
+	img_path = os.path.join(module_dir, 'static/lang/pa_IN/font/')
+	font_path = os.path.join(module_dir, 'static/fonts/lohit-gurmukhi/Lohit-Gurmukhi.ttf')
 	file = open(file_path)
 	data = file.read()
 	length = data.count('\n')
 	file.close()
 	file = open(file_path)
 	data_code = []
+	os.chdir(img_path)
 	for i in range(length):
 		line = file.readline()
 		st = line.strip('\n')
 		sp = st.split(',')
+		name = sp[1].strip('image/').strip(".svg")
+		os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
+		img1 = os.path.join(module_dir, 'static/lang/pa_IN/font/%s' % sp[1])
+		img2 = os.path.join(module_dir, 'static/lang/pa_IN/font/%s.svg' % name)
+		if filecmp.cmp(img1,img2)==True:
+			sp.append('Matched')
+		else:
+			sp.append('Not Matched')
 		data_code.append(sp)
-	return render(request, 'punjabi.html', {'data_code': data_code[1:]})
+		os.remove('%s.svg' % name)
+	return render(request, 'punjabi.html', {'data_code': data_code})
 
 def punjabi_codepoint(request):
 	module_dir = os.path.dirname(__file__)
@@ -700,18 +820,30 @@ def punjabi_gpos(request):
 def tamil(request):
 	module_dir = os.path.dirname(__file__)
 	file_path = os.path.join(module_dir, 'static/lang/ta_IN/font/data/master_ta.txt')
+	img_path = os.path.join(module_dir, 'static/lang/ta_IN/font/')
+	font_path = os.path.join(module_dir, 'static/fonts/lohit-tamil/Lohit-Tamil.ttf')
 	file = open(file_path)
 	data = file.read()
 	length = data.count('\n')
 	file.close()
 	file = open(file_path)
 	data_code = []
+	os.chdir(img_path)
 	for i in range(length):
 		line = file.readline()
 		st = line.strip('\n')
 		sp = st.split(',')
+		name = sp[1].strip('image/').strip(".svg")
+		os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
+		img1 = os.path.join(module_dir, 'static/lang/ta_IN/font/%s' % sp[1])
+		img2 = os.path.join(module_dir, 'static/lang/ta_IN/font/%s.svg' % name)
+		if filecmp.cmp(img1,img2)==True:
+			sp.append('Matched')
+		else:
+			sp.append('Not Matched')
 		data_code.append(sp)
-	return render(request, 'tamil.html', {'data_code': data_code[1:]})
+		os.remove('%s.svg' % name)
+	return render(request, 'tamil.html', {'data_code': data_code})
 
 def tamil_codepoint(request):
 	module_dir = os.path.dirname(__file__)
@@ -764,18 +896,30 @@ def tamil_gpos(request):
 def telugu(request):
 	module_dir = os.path.dirname(__file__)
 	file_path = os.path.join(module_dir, 'static/lang/te_IN/font/data/master_te.txt')
+	img_path = os.path.join(module_dir, 'static/lang/te_IN/font/')
+	font_path = os.path.join(module_dir, 'static/fonts/lohit-telugu/Lohit-Telugu.ttf')
 	file = open(file_path)
 	data = file.read()
 	length = data.count('\n')
 	file.close()
 	file = open(file_path)
 	data_code = []
+	os.chdir(img_path)
 	for i in range(length):
 		line = file.readline()
 		st = line.strip('\n')
 		sp = st.split(',')
+		name = sp[1].strip('image/').strip(".svg")
+		os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
+		img1 = os.path.join(module_dir, 'static/lang/te_IN/font/%s' % sp[1])
+		img2 = os.path.join(module_dir, 'static/lang/te_IN/font/%s.svg' % name)
+		if filecmp.cmp(img1,img2)==True:
+			sp.append('Matched')
+		else:
+			sp.append('Not Matched')
 		data_code.append(sp)
-	return render(request, 'telugu.html', {'data_code': data_code[1:]})
+		os.remove('%s.svg' % name)
+	return render(request, 'telugu.html', {'data_code': data_code})
 
 def telugu_codepoint(request):
 	module_dir = os.path.dirname(__file__)
