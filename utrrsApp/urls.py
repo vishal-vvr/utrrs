@@ -33,6 +33,7 @@ urlpatterns = [
     url(r'^german/codepoint$', views.german_codepoint, name='german_codepoint'),
     url(r'^german/gsub$', views.german_gsub, name='german_gsub'),
     url(r'^german/gpos$', views.german_gpos, name='german_gpos'),
+    url(r'^german/report.pdf$', views.german_pdf, name='german_pdf'),
 
 
     url(r'^gujarati/$', views.gujarati, name='gujarati'),

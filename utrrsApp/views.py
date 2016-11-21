@@ -3,9 +3,14 @@ from django.http import HttpResponse
 import os, filecmp
 import shlex, subprocess
 from collections import Counter
+from django.http import JsonResponse
+from wsgiref.util import FileWrapper
+from reportlab.lib import colors
+from reportlab.lib.pagesizes import A4, inch, landscape
+from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph
+from reportlab.lib.styles import getSampleStyleSheet
 
 def home(request):
-	
 	return render(request, 'home.html')
 
 def about(request):
@@ -21,6 +26,54 @@ def checkfont(request):
 	return render(request, 'check_font.html')
 
 def assamese(request):
+	if request.method == 'POST':
+		if request.is_ajax():
+			module_dir = os.path.dirname(__file__)
+			file_path = os.path.join(module_dir, 'static/lang/as_IN/font/data/master_as.txt')
+			img_path = os.path.join(module_dir, 'static/lang/as_IN/font/')
+			font_path = os.path.join(module_dir, 'static/fonts/lohit-assamese/Lohit-Assamese.ttf')
+			file = open(file_path)
+			data = file.read()
+			length = data.count('\n')
+			file.close()
+			file = open(file_path)
+			data_code = []
+			os.chdir(img_path)
+			for i in range(length):
+				line = file.readline()
+				st = line.strip('\n')
+				sp = st.split(',')
+				name = sp[1].strip('image/').strip(".svg")
+				os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
+				img1 = os.path.join(module_dir, 'static/lang/as_IN/font/%s' % sp[1])
+				img2 = os.path.join(module_dir, 'static/lang/as_IN/font/%s.svg' % name)
+				if filecmp.cmp(img1,img2)==True:
+					sp.append('Matched')
+				else:
+					sp.append('Not Matched')
+				data_code.append(sp)
+				os.remove('%s.svg' % name)
+			name = 'Tenstormavi'
+			return JsonResponse({'data_code': data_code, 'name': name})
+		return render(request, 'test.html')
+	else:
+		module_dir = os.path.dirname(__file__)
+		file_path = os.path.join(module_dir, 'static/lang/as_IN/font/data/master_as.txt')
+		file = open(file_path)
+		data = file.read()
+		length = data.count('\n')
+		file.close()
+		file = open(file_path)
+		data_code = []
+		for i in range(length):
+			line = file.readline()
+			st = line.strip('\n')
+			sp = st.split(',')
+			data_code.append(sp)
+		return render(request, 'test.html', {'data_code': data_code})
+        
+
+"""def assamese(request):
 	module_dir = os.path.dirname(__file__)
 	file_path = os.path.join(module_dir, 'static/lang/as_IN/font/data/master_as.txt')
 	img_path = os.path.join(module_dir, 'static/lang/as_IN/font/')
@@ -46,7 +99,7 @@ def assamese(request):
 			sp.append('Not Matched')
 		data_code.append(sp)
 		os.remove('%s.svg' % name)
-	return render(request, 'assamese.html', {'data_code': data_code})
+	return render(request, 'assamese.html', {'data_code': data_code})"""
 
 def assamese_codepoint(request):
 	module_dir = os.path.dirname(__file__)
@@ -183,6 +236,7 @@ def german(request):
 	file.close()
 	file = open(file_path)
 	data_code = []
+	pdf_data = [['<b>Codepoint</b>','<b>Character</b>','<b>Description</b>','<b>Result</b>']]
 	os.chdir(img_path)
 	for i in range(length):
 		line = file.readline()
@@ -196,8 +250,36 @@ def german(request):
 			sp.append('Matched')
 		else:
 			sp.append('Not Matched')
+		pd = sp[:]
+		pd.pop(1)
+		#pd.insert(0, i)
+		pdf_data.append(pd)
 		data_code.append(sp)
 		os.remove('%s.svg' % name)
+	doc = SimpleDocTemplate("german-report.pdf", pagesize=A4, rightMargin=30,leftMargin=30, topMargin=30,bottomMargin=18)
+	doc.pagesize = landscape(A4)
+	elements = []
+	style = TableStyle([('ALIGN',(1,1),(-2,-2),'RIGHT'),
+                       ('TEXTCOLOR',(1,1),(-2,-2),colors.red),
+                       ('VALIGN',(0,0),(0,-1),'TOP'),
+                       ('TEXTCOLOR',(0,0),(0,-1),colors.blue),
+                       ('ALIGN',(0,-1),(-1,-1),'CENTER'),
+                       ('VALIGN',(0,-1),(-1,-1),'MIDDLE'),
+                       ('TEXTCOLOR',(0,-1),(-1,-1),colors.green),
+                       ('INNERGRID', (0,0), (-1,-1), 0.25, colors.black),
+                       ('BOX', (0,0), (-1,-1), 0.25, colors.black),
+                       ])
+	s = getSampleStyleSheet()
+	s = s["BodyText"]
+	s.wordWrap = 'CJK'
+	data2 = [[Paragraph(cell, s) for cell in row] for row in pdf_data]
+	t = Table(data2)
+	t.setStyle(style)
+	styles = getSampleStyleSheet()
+	p = Paragraph("<u>Report</u>", styles["title"])
+	elements.append(p)
+	elements.append(t)
+	doc.build(elements)
 	return render(request, 'german.html', {'data_code': data_code})
 
 def german_codepoint(request):
@@ -221,6 +303,15 @@ def german_gsub(request):
 
 def german_gpos(request):
 	return render(request, 'de_gpos.html')
+
+def german_pdf(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/de_DE/font/german-report.pdf')
+	file = open(file_path, "r")
+	response = HttpResponse(FileWrapper(file), content_type='application/pdf')
+	response['Content-Disposition'] = 'attachment; filename=german-report.pdf'
+	file.close()
+	return response
 
 def gujarati(request):
 	module_dir = os.path.dirname(__file__)
