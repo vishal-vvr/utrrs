@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-import os, filecmp
+import os, filecmp, csv
 import shlex, subprocess
 from collections import Counter
 from django.http import JsonResponse
@@ -38,6 +38,7 @@ def assamese(request):
 			file.close()
 			file = open(file_path)
 			data_code = []
+			pdf_data = [['<b>Codepoint</b>','<b>Character</b>','<b>Description</b>','<b>Result</b>']]
 			os.chdir(img_path)
 			for i in range(length):
 				line = file.readline()
@@ -51,11 +52,42 @@ def assamese(request):
 					sp.append('Matched')
 				else:
 					sp.append('Not Matched')
+				pd = sp[:]
+				pd.pop(1)
+				pdf_data.append(pd)
 				data_code.append(sp)
 				os.remove('%s.svg' % name)
-			name = 'Tenstormavi'
-			return JsonResponse({'data_code': data_code, 'name': name})
-		return render(request, 'test.html')
+			doc = SimpleDocTemplate("assamese-report.pdf", pagesize=A4, rightMargin=30,leftMargin=30, topMargin=30,bottomMargin=18)
+			doc.pagesize = landscape(A4)
+			elements = []
+			style = TableStyle([('ALIGN',(1,1),(-2,-2),'RIGHT'),
+                       ('TEXTCOLOR',(1,1),(-2,-2),colors.red),
+                       ('VALIGN',(0,0),(0,-1),'TOP'),
+                       ('TEXTCOLOR',(0,0),(0,-1),colors.blue),
+                       ('ALIGN',(0,-1),(-1,-1),'CENTER'),
+                       ('VALIGN',(0,-1),(-1,-1),'MIDDLE'),
+                       ('TEXTCOLOR',(0,-1),(-1,-1),colors.green),
+                       ('INNERGRID', (0,0), (-1,-1), 0.25, colors.black),
+                       ('BOX', (0,0), (-1,-1), 0.25, colors.black),
+                       ])
+			s = getSampleStyleSheet()
+			s = s["BodyText"]
+			s.wordWrap = 'CJK'
+			data2 = [[Paragraph(cell, s) for cell in row] for row in pdf_data]
+			t = Table(data2)
+			t.setStyle(style)
+			styles = getSampleStyleSheet()
+			p = Paragraph("<u>Report</u>", styles["title"])
+			q = Paragraph(" ", styles["title"])
+			elements.append(p)
+			elements.append(q)
+			elements.append(t)
+			doc.build(elements)
+			with open('assamese-report.csv', 'w') as csvfile:
+				writer = csv.writer(csvfile)
+				[writer.writerow(r) for r in pdf_data]
+			return JsonResponse({'data_code': data_code})
+		return render(request, 'assamese.html')
 	else:
 		module_dir = os.path.dirname(__file__)
 		file_path = os.path.join(module_dir, 'static/lang/as_IN/font/data/master_as.txt')
@@ -70,7 +102,7 @@ def assamese(request):
 			st = line.strip('\n')
 			sp = st.split(',')
 			data_code.append(sp)
-		return render(request, 'test.html', {'data_code': data_code})
+		return render(request, 'assamese.html', {'data_code': data_code})
         
 
 """def assamese(request):
@@ -148,6 +180,24 @@ def assamese_gpos(request):
 		sp = st.split(',')
 		data_gpos.append(sp)
 	return render(request, 'as_gpos.html', {'data_gpos': data_gpos[1:]})
+
+def assamese_pdf(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/as_IN/font/assamese-report.pdf')
+	file = open(file_path, "r")
+	response = HttpResponse(FileWrapper(file), content_type='application/pdf')
+	response['Content-Disposition'] = 'attachment; filename=assamese-report.pdf'
+	file.close()
+	return response
+
+def assamese_csv(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/as_IN/font/assamese-report.csv')
+	file = open(file_path, "r")
+	response = HttpResponse(FileWrapper(file), content_type='application/csv')
+	response['Content-Disposition'] = 'attachment; filename=assamese-report.csv'
+	file.close()
+	return response
 
 def bengali(request):
 	module_dir = os.path.dirname(__file__)
@@ -277,9 +327,14 @@ def german(request):
 	t.setStyle(style)
 	styles = getSampleStyleSheet()
 	p = Paragraph("<u>Report</u>", styles["title"])
+	q = Paragraph(" ", styles["title"])
 	elements.append(p)
+	elements.append(q)
 	elements.append(t)
 	doc.build(elements)
+	with open('german-report.csv', 'w') as csvfile:
+		writer = csv.writer(csvfile)
+		[writer.writerow(r) for r in pdf_data]
 	return render(request, 'german.html', {'data_code': data_code})
 
 def german_codepoint(request):
@@ -310,6 +365,15 @@ def german_pdf(request):
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/pdf')
 	response['Content-Disposition'] = 'attachment; filename=german-report.pdf'
+	file.close()
+	return response
+
+def german_csv(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/de_DE/font/german-report.csv')
+	file = open(file_path, "r")
+	response = HttpResponse(FileWrapper(file), content_type='application/csv')
+	response['Content-Disposition'] = 'attachment; filename=german-report.csv'
 	file.close()
 	return response
 

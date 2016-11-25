@@ -21,6 +21,8 @@ urlpatterns = [
     url(r'^assamese/codepoint$', views.assamese_codepoint, name='assamese_codepoint'),
     url(r'^assamese/gsub$', views.assamese_gsub, name='assamese_gsub'),
     url(r'^assamese/gpos$', views.assamese_gpos, name='assamese_gpos'),
+    url(r'^assamese/report.pdf$', views.assamese_pdf, name='assamese_pdf'),
+    url(r'^assamese/report.csv$', views.assamese_csv, name='assamese_csv'),
 
 
     url(r'^bengali/$', views.bengali, name='bengali'),
@@ -34,6 +36,7 @@ urlpatterns = [
     url(r'^german/gsub$', views.german_gsub, name='german_gsub'),
     url(r'^german/gpos$', views.german_gpos, name='german_gpos'),
     url(r'^german/report.pdf$', views.german_pdf, name='german_pdf'),
+    url(r'^german/report.csv$', views.german_csv, name='german_csv'),
 
 
     url(r'^gujarati/$', views.gujarati, name='gujarati'),
