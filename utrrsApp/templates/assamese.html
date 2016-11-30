@@ -1,11 +1,9 @@
 {% extends "master.html" %}
 {% load static %}
 
-
 {% block navitem %}
 <a href="" id="submit" method="POST" data-toggle="modal" data-target="#modal-transparent"><i class="glyphicon glyphicon-duplicate"></i>&nbsp&nbspCompare</a>
 {% endblock %}
-
 
 {% block style %}
 <style>
@@ -18,7 +16,7 @@
     height:     100%;
     width:      100%;
     background: rgba( 255, 255, 255, .8 ) 
-                url('/static/images/loading.gif') 
+                url('/static/images/loading6.gif') 
                 50% 50% 
                 no-repeat;
 }
@@ -32,7 +30,6 @@ body.loading .modal7 {
 }
 </style>
 {% endblock %}
-
 
 {% block content %}
 <div class="col-xs-10" id="content">
@@ -84,7 +81,6 @@ body.loading .modal7 {
     </div>
 
 </div>
-
 
 <script>
 function getCookie(name) {
@@ -143,7 +139,7 @@ error : function(xhr,errmsg,err) {
             <div class="modal-body">
                 <a class="btn btn-primary" href="" data-dismiss="modal" data-toggle="modal" data-target="#modal-transparent_two">Browser</a>
                 <a href="/assamese/report.csv" class="btn btn-primary">Libre Office</a>
-                <button class="btn btn-primary">gedit</button>
+                <a href="/assamese/report.txt" class="btn btn-primary">gedit</a>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>

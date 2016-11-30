@@ -23,12 +23,16 @@ urlpatterns = [
     url(r'^assamese/gpos$', views.assamese_gpos, name='assamese_gpos'),
     url(r'^assamese/report.pdf$', views.assamese_pdf, name='assamese_pdf'),
     url(r'^assamese/report.csv$', views.assamese_csv, name='assamese_csv'),
+    url(r'^assamese/report.txt$', views.assamese_txt, name='assamese_txt'),
 
 
     url(r'^bengali/$', views.bengali, name='bengali'),
     url(r'^bengali/codepoint$', views.bengali_codepoint, name='bengali_codepoint'),
     url(r'^bengali/gsub$', views.bengali_gsub, name='bengali_gsub'),
     url(r'^bengali/gpos$', views.bengali_gpos, name='bengali_gpos'),
+    url(r'^bengali/report.pdf$', views.bengali_pdf, name='bengali_pdf'),
+    url(r'^bengali/report.csv$', views.bengali_csv, name='bengali_csv'),
+    url(r'^bengali/report.txt$', views.bengali_txt, name='bengali_txt'),
 
 
     url(r'^german/$', views.german, name='german'),
@@ -37,36 +41,52 @@ urlpatterns = [
     url(r'^german/gpos$', views.german_gpos, name='german_gpos'),
     url(r'^german/report.pdf$', views.german_pdf, name='german_pdf'),
     url(r'^german/report.csv$', views.german_csv, name='german_csv'),
+    url(r'^german/report.txt$', views.german_txt, name='german_txt'),
 
 
     url(r'^gujarati/$', views.gujarati, name='gujarati'),
     url(r'^gujarati/codepoint$', views.gujarati_codepoint, name='gujarati_codepoint'),
     url(r'^gujarati/gsub$', views.gujarati_gsub, name='gujarati_gsub'),
     url(r'^gujarati/gpos$', views.gujarati_gpos, name='gujarati_gpos'),
+    url(r'^gujarati/report.pdf$', views.gujarati_pdf, name='gujarati_pdf'),
+    url(r'^gujarati/report.csv$', views.gujarati_csv, name='gujarati_csv'),
+    url(r'^gujarati/report.txt$', views.gujarati_txt, name='gujarati_txt'),
 
 
     url(r'^hindi/$', views.hindi, name='hindi'),
     url(r'^hindi/codepoint$', views.hindi_codepoint, name='hindi_codepoint'),
     url(r'^hindi/gsub$', views.hindi_gsub, name='hindi_gsub'),
     url(r'^hindi/gpos$', views.hindi_gpos, name='hindi_gpos'),
+    url(r'^hindi/report.pdf$', views.hindi_pdf, name='hindi_pdf'),
+    url(r'^hindi/report.csv$', views.hindi_csv, name='hindi_csv'),
+    url(r'^hindi/report.txt$', views.hindi_txt, name='hindi_txt'),
 
 
     url(r'^kannada/$', views.kannada, name='kannada'),
     url(r'^kannada/codepoint$', views.kannada_codepoint, name='kannada_codepoint'),
     url(r'^kannada/gsub$', views.kannada_gsub, name='kannada_gsub'),
     url(r'^kannada/gpos$', views.kannada_gpos, name='kannada_gpos'),
+    url(r'^kannada/report.pdf$', views.kannada_pdf, name='kannada_pdf'),
+    url(r'^kannada/report.csv$', views.kannada_csv, name='kannada_csv'),
+    url(r'^kannada/report.txt$', views.kannada_txt, name='kannada_txt'),
 
 
     url(r'^maithili/$', views.maithili, name='maithili'),
     url(r'^maithili/codepoint$', views.maithili_codepoint, name='maithili_codepoint'),
     url(r'^maithili/gsub$', views.maithili_gsub, name='maithili_gsub'),
     url(r'^maithili/gpos$', views.maithili_gpos, name='maithili_gpos'),
+    url(r'^maithili/report.pdf$', views.maithili_pdf, name='maithili_pdf'),
+    url(r'^maithili/report.csv$', views.maithili_csv, name='maithili_csv'),
+    url(r'^maithili/report.txt$', views.maithili_txt, name='maithili_txt'),
 
 
     url(r'^malayalam/$', views.malayalam, name='malayalam'),
     url(r'^malayalam/codepoint$', views.malayalam_codepoint, name='malayalam_codepoint'),
     url(r'^malayalam/gsub$', views.malayalam_gsub, name='malayalam_gsub'),
     url(r'^malayalam/gpos$', views.malayalam_gpos, name='malayalam_gpos'),
+     url(r'^malayalam/report.pdf$', views.malayalam_pdf, name='malayalam_pdf'),
+    url(r'^malayalam/report.csv$', views.malayalam_csv, name='malayalam_csv'),
+    url(r'^malayalam/report.txt$', views.malayalam_txt, name='malayalam_txt'),
 
 
     url(r'^marathi/$', views.marathi, name='marathi'),
