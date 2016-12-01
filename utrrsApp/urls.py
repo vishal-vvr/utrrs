@@ -93,28 +93,43 @@ urlpatterns = [
     url(r'^marathi/codepoint$', views.marathi_codepoint, name='marathi_codepoint'),
     url(r'^marathi/gsub$', views.marathi_gsub, name='marathi_gsub'),
     url(r'^marathi/gpos$', views.marathi_gpos, name='marathi_gpos'),
+    url(r'^marathi/report.pdf$', views.marathi_pdf, name='marathi_pdf'),
+    url(r'^marathi/report.csv$', views.marathi_csv, name='marathi_csv'),
+    url(r'^marathi/report.txt$', views.marathi_txt, name='marathi_txt'),
 
 
     url(r'^odia/$', views.odia, name='odia'),
     url(r'^odia/codepoint$', views.odia_codepoint, name='odia_codepoint'),
     url(r'^odia/gsub$', views.odia_gsub, name='odia_gsub'),
     url(r'^odia/gpos$', views.odia_gpos, name='odia_gpos'),
+    url(r'^odia/report.pdf$', views.odia_pdf, name='odia_pdf'),
+    url(r'^odia/report.csv$', views.odia_csv, name='odia_csv'),
+    url(r'^odia/report.txt$', views.odia_txt, name='odia_txt'),
 
 
     url(r'^punjabi/$', views.punjabi, name='punjabi'),
     url(r'^punjabi/codepoint$', views.punjabi_codepoint, name='punjabi_codepoint'),
     url(r'^punjabi/gsub$', views.punjabi_gsub, name='punjabi_gsub'),
     url(r'^punjabi/gpos$', views.punjabi_gpos, name='punjabi_gpos'),
+    url(r'^punjabi/report.pdf$', views.punjabi_pdf, name='punjabi_pdf'),
+    url(r'^punjabi/report.csv$', views.punjabi_csv, name='punjabi_csv'),
+    url(r'^punjabi/report.txt$', views.punjabi_txt, name='punjabi_txt'),
 
 
     url(r'^tamil/$', views.tamil, name='tamil'),
     url(r'^tamil/codepoint$', views.tamil_codepoint, name='tamil_codepoint'),
     url(r'^tamil/gsub$', views.tamil_gsub, name='tamil_gsub'),
     url(r'^tamil/gpos$', views.tamil_gpos, name='tamil_gpos'),
+    url(r'^tamil/report.pdf$', views.tamil_pdf, name='tamil_pdf'),
+    url(r'^tamil/report.csv$', views.tamil_csv, name='tamil_csv'),
+    url(r'^tamil/report.txt$', views.tamil_txt, name='tamil_txt'),
 
 
     url(r'^telugu/$', views.telugu, name='telugu'),
     url(r'^telugu/codepoint$', views.telugu_codepoint, name='telugu_codepoint'),
     url(r'^telugu/gsub$', views.telugu_gsub, name='telugu_gsub'),
     url(r'^telugu/gpos$', views.telugu_gpos, name='telugu_gpos'),
+    url(r'^telugu/report.pdf$', views.telugu_pdf, name='telugu_pdf'),
+    url(r'^telugu/report.csv$', views.telugu_csv, name='telugu_csv'),
+    url(r'^telugu/report.txt$', views.telugu_txt, name='telugu_txt'),
 ]

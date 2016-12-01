@@ -1216,32 +1216,82 @@ def malayalam_txt(request):
 	return response
 
 def marathi(request):
-	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/mr_IN/font/data/master_mr.txt')
-	img_path = os.path.join(module_dir, 'static/lang/mr_IN/font/')
-	font_path = os.path.join(module_dir, 'static/fonts/lohit-devanagari/Lohit-Devanagari.ttf')
-	file = open(file_path)
-	data = file.read()
-	length = data.count('\n')
-	file.close()
-	file = open(file_path)
-	data_code = []
-	os.chdir(img_path)
-	for i in range(length):
-		line = file.readline()
-		st = line.strip('\n')
-		sp = st.split(',')
-		name = sp[1].strip('image/').strip(".svg")
-		os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
-		img1 = os.path.join(module_dir, 'static/lang/mr_IN/font/%s' % sp[1])
-		img2 = os.path.join(module_dir, 'static/lang/mr_IN/font/%s.svg' % name)
-		if filecmp.cmp(img1,img2)==True:
-			sp.append('Matched')
-		else:
-			sp.append('Not Matched')
-		data_code.append(sp)
-		os.remove('%s.svg' % name)
-	return render(request, 'marathi.html', {'data_code': data_code})
+	if request.method == 'POST':
+		if request.is_ajax():
+			module_dir = os.path.dirname(__file__)
+			file_path = os.path.join(module_dir, 'static/lang/mr_IN/font/data/master_mr.txt')
+			img_path = os.path.join(module_dir, 'static/lang/mr_IN/font/')
+			font_path = os.path.join(module_dir, 'static/fonts/lohit-devanagari/Lohit-Devanagari.ttf')
+			file = open(file_path)
+			data = file.read()
+			length = data.count('\n')
+			file.close()
+			file = open(file_path)
+			data_code = []
+			pdf_data = [['Codepoint','Character','Description','Result']]
+			os.chdir(img_path)
+			for i in range(length):
+				line = file.readline()
+				st = line.strip('\n')
+				sp = st.split(',')
+				name = sp[1].strip('image/').strip(".svg")
+				os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
+				img1 = os.path.join(module_dir, 'static/lang/mr_IN/font/%s' % sp[1])
+				img2 = os.path.join(module_dir, 'static/lang/mr_IN/font/%s.svg' % name)
+				if filecmp.cmp(img1,img2)==True:
+					sp.append('Matched')
+				else:
+					sp.append('Not Matched')
+				pd = sp[:]
+				pd.pop(1)
+				pdf_data.append(pd)
+				data_code.append(sp)
+				os.remove('%s.svg' % name)
+			"""PDF Generating"""
+			pdfmetrics.registerFont(TTFont('lohit-devanagari',font_path))
+			doc = SimpleDocTemplate("marathi-report.pdf", pagesize=A4, rightMargin=30,leftMargin=30, topMargin=30,bottomMargin=18)
+			elements = []
+			table = Table(pdf_data)
+			table.setStyle(TableStyle([
+			    ('FONT', (1, 0), (1, -1), 'lohit-devanagari'),
+			    ('FONT', (0, 0), (-1, 0), 'Helvetica-Bold'),
+			    ('FONTSIZE', (0, 0), (-1, -1), 8),
+			    ('INNERGRID', (0, 0), (-1, -1), 0.25, colors.black),
+			    ('BOX', (0, 0), (-1, -1), 0.25, colors.black),
+			    ('ALIGN', (0, 0), (-1, 0), 'CENTER'),
+			]))
+			styles = getSampleStyleSheet()
+			p = Paragraph("<u>Report</u>\n", styles["title"])
+			elements.append(p)
+			elements.append(table)
+			doc.build(elements)
+			"""Libre Office Generating"""
+			with open('marathi-report.csv', 'w') as csvfile:
+				writer = csv.writer(csvfile)
+				[writer.writerow(r) for r in pdf_data]
+			"""Text File Generating"""
+			table_instance = AsciiTable(pdf_data, 'Report')
+			table_instance.justify_columns[1] = 'left'
+			table_instance.inner_row_border = True
+			with open('marathi-report.txt','w') as f:
+				f.write(table_instance.table)
+    		return JsonResponse({'data_code': data_code})
+		return render(request, 'marathi.html')
+	else:
+		module_dir = os.path.dirname(__file__)
+		file_path = os.path.join(module_dir, 'static/lang/mr_IN/font/data/master_mr.txt')
+		file = open(file_path)
+		data = file.read()
+		length = data.count('\n')
+		file.close()
+		file = open(file_path)
+		data_code = []
+		for i in range(length):
+			line = file.readline()
+			st = line.strip('\n')
+			sp = st.split(',')
+			data_code.append(sp)
+		return render(request, 'marathi.html', {'data_code': data_code})
 
 def marathi_codepoint(request):
 	module_dir = os.path.dirname(__file__)
@@ -1291,33 +1341,110 @@ def marathi_gpos(request):
 		data_gpos.append(sp)
 	return render(request, 'mr_gpos.html', {'data_gpos': data_gpos[1:]})
 
-def odia(request):
+def marathi_pdf(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/or_IN/font/data/master_or.txt')
-	img_path = os.path.join(module_dir, 'static/lang/or_IN/font/')
-	font_path = os.path.join(module_dir, 'static/fonts/lohit-odia/Lohit-Odia.ttf')
-	file = open(file_path)
-	data = file.read()
-	length = data.count('\n')
+	file_path = os.path.join(module_dir, 'static/lang/mr_IN/font/marathi-report.pdf')
+	file = open(file_path, "r")
+	response = HttpResponse(FileWrapper(file), content_type='application/pdf')
+	response['Content-Disposition'] = 'attachment; filename=marathi-report.pdf'
 	file.close()
-	file = open(file_path)
-	data_code = []
-	os.chdir(img_path)
-	for i in range(length):
-		line = file.readline()
-		st = line.strip('\n')
-		sp = st.split(',')
-		name = sp[1].strip('image/').strip(".svg")
-		os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
-		img1 = os.path.join(module_dir, 'static/lang/or_IN/font/%s' % sp[1])
-		img2 = os.path.join(module_dir, 'static/lang/or_IN/font/%s.svg' % name)
-		if filecmp.cmp(img1,img2)==True:
-			sp.append('Matched')
-		else:
-			sp.append('Not Matched')
-		data_code.append(sp)
-		os.remove('%s.svg' % name)
-	return render(request, 'odia.html', {'data_code': data_code})
+	return response
+
+def marathi_csv(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/mr_IN/font/marathi-report.csv')
+	file = open(file_path, "r")
+	response = HttpResponse(FileWrapper(file), content_type='application/csv')
+	response['Content-Disposition'] = 'attachment; filename=marathi-report.csv'
+	file.close()
+	return response
+
+def marathi_txt(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/mr_IN/font/marathi-report.txt')
+	file = open(file_path, "r")
+	response = HttpResponse(FileWrapper(file), content_type='application/text')
+	response['Content-Disposition'] = 'attachment; filename=marathi-report.txt'
+	file.close()
+	return response
+
+def odia(request):
+	if request.method == 'POST':
+		if request.is_ajax():
+			module_dir = os.path.dirname(__file__)
+			file_path = os.path.join(module_dir, 'static/lang/or_IN/font/data/master_or.txt')
+			img_path = os.path.join(module_dir, 'static/lang/or_IN/font/')
+			font_path = os.path.join(module_dir, 'static/fonts/lohit-odia/Lohit-Odia.ttf')
+			file = open(file_path)
+			data = file.read()
+			length = data.count('\n')
+			file.close()
+			file = open(file_path)
+			data_code = []
+			pdf_data = [['Codepoint','Character','Description','Result']]
+			os.chdir(img_path)
+			for i in range(length):
+				line = file.readline()
+				st = line.strip('\n')
+				sp = st.split(',')
+				name = sp[1].strip('image/').strip(".svg")
+				os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
+				img1 = os.path.join(module_dir, 'static/lang/or_IN/font/%s' % sp[1])
+				img2 = os.path.join(module_dir, 'static/lang/or_IN/font/%s.svg' % name)
+				if filecmp.cmp(img1,img2)==True:
+					sp.append('Matched')
+				else:
+					sp.append('Not Matched')
+				pd = sp[:]
+				pd.pop(1)
+				pdf_data.append(pd)
+				data_code.append(sp)
+				os.remove('%s.svg' % name)
+			"""PDF Generating"""
+			pdfmetrics.registerFont(TTFont('lohit-odia',font_path))
+			doc = SimpleDocTemplate("odia-report.pdf", pagesize=A4, rightMargin=30,leftMargin=30, topMargin=30,bottomMargin=18)
+			elements = []
+			table = Table(pdf_data)
+			table.setStyle(TableStyle([
+			    ('FONT', (1, 0), (1, -1), 'lohit-odia'),
+			    ('FONT', (0, 0), (-1, 0), 'Helvetica-Bold'),
+			    ('FONTSIZE', (0, 0), (-1, -1), 8),
+			    ('INNERGRID', (0, 0), (-1, -1), 0.25, colors.black),
+			    ('BOX', (0, 0), (-1, -1), 0.25, colors.black),
+			    ('ALIGN', (0, 0), (-1, 0), 'CENTER'),
+			]))
+			styles = getSampleStyleSheet()
+			p = Paragraph("<u>Report</u>\n", styles["title"])
+			elements.append(p)
+			elements.append(table)
+			doc.build(elements)
+			"""Libre Office Generating"""
+			with open('odia-report.csv', 'w') as csvfile:
+				writer = csv.writer(csvfile)
+				[writer.writerow(r) for r in pdf_data]
+			"""Text File Generating"""
+			table_instance = AsciiTable(pdf_data, 'Report')
+			table_instance.justify_columns[1] = 'left'
+			table_instance.inner_row_border = True
+			with open('odia-report.txt','w') as f:
+				f.write(table_instance.table)
+    		return JsonResponse({'data_code': data_code})
+		return render(request, 'odia.html')
+	else:
+		module_dir = os.path.dirname(__file__)
+		file_path = os.path.join(module_dir, 'static/lang/or_IN/font/data/master_or.txt')
+		file = open(file_path)
+		data = file.read()
+		length = data.count('\n')
+		file.close()
+		file = open(file_path)
+		data_code = []
+		for i in range(length):
+			line = file.readline()
+			st = line.strip('\n')
+			sp = st.split(',')
+			data_code.append(sp)
+		return render(request, 'odia.html', {'data_code': data_code})
 
 def odia_codepoint(request):
 	module_dir = os.path.dirname(__file__)
@@ -1367,33 +1494,110 @@ def odia_gpos(request):
 		data_gpos.append(sp)
 	return render(request, 'or_gpos.html', {'data_gpos': data_gpos[1:]})
 
-def punjabi(request):
+def odia_pdf(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/pa_IN/font/data/master_pa.txt')
-	img_path = os.path.join(module_dir, 'static/lang/pa_IN/font/')
-	font_path = os.path.join(module_dir, 'static/fonts/lohit-gurmukhi/Lohit-Gurmukhi.ttf')
-	file = open(file_path)
-	data = file.read()
-	length = data.count('\n')
+	file_path = os.path.join(module_dir, 'static/lang/or_IN/font/odia-report.pdf')
+	file = open(file_path, "r")
+	response = HttpResponse(FileWrapper(file), content_type='application/pdf')
+	response['Content-Disposition'] = 'attachment; filename=odia-report.pdf'
 	file.close()
-	file = open(file_path)
-	data_code = []
-	os.chdir(img_path)
-	for i in range(length):
-		line = file.readline()
-		st = line.strip('\n')
-		sp = st.split(',')
-		name = sp[1].strip('image/').strip(".svg")
-		os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
-		img1 = os.path.join(module_dir, 'static/lang/pa_IN/font/%s' % sp[1])
-		img2 = os.path.join(module_dir, 'static/lang/pa_IN/font/%s.svg' % name)
-		if filecmp.cmp(img1,img2)==True:
-			sp.append('Matched')
-		else:
-			sp.append('Not Matched')
-		data_code.append(sp)
-		os.remove('%s.svg' % name)
-	return render(request, 'punjabi.html', {'data_code': data_code})
+	return response
+
+def odia_csv(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/or_IN/font/odia-report.csv')
+	file = open(file_path, "r")
+	response = HttpResponse(FileWrapper(file), content_type='application/csv')
+	response['Content-Disposition'] = 'attachment; filename=odia-report.csv'
+	file.close()
+	return response
+
+def odia_txt(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/or_IN/font/odia-report.txt')
+	file = open(file_path, "r")
+	response = HttpResponse(FileWrapper(file), content_type='application/text')
+	response['Content-Disposition'] = 'attachment; filename=odia-report.txt'
+	file.close()
+	return response
+
+def punjabi(request):
+	if request.method == 'POST':
+		if request.is_ajax():
+			module_dir = os.path.dirname(__file__)
+			file_path = os.path.join(module_dir, 'static/lang/pa_IN/font/data/master_pa.txt')
+			img_path = os.path.join(module_dir, 'static/lang/pa_IN/font/')
+			font_path = os.path.join(module_dir, 'static/fonts/lohit-gurmukhi/Lohit-Gurmukhi.ttf')
+			file = open(file_path)
+			data = file.read()
+			length = data.count('\n')
+			file.close()
+			file = open(file_path)
+			data_code = []
+			pdf_data = [['Codepoint','Character','Description','Result']]
+			os.chdir(img_path)
+			for i in range(length):
+				line = file.readline()
+				st = line.strip('\n')
+				sp = st.split(',')
+				name = sp[1].strip('image/').strip(".svg")
+				os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
+				img1 = os.path.join(module_dir, 'static/lang/pa_IN/font/%s' % sp[1])
+				img2 = os.path.join(module_dir, 'static/lang/pa_IN/font/%s.svg' % name)
+				if filecmp.cmp(img1,img2)==True:
+					sp.append('Matched')
+				else:
+					sp.append('Not Matched')
+				pd = sp[:]
+				pd.pop(1)
+				pdf_data.append(pd)
+				data_code.append(sp)
+				os.remove('%s.svg' % name)
+			"""PDF Generating"""
+			pdfmetrics.registerFont(TTFont('lohit-gurmukhi',font_path))
+			doc = SimpleDocTemplate("punjabi-report.pdf", pagesize=A4, rightMargin=30,leftMargin=30, topMargin=30,bottomMargin=18)
+			elements = []
+			table = Table(pdf_data)
+			table.setStyle(TableStyle([
+			    ('FONT', (1, 0), (1, -1), 'lohit-gurmukhi'),
+			    ('FONT', (0, 0), (-1, 0), 'Helvetica-Bold'),
+			    ('FONTSIZE', (0, 0), (-1, -1), 8),
+			    ('INNERGRID', (0, 0), (-1, -1), 0.25, colors.black),
+			    ('BOX', (0, 0), (-1, -1), 0.25, colors.black),
+			    ('ALIGN', (0, 0), (-1, 0), 'CENTER'),
+			]))
+			styles = getSampleStyleSheet()
+			p = Paragraph("<u>Report</u>\n", styles["title"])
+			elements.append(p)
+			elements.append(table)
+			doc.build(elements)
+			"""Libre Office Generating"""
+			with open('punjabi-report.csv', 'w') as csvfile:
+				writer = csv.writer(csvfile)
+				[writer.writerow(r) for r in pdf_data]
+			"""Text File Generating"""
+			table_instance = AsciiTable(pdf_data, 'Report')
+			table_instance.justify_columns[1] = 'left'
+			table_instance.inner_row_border = True
+			with open('punjabi-report.txt','w') as f:
+				f.write(table_instance.table)
+    		return JsonResponse({'data_code': data_code})
+		return render(request, 'punjabi.html')
+	else:
+		module_dir = os.path.dirname(__file__)
+		file_path = os.path.join(module_dir, 'static/lang/pa_IN/font/data/master_pa.txt')
+		file = open(file_path)
+		data = file.read()
+		length = data.count('\n')
+		file.close()
+		file = open(file_path)
+		data_code = []
+		for i in range(length):
+			line = file.readline()
+			st = line.strip('\n')
+			sp = st.split(',')
+			data_code.append(sp)
+		return render(request, 'punjabi.html', {'data_code': data_code})
 
 def punjabi_codepoint(request):
 	module_dir = os.path.dirname(__file__)
@@ -1443,33 +1647,110 @@ def punjabi_gpos(request):
 		data_gpos.append(sp)
 	return render(request, 'pa_gpos.html', {'data_gpos': data_gpos[1:]})
 
-def tamil(request):
+def punjabi_pdf(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/ta_IN/font/data/master_ta.txt')
-	img_path = os.path.join(module_dir, 'static/lang/ta_IN/font/')
-	font_path = os.path.join(module_dir, 'static/fonts/lohit-tamil/Lohit-Tamil.ttf')
-	file = open(file_path)
-	data = file.read()
-	length = data.count('\n')
+	file_path = os.path.join(module_dir, 'static/lang/pa_IN/font/punjabi-report.pdf')
+	file = open(file_path, "r")
+	response = HttpResponse(FileWrapper(file), content_type='application/pdf')
+	response['Content-Disposition'] = 'attachment; filename=punjabi-report.pdf'
 	file.close()
-	file = open(file_path)
-	data_code = []
-	os.chdir(img_path)
-	for i in range(length):
-		line = file.readline()
-		st = line.strip('\n')
-		sp = st.split(',')
-		name = sp[1].strip('image/').strip(".svg")
-		os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
-		img1 = os.path.join(module_dir, 'static/lang/ta_IN/font/%s' % sp[1])
-		img2 = os.path.join(module_dir, 'static/lang/ta_IN/font/%s.svg' % name)
-		if filecmp.cmp(img1,img2)==True:
-			sp.append('Matched')
-		else:
-			sp.append('Not Matched')
-		data_code.append(sp)
-		os.remove('%s.svg' % name)
-	return render(request, 'tamil.html', {'data_code': data_code})
+	return response
+
+def punjabi_csv(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/pa_IN/font/punjabi-report.csv')
+	file = open(file_path, "r")
+	response = HttpResponse(FileWrapper(file), content_type='application/csv')
+	response['Content-Disposition'] = 'attachment; filename=punjabi-report.csv'
+	file.close()
+	return response
+
+def punjabi_txt(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/pa_IN/font/punjabi-report.txt')
+	file = open(file_path, "r")
+	response = HttpResponse(FileWrapper(file), content_type='application/text')
+	response['Content-Disposition'] = 'attachment; filename=punjabi-report.txt'
+	file.close()
+	return response
+
+def tamil(request):
+	if request.method == 'POST':
+		if request.is_ajax():
+			module_dir = os.path.dirname(__file__)
+			file_path = os.path.join(module_dir, 'static/lang/ta_IN/font/data/master_ta.txt')
+			img_path = os.path.join(module_dir, 'static/lang/ta_IN/font/')
+			font_path = os.path.join(module_dir, 'static/fonts/lohit-tamil/Lohit-Tamil.ttf')
+			file = open(file_path)
+			data = file.read()
+			length = data.count('\n')
+			file.close()
+			file = open(file_path)
+			data_code = []
+			pdf_data = [['Codepoint','Character','Description','Result']]
+			os.chdir(img_path)
+			for i in range(length):
+				line = file.readline()
+				st = line.strip('\n')
+				sp = st.split(',')
+				name = sp[1].strip('image/').strip(".svg")
+				os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
+				img1 = os.path.join(module_dir, 'static/lang/ta_IN/font/%s' % sp[1])
+				img2 = os.path.join(module_dir, 'static/lang/ta_IN/font/%s.svg' % name)
+				if filecmp.cmp(img1,img2)==True:
+					sp.append('Matched')
+				else:
+					sp.append('Not Matched')
+				pd = sp[:]
+				pd.pop(1)
+				pdf_data.append(pd)
+				data_code.append(sp)
+				os.remove('%s.svg' % name)
+			"""PDF Generating"""
+			pdfmetrics.registerFont(TTFont('lohit-tamil',font_path))
+			doc = SimpleDocTemplate("tamil-report.pdf", pagesize=A4, rightMargin=30,leftMargin=30, topMargin=30,bottomMargin=18)
+			elements = []
+			table = Table(pdf_data)
+			table.setStyle(TableStyle([
+			    ('FONT', (1, 0), (1, -1), 'lohit-tamil'),
+			    ('FONT', (0, 0), (-1, 0), 'Helvetica-Bold'),
+			    ('FONTSIZE', (0, 0), (-1, -1), 8),
+			    ('INNERGRID', (0, 0), (-1, -1), 0.25, colors.black),
+			    ('BOX', (0, 0), (-1, -1), 0.25, colors.black),
+			    ('ALIGN', (0, 0), (-1, 0), 'CENTER'),
+			]))
+			styles = getSampleStyleSheet()
+			p = Paragraph("<u>Report</u>\n", styles["title"])
+			elements.append(p)
+			elements.append(table)
+			doc.build(elements)
+			"""Libre Office Generating"""
+			with open('tamil-report.csv', 'w') as csvfile:
+				writer = csv.writer(csvfile)
+				[writer.writerow(r) for r in pdf_data]
+			"""Text File Generating"""
+			table_instance = AsciiTable(pdf_data, 'Report')
+			table_instance.justify_columns[1] = 'left'
+			table_instance.inner_row_border = True
+			with open('tamil-report.txt','w') as f:
+				f.write(table_instance.table)
+    		return JsonResponse({'data_code': data_code})
+		return render(request, 'tamil.html')
+	else:
+		module_dir = os.path.dirname(__file__)
+		file_path = os.path.join(module_dir, 'static/lang/ta_IN/font/data/master_ta.txt')
+		file = open(file_path)
+		data = file.read()
+		length = data.count('\n')
+		file.close()
+		file = open(file_path)
+		data_code = []
+		for i in range(length):
+			line = file.readline()
+			st = line.strip('\n')
+			sp = st.split(',')
+			data_code.append(sp)
+		return render(request, 'tamil.html', {'data_code': data_code})
 
 def tamil_codepoint(request):
 	module_dir = os.path.dirname(__file__)
@@ -1519,33 +1800,110 @@ def tamil_gpos(request):
 		data_gpos.append(sp)
 	return render(request, 'ta_gpos.html', {'data_gpos': data_gpos[1:]})
 
-def telugu(request):
+def tamil_pdf(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/te_IN/font/data/master_te.txt')
-	img_path = os.path.join(module_dir, 'static/lang/te_IN/font/')
-	font_path = os.path.join(module_dir, 'static/fonts/lohit-telugu/Lohit-Telugu.ttf')
-	file = open(file_path)
-	data = file.read()
-	length = data.count('\n')
+	file_path = os.path.join(module_dir, 'static/lang/ta_IN/font/tamil-report.pdf')
+	file = open(file_path, "r")
+	response = HttpResponse(FileWrapper(file), content_type='application/pdf')
+	response['Content-Disposition'] = 'attachment; filename=tamil-report.pdf'
 	file.close()
-	file = open(file_path)
-	data_code = []
-	os.chdir(img_path)
-	for i in range(length):
-		line = file.readline()
-		st = line.strip('\n')
-		sp = st.split(',')
-		name = sp[1].strip('image/').strip(".svg")
-		os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
-		img1 = os.path.join(module_dir, 'static/lang/te_IN/font/%s' % sp[1])
-		img2 = os.path.join(module_dir, 'static/lang/te_IN/font/%s.svg' % name)
-		if filecmp.cmp(img1,img2)==True:
-			sp.append('Matched')
-		else:
-			sp.append('Not Matched')
-		data_code.append(sp)
-		os.remove('%s.svg' % name)
-	return render(request, 'telugu.html', {'data_code': data_code})
+	return response
+
+def tamil_csv(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/ta_IN/font/tamil-report.csv')
+	file = open(file_path, "r")
+	response = HttpResponse(FileWrapper(file), content_type='application/csv')
+	response['Content-Disposition'] = 'attachment; filename=tamil-report.csv'
+	file.close()
+	return response
+
+def tamil_txt(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/ta_IN/font/tamil-report.txt')
+	file = open(file_path, "r")
+	response = HttpResponse(FileWrapper(file), content_type='application/text')
+	response['Content-Disposition'] = 'attachment; filename=tamil-report.txt'
+	file.close()
+	return response
+
+def telugu(request):
+	if request.method == 'POST':
+		if request.is_ajax():
+			module_dir = os.path.dirname(__file__)
+			file_path = os.path.join(module_dir, 'static/lang/te_IN/font/data/master_te.txt')
+			img_path = os.path.join(module_dir, 'static/lang/te_IN/font/')
+			font_path = os.path.join(module_dir, 'static/fonts/lohit-telugu/Lohit-Telugu.ttf')
+			file = open(file_path)
+			data = file.read()
+			length = data.count('\n')
+			file.close()
+			file = open(file_path)
+			data_code = []
+			pdf_data = [['Codepoint','Character','Description','Result']]
+			os.chdir(img_path)
+			for i in range(length):
+				line = file.readline()
+				st = line.strip('\n')
+				sp = st.split(',')
+				name = sp[1].strip('image/').strip(".svg")
+				os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
+				img1 = os.path.join(module_dir, 'static/lang/te_IN/font/%s' % sp[1])
+				img2 = os.path.join(module_dir, 'static/lang/te_IN/font/%s.svg' % name)
+				if filecmp.cmp(img1,img2)==True:
+					sp.append('Matched')
+				else:
+					sp.append('Not Matched')
+				pd = sp[:]
+				pd.pop(1)
+				pdf_data.append(pd)
+				data_code.append(sp)
+				os.remove('%s.svg' % name)
+			"""PDF Generating"""
+			pdfmetrics.registerFont(TTFont('lohit-telugu',font_path))
+			doc = SimpleDocTemplate("telugu-report.pdf", pagesize=A4, rightMargin=30,leftMargin=30, topMargin=30,bottomMargin=18)
+			elements = []
+			table = Table(pdf_data)
+			table.setStyle(TableStyle([
+			    ('FONT', (1, 0), (1, -1), 'lohit-telugu'),
+			    ('FONT', (0, 0), (-1, 0), 'Helvetica-Bold'),
+			    ('FONTSIZE', (0, 0), (-1, -1), 8),
+			    ('INNERGRID', (0, 0), (-1, -1), 0.25, colors.black),
+			    ('BOX', (0, 0), (-1, -1), 0.25, colors.black),
+			    ('ALIGN', (0, 0), (-1, 0), 'CENTER'),
+			]))
+			styles = getSampleStyleSheet()
+			p = Paragraph("<u>Report</u>\n", styles["title"])
+			elements.append(p)
+			elements.append(table)
+			doc.build(elements)
+			"""Libre Office Generating"""
+			with open('telugu-report.csv', 'w') as csvfile:
+				writer = csv.writer(csvfile)
+				[writer.writerow(r) for r in pdf_data]
+			"""Text File Generating"""
+			table_instance = AsciiTable(pdf_data, 'Report')
+			table_instance.justify_columns[1] = 'left'
+			table_instance.inner_row_border = True
+			with open('telugu-report.txt','w') as f:
+				f.write(table_instance.table)
+    		return JsonResponse({'data_code': data_code})
+		return render(request, 'telugu.html')
+	else:
+		module_dir = os.path.dirname(__file__)
+		file_path = os.path.join(module_dir, 'static/lang/te_IN/font/data/master_te.txt')
+		file = open(file_path)
+		data = file.read()
+		length = data.count('\n')
+		file.close()
+		file = open(file_path)
+		data_code = []
+		for i in range(length):
+			line = file.readline()
+			st = line.strip('\n')
+			sp = st.split(',')
+			data_code.append(sp)
+		return render(request, 'telugu.html', {'data_code': data_code})
 
 def telugu_codepoint(request):
 	module_dir = os.path.dirname(__file__)
@@ -1594,4 +1952,31 @@ def telugu_gpos(request):
 		sp = st.split(',')
 		data_gpos.append(sp)
 	return render(request, 'te_gpos.html', {'data_gpos': data_gpos[1:]})
+
+def telugu_pdf(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/te_IN/font/telugu-report.pdf')
+	file = open(file_path, "r")
+	response = HttpResponse(FileWrapper(file), content_type='application/pdf')
+	response['Content-Disposition'] = 'attachment; filename=telugu-report.pdf'
+	file.close()
+	return response
+
+def telugu_csv(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/te_IN/font/telugu-report.csv')
+	file = open(file_path, "r")
+	response = HttpResponse(FileWrapper(file), content_type='application/csv')
+	response['Content-Disposition'] = 'attachment; filename=telugu-report.csv'
+	file.close()
+	return response
+
+def telugu_txt(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/te_IN/font/telugu-report.txt')
+	file = open(file_path, "r")
+	response = HttpResponse(FileWrapper(file), content_type='application/text')
+	response['Content-Disposition'] = 'attachment; filename=telugu-report.txt'
+	file.close()
+	return response
 

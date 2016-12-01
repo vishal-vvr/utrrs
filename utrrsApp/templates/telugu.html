@@ -2,7 +2,33 @@
 {% load static %}
 
 {% block navitem %}
-<a href="" data-toggle="modal" data-target="#modal-transparent"><i class="glyphicon glyphicon-duplicate"></i>&nbsp&nbspCompare</a>
+<a href="" id="submit" method="POST" data-toggle="modal" data-target="#modal-transparent"><i class="glyphicon glyphicon-duplicate"></i>&nbsp&nbspCompare</a>
+{% endblock %}
+
+{% block style %}
+<style>
+.modal7 {
+    display:    none;
+    position:   fixed;
+    z-index:    1051;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 ) 
+                url('/static/images/loading6.gif') 
+                50% 50% 
+                no-repeat;
+}
+
+body.loading {
+    overflow: hidden;   
+}
+
+body.loading .modal7 {
+    display: block;
+}
+</style>
 {% endblock %}
 
 {% block content %}
@@ -57,7 +83,53 @@
 
 </div>
 
+<script>
+function getCookie(name) {
+       var cookieValue = null;
+       if (document.cookie && document.cookie != '') {
+         var cookies = document.cookie.split(';');
+         for (var i = 0; i < cookies.length; i++) {
+         var cookie = jQuery.trim(cookies[i]);
+         if (cookie.substring(0, name.length + 1) == (name + '=')) {
+             cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+             break;
+          }
+     }
+ }
+ return cookieValue;
+}
+
+$("#submit").click(function(e) {
+e.preventDefault();
+$body = $("body");
+$(document).on({
+    ajaxStart: function() { $body.addClass("loading");    },
+    ajaxStop: function() { $body.removeClass("loading"); }    
+});
+var csrftoken = getCookie('csrftoken');
+$.ajax({
+         url : window.location.href,
+         type : "POST",
+         data : { csrfmiddlewaretoken : csrftoken,
+ },
+success : function(json) {
+    console.log(json);
+
+    for (var i = 0; i < json['data_code'].length; i++) {
+        document.getElementById("compare_result" + (i+1)).innerHTML = json['data_code'][i][4];
+    }
+},
+error : function(xhr,errmsg,err) {
+    console.log(xhr.status + ": " + xhr.responseText);
+}
+});
+});
+</script>
+
+
 <!-- Modal transparent -->
+<div class="modal7"></div>
+
 <div class="modal modal-transparent fade" id="modal-transparent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -66,9 +138,9 @@
                 <h4 class="modal-title" id="myModalLabel">Compare In</h4>
             </div>
             <div class="modal-body">
-            	<a class="btn btn-primary" href="" data-dismiss="modal" data-toggle="modal" data-target="#modal-transparent_two">Browser</a>
-				<button class="btn btn-primary">Libre Office</button>
-				<button class="btn btn-primary">gedit</button>
+                <a class="btn btn-primary" href="" data-dismiss="modal" data-toggle="modal" data-target="#modal-transparent_two">Browser</a>
+                <a href="/telugu/report.csv" class="btn btn-primary">Libre Office</a>
+                <a href="/telugu/report.txt" class="btn btn-primary">gedit</a>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -83,32 +155,38 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                 <h4 class="modal-title" id="myModalLabel">Compared in Browser</h4>
+                <a href="/telugu/report.pdf" target="_blank" class="btn btn-success btn-download" id="download" >Download PDF</a>
             </div>
             <div class="modal-body">
-            	<table class="table table-bordered datatable">
-	    <thead class="table-head">
-	      <tr>
-	        <th>No</th>
-	        <th>Code Point</th>
-	        <th>Reference</th>
-	        <th>Character</th>
-			<th>Result</th>
-	      </tr>
-	    </thead>
-	    <tbody>
-	      {% for x in data_code %}
-	      <tr class="table-row">
-	        <td>{{ forloop.counter }}</td>
-			<td><label>{{ x.0 }}</label></td>
-			<td><img height="40px" src="{% static 'lang/te_IN/font/' %}{{ x.1 }}"></td>
-			<td><label id="codepoint_label">  {{ x.2 }}</label></td>
-			<td><label> {{x.4}}</label></td>
-	      </tr>
-	      {% endfor %}
-	    </tbody>
-	  </table>
+                <table class="table table-bordered">
+        <thead class="table-head">
+          <tr>
+            <th>No</th>
+            <th>Code Point</th>
+            <th>Reference</th>
+            <th>Character</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for x in data_code %}
+          <tr id="myTr" class="table-row">
+            <td>{{ forloop.counter }}</td>
+            <td><label>{{ x.0 }}</label></td>
+            <td><img height="40px" src="{% static 'lang/te_IN/font/' %}{{ x.1 }}"></td>
+            <td><label id="codepoint_label">  {{ x.2 }}</label></td>
+            {% with y=forloop.counter|stringformat:"s" %}
+            {% with temp="compare_result"|add:y %}
+            <td><label id={{temp}}></label></td>
+            {% endwith %}
+            {% endwith %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
             </div>
             <div class="modal-footer">
+            	<a href="/telugu/report.pdf" target="_blank" class="btn btn-success btn-download" id="download" >Download PDF</a>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
         </div>
