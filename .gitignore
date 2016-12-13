@@ -1,2 +1,4 @@
+*.report.txt
+*.report.pdf
+*.report.csv
 *.pyc
-db.sqlite3

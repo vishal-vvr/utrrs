@@ -15,25 +15,10 @@ $(document).ready(function(){
     $('.datatable').dataTable({
         "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]]
     });
+});
 
-    if(location.hash) {
-        $('a[href=' + location.hash + ']').tab('show');
+$(document).on('click','.navbar-collapse.in',function(e) {
+    if( $(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle' ) {
+        $(this).collapse('hide');
     }
-    $(document.body).on("click", "a[data-toggle]", function(event) {
-        location.hash = this.getAttribute("href");
-    });
-});
-
-$(window).on('popstate', function() {
-    var anchor = location.hash || $("a[data-toggle=tab]").first().attr("href");
-    $('a[href=' + anchor + ']').tab('show');
-});
-
-$(".modal-transparent").on('show.bs.modal', function () {
-  setTimeout( function() {
-    $(".modal-backdrop").addClass("modal-backdrop-transparent");
-  }, 0);
-});
-$(".modal-transparent").on('hidden.bs.modal', function () {
-  $(".modal-backdrop").addClass("modal-backdrop-transparent");
 });

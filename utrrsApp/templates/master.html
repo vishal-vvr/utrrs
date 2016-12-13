@@ -1,9 +1,11 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Unicode Text Rendering Reference System</title>
-    <link rel="stylesheet"
+  <title>Unicode Text Rendering Reference System</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet"
           type="text/css"
           href="{% static 'bootstrap/css/bootstrap.css' %}"/>
     <meta name="viewport"
@@ -22,91 +24,87 @@
     <script type="text/javascript" src="{% static 'bootstrap/js/mystyle.js' %}"></script>
     {% block head %}{% endblock %}
     {% block style %}{% endblock %}
+  <style>
+
+  </style>
 </head>
 <body>
 
-<!-- Header -->
-<div class="container-fluid" id="header">
-    <div class="row">
-        <div class="logo">
-            <a href="/"><img height="100px" src="{% static 'images/logo1.png' %}"></a>
-        </div>
-
-        <div class="col-xs-6" id="brand">
-            <span >Unicode Text Rendering Reference System</span>
-        </div>
-
-        <div class="col-xs-6" style="margin-left:30px">
-            <div id="navbar">
-                <ul class="nav navbar-nav">
-                    <li class="tray"><a href="/"><i class="glyphicon glyphicon-home"></i>&nbsp&nbspHome
-                    </a></li>
-                    <li class="tray"><a href="/about"><i class="glyphicon glyphicon-question-sign"></i>&nbsp&nbspAbout</a>
-                    </li>
-                    <li class="tray"><a href="/checkfont"><i class="glyphicon glyphicon-check"></i>&nbsp&nbspCheck Font</a>
-                    </li>
-                    <li class="tray"><a href="mailto:fuel-discuss@lists.fedorahosted.org?"><i class="glyphicon glyphicon-pencil"></i>&nbsp&nbspFeedback</a>
-                    </li>
-                    <li class="tray">{% block navitem %}{% endblock %}</li>
-                </ul>
-            </div>
-        </div>
+<nav class="navbar navbar-inverse header">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <!--<span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>-->
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                      
+      </button>
+      <a class="logo" href="/"><img height="100px" src="{% static 'images/logo1.png' %}"></a>
     </div>
+    <div>
+      <p class="heading">Unicode Text Rendering Reference System</p>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav header_links">
+        <li class="tray"><a href="/"><i class="glyphicon glyphicon-home"></i>&nbsp&nbspHome</a></li>
+        <li class="tray"><a href="/about"><i class="glyphicon glyphicon-info-sign"></i>&nbsp&nbspAbout</a></li>
+        <li class="tray"><a href="/checkfont"><i class="glyphicon glyphicon-check"></i>&nbsp&nbspCheck Font</a></li>
+        <li class="tray"><a href="mailto:fuel-discuss@lists.fedorahosted.org?"><i class="glyphicon glyphicon-pencil"></i>&nbsp&nbspFeedback</a></li>
+        <li class="tray">{% block navitem %}{% endblock %}</li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2">
+      <nav class="bs-docs-sidebar">
+        <ul id="sidebar" class="nav nav-stacked text-left">
+          <h5><b><i class="fa fa-language fa-lg"></i> LANGUAGES</b></h5>
+          <li><a href="/assamese">Assamese</a></li>
+          <li><a href="/bengali">Bengali</a></li>
+          <li><a href="/german">German</a></li>
+          <li><a href="/gujarati">Gujarati</a></li> 
+          <li><a href="/hindi">Hindi</a></li>
+          <li><a href="/kannada">Kannada</a></li>
+          <li><a href="/maithili">Maithili</a></li>
+          <li><a href="/malayalam">Malayalam</a></li>
+          <li><a href="/marathi">Marathi</a></li>
+          <li><a href="/odia">Odia</a></li>
+          <li><a href="/punjabi">Punjabi</a></li>
+          <li><a href="/tamil">Tamil</a></li>
+          <li><a href="/telugu">Telugu</a></li>
+        </ul>
+    </nav>
+    </div>
+
+    <!-- Content -->
+    {% block content %}{% endblock %}
+    
+    <div class="col-sm-1 sidenav">
+      <a id="back-to-top" class="btn btn-primary btn-lg back-to-top" role="button" title="Back to top"><span class="glyphicon glyphicon-chevron-up"></span></a>
+    </div>
+  </div>
 </div>
 
-<!-- Body -->
-<div class="container-fluid"
-     id="body">
-    <div class="row">
+<footer class="container-fluid text-center">
 
-        <!-- Sidebar -->
-        <div class="col-xs-1" id="sidebar">
-            <ul>
-                <h5 style=""><b> LANGUAGES</b></h5>
-                <a href="/assamese"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Assamese</button></a>
-                <a href="/bengali"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Bengali (IN)</button></a>
-                <a href="/german"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp German</button></a>
-                <a href="/gujarati"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Gujarati</button></a>
-                <a href="/hindi"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Hindi</button></a>
-                <a href="/kannada"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Kannada</button></a>
-                <a href="/maithili"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Maithili</button></a>
-                <a href="/malayalam"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Malayalam</button></a>
-                <a href="/marathi"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Marathi</button></a>
-                <a href="/odia"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Odia</button></a>
-                <a href="/punjabi"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Punjabi</button></a>
-                <a href="/tamil"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Tamil</button></a>
-                <a href="/telugu"><button type="button" class="btn btn-default btn-block"><i class="fa fa-language fa-lg"></i>&nbsp&nbsp Telugu</button></a>
-            </ul>
-        </div>
-
-        <!-- Content -->
-        {% block content %}{% endblock %}
-    </div>
-    <a id="back-to-top" class="btn btn-primary btn-lg back-to-top" role="button" title="Back to top"><span class="glyphicon glyphicon-chevron-up"></span></a>
-</div>
-
-<!-- Footer -->
-<div class="container-fluid" id="footer">
-
-    <div class="row" id="links">
-    	<div class="col-md-3"><a href="/history"><i class="glyphicon glyphicon-hourglass"></i>&nbsp&nbspHistory</a></div>
-  		<div class="col-md-3"><a href="/roadmap"><i class="glyphicon 
-  		glyphicon-road"></i>&nbsp&nbspRoadMaps</a></div>
-  		<div class="col-md-3"><a href="https://fedorahosted.org/fuel/" target="_blank"><i class="glyphicon glyphicon-wrench"></i>&nbsp&nbspDevelopment</a></div>
-  		<div class="col-md-3"><a href="mailto:fuel-discuss@lists.fedorahosted.org?"><i class="glyphicon glyphicon-envelope"></i>&nbsp&nbspContactUs</a></div>
-	</div>
-
-    <div id="footer_content">
-        © 2007-2016 Red Hat, Inc. and others. For comments or queries, please
-        contact us.<br/>
-
-        The Unicode Text Rendering Reference System Project is maintained and sponsored by Red Hat. This is a community maintained site. Red Hat is not responsible for content. <br/>
-    </div>
-</div>
-
-
+  <ul class="footer_links">
+    <li><a href="/history"><i class="glyphicon glyphicon-hourglass"><b>&nbsp&nbspHistory</b></i></a></li>
+    <li><a href="/roadmap"><i class="glyphicon 
+      glyphicon-road"><b>&nbsp&nbspRoadMaps</b></i></a></li>
+    <li><a href="https://fedorahosted.org/fuel/" target="_blank"><i class="glyphicon glyphicon-wrench"><b>&nbsp&nbspDevelopment</b></i></a></li>
+    <li><a href="mailto:fuel-discuss@lists.fedorahosted.org?"><i class="glyphicon glyphicon-envelope"><b>&nbsp&nbspContactUs</b></i></a></li>
+  </ul>
+  <p>
+    © 2007-2016 Red Hat, Inc. and others. For comments or queries, please
+    contact us.<br/>
+    The Unicode Text Rendering Reference System Project is maintained and sponsored by Red Hat. This is a community maintained site. Red Hat is not responsible for content.
+  </p>
+</footer>
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script type="text/javascript" src="{% static 'bootstrap/js/jquery.dataTables.js' %}"></script>
-<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
+<!--<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.js' %}"></script>-->
 </body>
 </html>

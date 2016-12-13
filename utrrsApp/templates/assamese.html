@@ -32,21 +32,21 @@ body.loading .modal7 {
 {% endblock %}
 
 {% block content %}
-<div class="col-xs-10" id="content">
+<div class="col-sm-8 text-left" id="content">
 
     <div class="container-fluid">
-        <ul class="nav nav-tabs">
+        <ul class="nav nav-tabs sub_links">
             <li><a href="/assamese/codepoint">Codepoint</a></li>
             <li><a href="/assamese/gsub">GSUB</a></li>
             <li><a href="/assamese/gpos">GPOS</a></li>
         </ul>
         <h2 id="heading">Assamese</h2>
         Assamese is the easternmost Indo-Aryan language. It is used mainly in the state of Assam in North-East India. It is the official language of Assam.<br>
-        <small><i>More information - wikipedia: <a href=https://en.wikipedia.org/wiki/Assamese_language>https://en.wikipedia.org/wiki/Assamese_language</a></i></small> <br><br>
+        <small><i>More information - wikipedia: <a href="https://en.wikipedia.org/wiki/Assamese_language"  target="_blank">https://en.wikipedia.org/wiki/Assamese_language</a></i></small>&nbsp<i class="fa fa-external-link" aria-hidden="true"></i><br><br>
         <b>Unicode-Range: </b>
         U+0980 - U+09FF <br><br>
         <b>Unicode Chart: </b>
-        <a href="http://www.unicode.org/charts/PDF/U0980.pdf">http://www.unicode.org/charts/PDF/U0980.pdf</a> <br><br>
+        <a href="http://www.unicode.org/charts/PDF/U0980.pdf"  target="_blank">http://www.unicode.org/charts/PDF/U0980.pdf</a>&nbsp<i class="fa fa-external-link" aria-hidden="true"></i><br><br>
         <b>Font: </b>
         Lohit <small><i>- used for generating reference images</i></small> <br><br>
         <b>Rendering Engine: </b>
@@ -157,35 +157,35 @@ error : function(xhr,errmsg,err) {
                 <a href="/assamese/report.pdf" target="_blank" class="btn btn-success btn-download" id="download" >Download PDF</a>
             </div>
             <div class="modal-body">
-                <table class="table table-bordered">
-        <thead class="table-head">
-          <tr>
-            <th>No</th>
-            <th>Code Point</th>
-            <th>Reference</th>
-            <th>Character</th>
-            <th>Result</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for x in data_code %}
-          <tr id="myTr" class="table-row">
-            <td>{{ forloop.counter }}</td>
-            <td><label>{{ x.0 }}</label></td>
-            <td><img height="40px" src="{% static 'lang/as_IN/font/' %}{{ x.1 }}"></td>
-            <td><label id="codepoint_label">  {{ x.2 }}</label></td>
-            {% with y=forloop.counter|stringformat:"s" %}
-            {% with temp="compare_result"|add:y %}
-            <td><label id={{temp}}></label></td>
-            {% endwith %}
-            {% endwith %}
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
+              <table class="table table-bordered">
+                <thead class="table-head">
+                  <tr>
+                    <th>No</th>
+                    <th>Code Point</th>
+                    <th>Reference</th>
+                    <th>Character</th>
+                    <th>Result</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for x in data_code %}
+                  <tr id="myTr" class="table-row">
+                    <td>{{ forloop.counter }}</td>
+                    <td><label>{{ x.0 }}</label></td>
+                    <td><img height="40px" src="{% static 'lang/as_IN/font/' %}{{ x.1 }}"></td>
+                    <td><label id="codepoint_label">  {{ x.2 }}</label></td>
+                    {% with y=forloop.counter|stringformat:"s" %}
+                    {% with temp="compare_result"|add:y %}
+                    <td><label id={{temp}}></label></td>
+                    {% endwith %}
+                    {% endwith %}
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
             </div>
             <div class="modal-footer">
-            	<a href="/assamese/report.pdf" target="_blank" class="btn btn-success btn-download" id="download" >Download PDF</a>
+              <a href="/assamese/report.pdf" target="_blank" class="btn btn-success btn-download" id="download" >Download PDF</a>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
         </div>
