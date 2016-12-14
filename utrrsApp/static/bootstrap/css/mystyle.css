@@ -116,6 +116,15 @@ b{
   background-color: transparent;
 }
 
+.sub_links_sub{
+  margin-top: 15px;
+  border-bottom:none;
+}
+
+.sub_links_sub >li >a{
+  color: #0097A7;
+}
+
 .nav-tabs > .codepoint > a:hover,
 .nav-tabs > .gpos > a:hover,
 .nav-tabs > .gsub > a:hover{
@@ -129,7 +138,7 @@ b{
   box-shadow: 0px 2px 0px #000;
   background-color: transparent;
   border:transparent;
-  color: #337ab7;
+  color: #0097A7;
 }
 
 .nav-tabs > li.active > a:hover,
@@ -138,7 +147,7 @@ b{
   box-shadow: 0px 2px 0px #000;
   background-color: transparent;
   border:transparent;
-  color: #337ab7;
+  color: #0097A7;
 }
 
 .table-head{
@@ -158,8 +167,8 @@ b{
 .back-to-top {
   cursor: pointer;
   position: fixed;
-  bottom: 5px;
-  right: 2px;
+  bottom: 20px;
+  right: 10px;
   display:none;
 }
 
