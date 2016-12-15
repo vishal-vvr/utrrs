@@ -158,32 +158,32 @@ error : function(xhr,errmsg,err) {
                 <a href="/malayalam/report.pdf" target="_blank" class="btn btn-success btn-download" id="download" >Download PDF</a>
             </div>
             <div class="modal-body">
-                <table class="table table-bordered">
-        <thead class="table-head">
-          <tr>
-            <th>No</th>
-            <th>Code Point</th>
-            <th>Reference</th>
-            <th>Character</th>
-            <th>Result</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for x in data_code %}
-          <tr id="myTr" class="table-row">
-            <td>{{ forloop.counter }}</td>
-            <td><label>{{ x.0 }}</label></td>
-            <td><img height="40px" src="{% static 'lang/ml_IN/font/' %}{{ x.1 }}"></td>
-            <td><label id="codepoint_label">  {{ x.2 }}</label></td>
-            {% with y=forloop.counter|stringformat:"s" %}
-            {% with temp="compare_result"|add:y %}
-            <td><label id={{temp}}></label></td>
-            {% endwith %}
-            {% endwith %}
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
+              <table class="table table-bordered res_table">
+                <thead class="table-head">
+                  <tr>
+                    <th>No</th>
+                    <th>Code Point</th>
+                    <th>Reference</th>
+                    <th>Character</th>
+                    <th>Result</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for x in data_code %}
+                  <tr id="myTr" class="table-row">
+                    <td>{{ forloop.counter }}</td>
+                    <td><label>{{ x.0 }}</label></td>
+                    <td><img height="40px" src="{% static 'lang/ml_IN/font/' %}{{ x.1 }}"></td>
+                    <td><label id="codepoint_label">  {{ x.2 }}</label></td>
+                    {% with y=forloop.counter|stringformat:"s" %}
+                    {% with temp="compare_result"|add:y %}
+                    <td><label id={{temp}}></label></td>
+                    {% endwith %}
+                    {% endwith %}
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
             </div>
             <div class="modal-footer">
             	<a href="/malayalam/report.pdf" target="_blank" class="btn btn-success btn-download" id="download" >Download PDF</a>
