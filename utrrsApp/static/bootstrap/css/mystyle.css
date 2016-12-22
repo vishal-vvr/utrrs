@@ -58,8 +58,6 @@
   padding: 4px 20px;
   font-size: 13px;
   font-weight: 400;
-  /*text-align: left;
-  margin-left: 90px;*/
 }
 
 .bs-docs-sidebar .nav>.active>a, 
@@ -70,6 +68,10 @@
   background-color: transparent;  
   border-left-color: #0097A7;
   font-weight: 600;
+}
+
+#sidebar > li{
+  width: 100px;
 }
 
 .footer_links{

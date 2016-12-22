@@ -1,4 +1,5 @@
-*.report.txt
-*.report.pdf
-*.report.csv
+*report.txt
+*report.pdf
+*report.csv
 *.pyc
+*.gitignore
