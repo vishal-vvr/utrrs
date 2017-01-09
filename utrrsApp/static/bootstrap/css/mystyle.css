@@ -39,8 +39,7 @@
   margin-top: 5px;
 }
 
-.navbar-inverse .header_links > .tray > a:hover,
-.navbar-inverse .header_links > .tray > a:focus{
+.navbar-inverse .header_links > .tray > a:hover{
   color: #333;
   background-color: #e6e6e6;
   border-radius:4px;
@@ -204,6 +203,18 @@ b{
 .sidenav {
   padding-top: 20px;
   height: 100%;
+}
+
+.modal-header > #match{
+  background-color: #5cb85c;
+  font-size:14px;
+  margin-top:10px;
+}
+
+.modal-header > #unmatch{
+  background-color: #d9534f;
+  font-size:14px;
+  margin-top:10px;
 }
 
 footer {
