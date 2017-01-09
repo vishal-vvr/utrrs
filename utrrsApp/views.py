@@ -14,6 +14,8 @@ from reportlab.platypus import SimpleDocTemplate, Spacer, Table, TableStyle, Par
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from terminaltables import AsciiTable
+from itertools import izip
+from PIL import Image
 
 def home(request):
 	return render(request, 'home.html')
@@ -43,25 +45,42 @@ def assamese(request):
 			file.close()
 			file = open(file_path)
 			data_code = []
-			pdf_data = [['Codepoint','Character','Description','Result']]
+			pdf_data = [['Codepoint','Character','Description','Matched %','Result']]
 			os.chdir(img_path)
+			match_count = 0
+			unmatch_count = 0
 			for i in range(length):
 				line = file.readline()
 				st = line.strip('\n')
 				sp = st.split(',')
 				name = sp[1].strip('image/').strip(".svg")
-				os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
-				img1 = os.path.join(module_dir, 'static/lang/as_IN/font/%s' % sp[1])
-				img2 = os.path.join(module_dir, 'static/lang/as_IN/font/%s.svg' % name)
+				os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
+				or_name = sp[1].strip('.svg')
+				img1 = os.path.join(module_dir, 'static/lang/as_IN/font/%s.png' % or_name)
+				img2 = os.path.join(module_dir, 'static/lang/as_IN/font/%s.png' % name)
+				i1 = Image.open(img1)
+				i2 = Image.open(img2)
+				pairs = izip(i1.getdata(), i2.getdata())
+				if len(i1.getbands()) == 1:
+					dif = sum(abs(p1-p2) for p1,p2 in pairs)
+				else:
+					dif = sum(abs(c1-c2) for p1,p2 in pairs for c1,c2 in zip(p1,p2))
+				ncomponents = i1.size[0] * i1.size[1] * 3
+				diff = (dif / 255.0 * 100) / ncomponents
+				mat = float(100-diff)
+				per = "%s %%" % round(mat,2)
+				sp.append(per)
 				if filecmp.cmp(img1,img2)==True:
 					sp.append('Matched')
+					match_count += 1
 				else:
 					sp.append('Not Matched')
+					unmatch_count += 1
 				pd = sp[:]
 				pd.pop(1)
 				pdf_data.append(pd)
 				data_code.append(sp)
-				os.remove('%s.svg' % name)
+				os.remove('%s.png' % name)
 			"""PDF Generating"""
 			pdfmetrics.registerFont(TTFont('lohit-assamese',font_path))
 			doc = SimpleDocTemplate("assamese-report.pdf", pagesize=A4, rightMargin=30,leftMargin=30, topMargin=30,bottomMargin=18)
@@ -90,7 +109,7 @@ def assamese(request):
 			table_instance.inner_row_border = True
 			with open('assamese-report.txt','w') as f:
 				f.write(table_instance.table)
-    		return JsonResponse({'data_code': data_code})
+    		return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
 		return render(request, 'assamese.html')
 	else:
 		module_dir = os.path.dirname(__file__)
