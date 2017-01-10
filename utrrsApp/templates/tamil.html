@@ -116,8 +116,11 @@ success : function(json) {
     console.log(json);
 
     for (var i = 0; i < json['data_code'].length; i++) {
-        document.getElementById("compare_result" + (i+1)).innerHTML = json['data_code'][i][4];
+      document.getElementById("compare_result" + (i+1)).innerHTML = json['data_code'][i][5];
+      document.getElementById("per_result" + (i+1)).innerHTML = json['data_code'][i][4];
     }
+    document.getElementById('match').innerHTML = "Matched: " + json['match_count'];
+    document.getElementById('unmatch').innerHTML = "Un-matched: " + json['unmatch_count'];
 },
 error : function(xhr,errmsg,err) {
     console.log(xhr.status + ": " + xhr.responseText);
@@ -136,6 +139,8 @@ error : function(xhr,errmsg,err) {
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                 <h4 class="modal-title" id="myModalLabel">Compare In</h4>
+                <span class="badge" id="match"></span>
+                <span class="badge" id="unmatch"></span>
             </div>
             <div class="modal-body">
                 <a class="btn btn-primary" href="" data-toggle="modal" data-target="#modal-transparent_two">Browser</a>
@@ -166,6 +171,7 @@ error : function(xhr,errmsg,err) {
                     <th>Reference</th>
                     <th>Character</th>
                     <th>Result</th>
+                    <th>Matched %</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -178,6 +184,9 @@ error : function(xhr,errmsg,err) {
                     {% with y=forloop.counter|stringformat:"s" %}
                     {% with temp="compare_result"|add:y %}
                     <td><label id={{temp}}></label></td>
+                    {% endwith %}
+                    {% with per="per_result"|add:y %}
+                    <td><label id={{per}}></label></td>
                     {% endwith %}
                     {% endwith %}
                   </tr>
