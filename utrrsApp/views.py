@@ -215,25 +215,42 @@ def bengali(request):
 			file.close()
 			file = open(file_path)
 			data_code = []
-			pdf_data = [['Codepoint','Character','Description','Result']]
+			pdf_data = [['Codepoint','Character','Description','Matched %','Result']]
 			os.chdir(img_path)
+			match_count = 0
+			unmatch_count = 0
 			for i in range(length):
 				line = file.readline()
 				st = line.strip('\n')
 				sp = st.split(',')
 				name = sp[1].strip('image/').strip(".svg")
-				os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
-				img1 = os.path.join(module_dir, 'static/lang/bn_IN/font/%s' % sp[1])
-				img2 = os.path.join(module_dir, 'static/lang/bn_IN/font/%s.svg' % name)
+				os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
+				or_name = sp[1].strip('.svg')
+				img1 = os.path.join(module_dir, 'static/lang/bn_IN/font/%s.png' % or_name)
+				img2 = os.path.join(module_dir, 'static/lang/bn_IN/font/%s.png' % name)
+				i1 = Image.open(img1)
+				i2 = Image.open(img2)
+				pairs = izip(i1.getdata(), i2.getdata())
+				if len(i1.getbands()) == 1:
+					dif = sum(abs(p1-p2) for p1,p2 in pairs)
+				else:
+					dif = sum(abs(c1-c2) for p1,p2 in pairs for c1,c2 in zip(p1,p2))
+				ncomponents = i1.size[0] * i1.size[1] * 3
+				diff = (dif / 255.0 * 100) / ncomponents
+				mat = float(100-diff)
+				per = "%s %%" % round(mat,2)
+				sp.append(per)
 				if filecmp.cmp(img1,img2)==True:
 					sp.append('Matched')
+					match_count += 1
 				else:
 					sp.append('Not Matched')
+					unmatch_count += 1
 				pd = sp[:]
 				pd.pop(1)
 				pdf_data.append(pd)
 				data_code.append(sp)
-				os.remove('%s.svg' % name)
+				os.remove('%s.png' % name)
 			"""PDF Generating"""
 			pdfmetrics.registerFont(TTFont('lohit-bengali',font_path))
 			doc = SimpleDocTemplate("bengali-report.pdf", pagesize=A4, rightMargin=30,leftMargin=30, topMargin=30,bottomMargin=18)
@@ -262,7 +279,7 @@ def bengali(request):
 			table_instance.inner_row_border = True
 			with open('bengali-report.txt','w') as f:
 				f.write(table_instance.table)
-    		return JsonResponse({'data_code': data_code})
+    		return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
 		return render(request, 'bengali.html')
 	else:
 		module_dir = os.path.dirname(__file__)
@@ -368,25 +385,42 @@ def german(request):
 			file.close()
 			file = open(file_path)
 			data_code = []
-			pdf_data = [['Codepoint','Character','Description','Result']]
+			pdf_data = [['Codepoint','Character','Description','Matched %','Result']]
 			os.chdir(img_path)
+			match_count = 0
+			unmatch_count = 0
 			for i in range(length):
 				line = file.readline()
 				st = line.strip('\n')
 				sp = st.split(',')
 				name = sp[1].strip('image/').strip(".svg")
-				os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
-				img1 = os.path.join(module_dir, 'static/lang/de_DE/font/%s' % sp[1])
-				img2 = os.path.join(module_dir, 'static/lang/de_DE/font/%s.svg' % name)
+				os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
+				or_name = sp[1].strip('.svg')
+				img1 = os.path.join(module_dir, 'static/lang/de_DE/font/%s.png' % or_name)
+				img2 = os.path.join(module_dir, 'static/lang/de_DE/font/%s.png' % name)
+				i1 = Image.open(img1)
+				i2 = Image.open(img2)
+				pairs = izip(i1.getdata(), i2.getdata())
+				if len(i1.getbands()) == 1:
+					dif = sum(abs(p1-p2) for p1,p2 in pairs)
+				else:
+					dif = sum(abs(c1-c2) for p1,p2 in pairs for c1,c2 in zip(p1,p2))
+				ncomponents = i1.size[0] * i1.size[1] * 3
+				diff = (dif / 255.0 * 100) / ncomponents
+				mat = float(100-diff)
+				per = "%s %%" % round(mat,2)
+				sp.append(per)
 				if filecmp.cmp(img1,img2)==True:
 					sp.append('Matched')
+					match_count += 1
 				else:
 					sp.append('Not Matched')
+					unmatch_count += 1
 				pd = sp[:]
 				pd.pop(1)
 				pdf_data.append(pd)
 				data_code.append(sp)
-				os.remove('%s.svg' % name)
+				os.remove('%s.png' % name)
 			"""PDF Generating"""
 			pdfmetrics.registerFont(TTFont('dejavu',font_path))
 			doc = SimpleDocTemplate("german-report.pdf", pagesize=A4, rightMargin=30,leftMargin=30, topMargin=30,bottomMargin=18)
@@ -415,7 +449,7 @@ def german(request):
 			table_instance.inner_row_border = True
 			with open('german-report.txt','w') as f:
 				f.write(table_instance.table)
-    		return JsonResponse({'data_code': data_code})
+    		return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
 		return render(request, 'german.html')
 	else:
 		module_dir = os.path.dirname(__file__)
@@ -495,25 +529,42 @@ def gujarati(request):
 			file.close()
 			file = open(file_path)
 			data_code = []
-			pdf_data = [['Codepoint','Character','Description','Result']]
+			pdf_data = [['Codepoint','Character','Description','Matched %','Result']]
 			os.chdir(img_path)
+			match_count = 0
+			unmatch_count = 0
 			for i in range(length):
 				line = file.readline()
 				st = line.strip('\n')
 				sp = st.split(',')
 				name = sp[1].strip('image/').strip(".svg")
-				os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
-				img1 = os.path.join(module_dir, 'static/lang/gu_IN/font/%s' % sp[1])
-				img2 = os.path.join(module_dir, 'static/lang/gu_IN/font/%s.svg' % name)
+				os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
+				or_name = sp[1].strip('.svg')
+				img1 = os.path.join(module_dir, 'static/lang/gu_IN/font/%s.png' % or_name)
+				img2 = os.path.join(module_dir, 'static/lang/gu_IN/font/%s.png' % name)
+				i1 = Image.open(img1)
+				i2 = Image.open(img2)
+				pairs = izip(i1.getdata(), i2.getdata())
+				if len(i1.getbands()) == 1:
+					dif = sum(abs(p1-p2) for p1,p2 in pairs)
+				else:
+					dif = sum(abs(c1-c2) for p1,p2 in pairs for c1,c2 in zip(p1,p2))
+				ncomponents = i1.size[0] * i1.size[1] * 3
+				diff = (dif / 255.0 * 100) / ncomponents
+				mat = float(100-diff)
+				per = "%s %%" % round(mat,2)
+				sp.append(per)
 				if filecmp.cmp(img1,img2)==True:
 					sp.append('Matched')
+					match_count += 1
 				else:
 					sp.append('Not Matched')
+					unmatch_count += 1
 				pd = sp[:]
 				pd.pop(1)
 				pdf_data.append(pd)
 				data_code.append(sp)
-				os.remove('%s.svg' % name)
+				os.remove('%s.png' % name)
 			"""PDF Generating"""
 			pdfmetrics.registerFont(TTFont('lohit-gujarati',font_path))
 			doc = SimpleDocTemplate("gujarati-report.pdf", pagesize=A4, rightMargin=30,leftMargin=30, topMargin=30,bottomMargin=18)
@@ -542,7 +593,7 @@ def gujarati(request):
 			table_instance.inner_row_border = True
 			with open('gujarati-report.txt','w') as f:
 				f.write(table_instance.table)
-    		return JsonResponse({'data_code': data_code})
+    		return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
 		return render(request, 'gujarati.html')
 	else:
 		module_dir = os.path.dirname(__file__)
@@ -648,25 +699,42 @@ def hindi(request):
 			file.close()
 			file = open(file_path)
 			data_code = []
-			pdf_data = [['Codepoint','Character','Description','Result']]
+			pdf_data = [['Codepoint','Character','Description','Matched %','Result']]
 			os.chdir(img_path)
+			match_count = 0
+			unmatch_count = 0
 			for i in range(length):
 				line = file.readline()
 				st = line.strip('\n')
 				sp = st.split(',')
 				name = sp[1].strip('image/').strip(".svg")
-				os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
-				img1 = os.path.join(module_dir, 'static/lang/hi_IN/font/%s' % sp[1])
-				img2 = os.path.join(module_dir, 'static/lang/hi_IN/font/%s.svg' % name)
+				os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
+				or_name = sp[1].strip('.svg')
+				img1 = os.path.join(module_dir, 'static/lang/hi_IN/font/%s.png' % or_name)
+				img2 = os.path.join(module_dir, 'static/lang/hi_IN/font/%s.png' % name)
+				i1 = Image.open(img1)
+				i2 = Image.open(img2)
+				pairs = izip(i1.getdata(), i2.getdata())
+				if len(i1.getbands()) == 1:
+					dif = sum(abs(p1-p2) for p1,p2 in pairs)
+				else:
+					dif = sum(abs(c1-c2) for p1,p2 in pairs for c1,c2 in zip(p1,p2))
+				ncomponents = i1.size[0] * i1.size[1] * 3
+				diff = (dif / 255.0 * 100) / ncomponents
+				mat = float(100-diff)
+				per = "%s %%" % round(mat,2)
+				sp.append(per)
 				if filecmp.cmp(img1,img2)==True:
 					sp.append('Matched')
+					match_count += 1
 				else:
 					sp.append('Not Matched')
+					unmatch_count += 1
 				pd = sp[:]
 				pd.pop(1)
 				pdf_data.append(pd)
 				data_code.append(sp)
-				os.remove('%s.svg' % name)
+				os.remove('%s.png' % name)
 			"""PDF Generating"""
 			pdfmetrics.registerFont(TTFont('lohit-devanagari',font_path))
 			doc = SimpleDocTemplate("hindi-report.pdf", pagesize=A4, rightMargin=30,leftMargin=30, topMargin=30,bottomMargin=18)
@@ -695,7 +763,7 @@ def hindi(request):
 			table_instance.inner_row_border = True
 			with open('hindi-report.txt','w') as f:
 				f.write(table_instance.table)
-    		return JsonResponse({'data_code': data_code})
+    		return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
 		return render(request, 'hindi.html')
 	else:
 		module_dir = os.path.dirname(__file__)
@@ -801,25 +869,42 @@ def kannada(request):
 			file.close()
 			file = open(file_path)
 			data_code = []
-			pdf_data = [['Codepoint','Character','Description','Result']]
+			pdf_data = [['Codepoint','Character','Description','Matched %','Result']]
 			os.chdir(img_path)
+			match_count = 0
+			unmatch_count = 0
 			for i in range(length):
 				line = file.readline()
 				st = line.strip('\n')
 				sp = st.split(',')
 				name = sp[1].strip('image/').strip(".svg")
-				os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
-				img1 = os.path.join(module_dir, 'static/lang/kn_IN/font/%s' % sp[1])
-				img2 = os.path.join(module_dir, 'static/lang/kn_IN/font/%s.svg' % name)
+				os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
+				or_name = sp[1].strip('.svg')
+				img1 = os.path.join(module_dir, 'static/lang/kn_IN/font/%s.png' % or_name)
+				img2 = os.path.join(module_dir, 'static/lang/kn_IN/font/%s.png' % name)
+				i1 = Image.open(img1)
+				i2 = Image.open(img2)
+				pairs = izip(i1.getdata(), i2.getdata())
+				if len(i1.getbands()) == 1:
+					dif = sum(abs(p1-p2) for p1,p2 in pairs)
+				else:
+					dif = sum(abs(c1-c2) for p1,p2 in pairs for c1,c2 in zip(p1,p2))
+				ncomponents = i1.size[0] * i1.size[1] * 3
+				diff = (dif / 255.0 * 100) / ncomponents
+				mat = float(100-diff)
+				per = "%s %%" % round(mat,2)
+				sp.append(per)
 				if filecmp.cmp(img1,img2)==True:
 					sp.append('Matched')
+					match_count += 1
 				else:
 					sp.append('Not Matched')
+					unmatch_count += 1
 				pd = sp[:]
 				pd.pop(1)
 				pdf_data.append(pd)
 				data_code.append(sp)
-				os.remove('%s.svg' % name)
+				os.remove('%s.png' % name)
 			"""PDF Generating"""
 			pdfmetrics.registerFont(TTFont('lohit-kannada',font_path))
 			doc = SimpleDocTemplate("kannada-report.pdf", pagesize=A4, rightMargin=30,leftMargin=30, topMargin=30,bottomMargin=18)
@@ -848,7 +933,7 @@ def kannada(request):
 			table_instance.inner_row_border = True
 			with open('kannada-report.txt','w') as f:
 				f.write(table_instance.table)
-    		return JsonResponse({'data_code': data_code})
+    		return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
 		return render(request, 'kannada.html')
 	else:
 		module_dir = os.path.dirname(__file__)
@@ -954,25 +1039,42 @@ def maithili(request):
 			file.close()
 			file = open(file_path)
 			data_code = []
-			pdf_data = [['Codepoint','Character','Description','Result']]
+			pdf_data = [['Codepoint','Character','Description','Matched %','Result']]
 			os.chdir(img_path)
+			match_count = 0
+			unmatch_count = 0
 			for i in range(length):
 				line = file.readline()
 				st = line.strip('\n')
 				sp = st.split(',')
 				name = sp[1].strip('image/').strip(".svg")
-				os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
-				img1 = os.path.join(module_dir, 'static/lang/mai_IN/font/%s' % sp[1])
-				img2 = os.path.join(module_dir, 'static/lang/mai_IN/font/%s.svg' % name)
+				os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
+				or_name = sp[1].strip('.svg')
+				img1 = os.path.join(module_dir, 'static/lang/mai_IN/font/%s.png' % or_name)
+				img2 = os.path.join(module_dir, 'static/lang/mai_IN/font/%s.png' % name)
+				i1 = Image.open(img1)
+				i2 = Image.open(img2)
+				pairs = izip(i1.getdata(), i2.getdata())
+				if len(i1.getbands()) == 1:
+					dif = sum(abs(p1-p2) for p1,p2 in pairs)
+				else:
+					dif = sum(abs(c1-c2) for p1,p2 in pairs for c1,c2 in zip(p1,p2))
+				ncomponents = i1.size[0] * i1.size[1] * 3
+				diff = (dif / 255.0 * 100) / ncomponents
+				mat = float(100-diff)
+				per = "%s %%" % round(mat,2)
+				sp.append(per)
 				if filecmp.cmp(img1,img2)==True:
 					sp.append('Matched')
+					match_count += 1
 				else:
 					sp.append('Not Matched')
+					unmatch_count += 1
 				pd = sp[:]
 				pd.pop(1)
 				pdf_data.append(pd)
 				data_code.append(sp)
-				os.remove('%s.svg' % name)
+				os.remove('%s.png' % name)
 			"""PDF Generating"""
 			pdfmetrics.registerFont(TTFont('lohit-devanagari',font_path))
 			doc = SimpleDocTemplate("maithili-report.pdf", pagesize=A4, rightMargin=30,leftMargin=30, topMargin=30,bottomMargin=18)
@@ -1001,7 +1103,7 @@ def maithili(request):
 			table_instance.inner_row_border = True
 			with open('maithili-report.txt','w') as f:
 				f.write(table_instance.table)
-    		return JsonResponse({'data_code': data_code})
+    		return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
 		return render(request, 'maithili.html')
 	else:
 		module_dir = os.path.dirname(__file__)
@@ -1107,25 +1209,42 @@ def malayalam(request):
 			file.close()
 			file = open(file_path)
 			data_code = []
-			pdf_data = [['Codepoint','Character','Description','Result']]
+			pdf_data = [['Codepoint','Character','Description','Matched %','Result']]
 			os.chdir(img_path)
+			match_count = 0
+			unmatch_count = 0
 			for i in range(length):
 				line = file.readline()
 				st = line.strip('\n')
 				sp = st.split(',')
 				name = sp[1].strip('image/').strip(".svg")
-				os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
-				img1 = os.path.join(module_dir, 'static/lang/ml_IN/font/%s' % sp[1])
-				img2 = os.path.join(module_dir, 'static/lang/ml_IN/font/%s.svg' % name)
+				os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
+				or_name = sp[1].strip('.svg')
+				img1 = os.path.join(module_dir, 'static/lang/ml_IN/font/%s.png' % or_name)
+				img2 = os.path.join(module_dir, 'static/lang/ml_IN/font/%s.png' % name)
+				i1 = Image.open(img1)
+				i2 = Image.open(img2)
+				pairs = izip(i1.getdata(), i2.getdata())
+				if len(i1.getbands()) == 1:
+					dif = sum(abs(p1-p2) for p1,p2 in pairs)
+				else:
+					dif = sum(abs(c1-c2) for p1,p2 in pairs for c1,c2 in zip(p1,p2))
+				ncomponents = i1.size[0] * i1.size[1] * 3
+				diff = (dif / 255.0 * 100) / ncomponents
+				mat = float(100-diff)
+				per = "%s %%" % round(mat,2)
+				sp.append(per)
 				if filecmp.cmp(img1,img2)==True:
 					sp.append('Matched')
+					match_count += 1
 				else:
 					sp.append('Not Matched')
+					unmatch_count += 1
 				pd = sp[:]
 				pd.pop(1)
 				pdf_data.append(pd)
 				data_code.append(sp)
-				os.remove('%s.svg' % name)
+				os.remove('%s.png' % name)
 			"""PDF Generating"""
 			pdfmetrics.registerFont(TTFont('smc',font_path))
 			doc = SimpleDocTemplate("malayalam-report.pdf", pagesize=A4, rightMargin=0,leftMargin=0, topMargin=30,bottomMargin=18)
@@ -1154,7 +1273,7 @@ def malayalam(request):
 			table_instance.inner_row_border = True
 			with open('malayalam-report.txt','w') as f:
 				f.write(table_instance.table)
-    		return JsonResponse({'data_code': data_code})
+    		return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
 		return render(request, 'malayalam.html')
 	else:
 		module_dir = os.path.dirname(__file__)
@@ -1247,25 +1366,42 @@ def marathi(request):
 			file.close()
 			file = open(file_path)
 			data_code = []
-			pdf_data = [['Codepoint','Character','Description','Result']]
+			pdf_data = [['Codepoint','Character','Description','Matched %','Result']]
 			os.chdir(img_path)
+			match_count = 0
+			unmatch_count = 0
 			for i in range(length):
 				line = file.readline()
 				st = line.strip('\n')
 				sp = st.split(',')
 				name = sp[1].strip('image/').strip(".svg")
-				os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
-				img1 = os.path.join(module_dir, 'static/lang/mr_IN/font/%s' % sp[1])
-				img2 = os.path.join(module_dir, 'static/lang/mr_IN/font/%s.svg' % name)
+				os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
+				or_name = sp[1].strip('.svg')
+				img1 = os.path.join(module_dir, 'static/lang/mr_IN/font/%s.png' % or_name)
+				img2 = os.path.join(module_dir, 'static/lang/mr_IN/font/%s.png' % name)
+				i1 = Image.open(img1)
+				i2 = Image.open(img2)
+				pairs = izip(i1.getdata(), i2.getdata())
+				if len(i1.getbands()) == 1:
+					dif = sum(abs(p1-p2) for p1,p2 in pairs)
+				else:
+					dif = sum(abs(c1-c2) for p1,p2 in pairs for c1,c2 in zip(p1,p2))
+				ncomponents = i1.size[0] * i1.size[1] * 3
+				diff = (dif / 255.0 * 100) / ncomponents
+				mat = float(100-diff)
+				per = "%s %%" % round(mat,2)
+				sp.append(per)
 				if filecmp.cmp(img1,img2)==True:
 					sp.append('Matched')
+					match_count += 1
 				else:
 					sp.append('Not Matched')
+					unmatch_count += 1
 				pd = sp[:]
 				pd.pop(1)
 				pdf_data.append(pd)
 				data_code.append(sp)
-				os.remove('%s.svg' % name)
+				os.remove('%s.png' % name)
 			"""PDF Generating"""
 			pdfmetrics.registerFont(TTFont('lohit-devanagari',font_path))
 			doc = SimpleDocTemplate("marathi-report.pdf", pagesize=A4, rightMargin=30,leftMargin=30, topMargin=30,bottomMargin=18)
@@ -1294,7 +1430,7 @@ def marathi(request):
 			table_instance.inner_row_border = True
 			with open('marathi-report.txt','w') as f:
 				f.write(table_instance.table)
-    		return JsonResponse({'data_code': data_code})
+    		return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
 		return render(request, 'marathi.html')
 	else:
 		module_dir = os.path.dirname(__file__)
@@ -1400,25 +1536,42 @@ def odia(request):
 			file.close()
 			file = open(file_path)
 			data_code = []
-			pdf_data = [['Codepoint','Character','Description','Result']]
+			pdf_data = [['Codepoint','Character','Description','Matched %','Result']]
 			os.chdir(img_path)
+			match_count = 0
+			unmatch_count = 0
 			for i in range(length):
 				line = file.readline()
 				st = line.strip('\n')
 				sp = st.split(',')
 				name = sp[1].strip('image/').strip(".svg")
-				os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
-				img1 = os.path.join(module_dir, 'static/lang/or_IN/font/%s' % sp[1])
-				img2 = os.path.join(module_dir, 'static/lang/or_IN/font/%s.svg' % name)
+				os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
+				or_name = sp[1].strip('.svg')
+				img1 = os.path.join(module_dir, 'static/lang/or_IN/font/%s.png' % or_name)
+				img2 = os.path.join(module_dir, 'static/lang/or_IN/font/%s.png' % name)
+				i1 = Image.open(img1)
+				i2 = Image.open(img2)
+				pairs = izip(i1.getdata(), i2.getdata())
+				if len(i1.getbands()) == 1:
+					dif = sum(abs(p1-p2) for p1,p2 in pairs)
+				else:
+					dif = sum(abs(c1-c2) for p1,p2 in pairs for c1,c2 in zip(p1,p2))
+				ncomponents = i1.size[0] * i1.size[1] * 3
+				diff = (dif / 255.0 * 100) / ncomponents
+				mat = float(100-diff)
+				per = "%s %%" % round(mat,2)
+				sp.append(per)
 				if filecmp.cmp(img1,img2)==True:
 					sp.append('Matched')
+					match_count += 1
 				else:
 					sp.append('Not Matched')
+					unmatch_count += 1
 				pd = sp[:]
 				pd.pop(1)
 				pdf_data.append(pd)
 				data_code.append(sp)
-				os.remove('%s.svg' % name)
+				os.remove('%s.png' % name)
 			"""PDF Generating"""
 			pdfmetrics.registerFont(TTFont('lohit-odia',font_path))
 			doc = SimpleDocTemplate("odia-report.pdf", pagesize=A4, rightMargin=30,leftMargin=30, topMargin=30,bottomMargin=18)
@@ -1447,7 +1600,7 @@ def odia(request):
 			table_instance.inner_row_border = True
 			with open('odia-report.txt','w') as f:
 				f.write(table_instance.table)
-    		return JsonResponse({'data_code': data_code})
+    		return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
 		return render(request, 'odia.html')
 	else:
 		module_dir = os.path.dirname(__file__)
@@ -1553,25 +1706,42 @@ def punjabi(request):
 			file.close()
 			file = open(file_path)
 			data_code = []
-			pdf_data = [['Codepoint','Character','Description','Result']]
+			pdf_data = [['Codepoint','Character','Description','Matched %','Result']]
 			os.chdir(img_path)
+			match_count = 0
+			unmatch_count = 0
 			for i in range(length):
 				line = file.readline()
 				st = line.strip('\n')
 				sp = st.split(',')
 				name = sp[1].strip('image/').strip(".svg")
-				os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
-				img1 = os.path.join(module_dir, 'static/lang/pa_IN/font/%s' % sp[1])
-				img2 = os.path.join(module_dir, 'static/lang/pa_IN/font/%s.svg' % name)
+				os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
+				or_name = sp[1].strip('.svg')
+				img1 = os.path.join(module_dir, 'static/lang/pa_IN/font/%s.png' % or_name)
+				img2 = os.path.join(module_dir, 'static/lang/pa_IN/font/%s.png' % name)
+				i1 = Image.open(img1)
+				i2 = Image.open(img2)
+				pairs = izip(i1.getdata(), i2.getdata())
+				if len(i1.getbands()) == 1:
+					dif = sum(abs(p1-p2) for p1,p2 in pairs)
+				else:
+					dif = sum(abs(c1-c2) for p1,p2 in pairs for c1,c2 in zip(p1,p2))
+				ncomponents = i1.size[0] * i1.size[1] * 3
+				diff = (dif / 255.0 * 100) / ncomponents
+				mat = float(100-diff)
+				per = "%s %%" % round(mat,2)
+				sp.append(per)
 				if filecmp.cmp(img1,img2)==True:
 					sp.append('Matched')
+					match_count += 1
 				else:
 					sp.append('Not Matched')
+					unmatch_count += 1
 				pd = sp[:]
 				pd.pop(1)
 				pdf_data.append(pd)
 				data_code.append(sp)
-				os.remove('%s.svg' % name)
+				os.remove('%s.png' % name)
 			"""PDF Generating"""
 			pdfmetrics.registerFont(TTFont('lohit-gurmukhi',font_path))
 			doc = SimpleDocTemplate("punjabi-report.pdf", pagesize=A4, rightMargin=30,leftMargin=30, topMargin=30,bottomMargin=18)
@@ -1600,7 +1770,7 @@ def punjabi(request):
 			table_instance.inner_row_border = True
 			with open('punjabi-report.txt','w') as f:
 				f.write(table_instance.table)
-    		return JsonResponse({'data_code': data_code})
+    		return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
 		return render(request, 'punjabi.html')
 	else:
 		module_dir = os.path.dirname(__file__)
@@ -1706,25 +1876,42 @@ def tamil(request):
 			file.close()
 			file = open(file_path)
 			data_code = []
-			pdf_data = [['Codepoint','Character','Description','Result']]
+			pdf_data = [['Codepoint','Character','Description','Matched %','Result']]
 			os.chdir(img_path)
+			match_count = 0
+			unmatch_count = 0
 			for i in range(length):
 				line = file.readline()
 				st = line.strip('\n')
 				sp = st.split(',')
 				name = sp[1].strip('image/').strip(".svg")
-				os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
-				img1 = os.path.join(module_dir, 'static/lang/ta_IN/font/%s' % sp[1])
-				img2 = os.path.join(module_dir, 'static/lang/ta_IN/font/%s.svg' % name)
+				os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
+				or_name = sp[1].strip('.svg')
+				img1 = os.path.join(module_dir, 'static/lang/ta_IN/font/%s.png' % or_name)
+				img2 = os.path.join(module_dir, 'static/lang/ta_IN/font/%s.png' % name)
+				i1 = Image.open(img1)
+				i2 = Image.open(img2)
+				pairs = izip(i1.getdata(), i2.getdata())
+				if len(i1.getbands()) == 1:
+					dif = sum(abs(p1-p2) for p1,p2 in pairs)
+				else:
+					dif = sum(abs(c1-c2) for p1,p2 in pairs for c1,c2 in zip(p1,p2))
+				ncomponents = i1.size[0] * i1.size[1] * 3
+				diff = (dif / 255.0 * 100) / ncomponents
+				mat = float(100-diff)
+				per = "%s %%" % round(mat,2)
+				sp.append(per)
 				if filecmp.cmp(img1,img2)==True:
 					sp.append('Matched')
+					match_count += 1
 				else:
 					sp.append('Not Matched')
+					unmatch_count += 1
 				pd = sp[:]
 				pd.pop(1)
 				pdf_data.append(pd)
 				data_code.append(sp)
-				os.remove('%s.svg' % name)
+				os.remove('%s.png' % name)
 			"""PDF Generating"""
 			pdfmetrics.registerFont(TTFont('lohit-tamil',font_path))
 			doc = SimpleDocTemplate("tamil-report.pdf", pagesize=A4, rightMargin=30,leftMargin=30, topMargin=30,bottomMargin=18)
@@ -1753,7 +1940,7 @@ def tamil(request):
 			table_instance.inner_row_border = True
 			with open('tamil-report.txt','w') as f:
 				f.write(table_instance.table)
-    		return JsonResponse({'data_code': data_code})
+    		return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
 		return render(request, 'tamil.html')
 	else:
 		module_dir = os.path.dirname(__file__)
@@ -1859,25 +2046,42 @@ def telugu(request):
 			file.close()
 			file = open(file_path)
 			data_code = []
-			pdf_data = [['Codepoint','Character','Description','Result']]
+			pdf_data = [['Codepoint','Character','Description','Matched %','Result']]
 			os.chdir(img_path)
+			match_count = 0
+			unmatch_count = 0
 			for i in range(length):
 				line = file.readline()
 				st = line.strip('\n')
 				sp = st.split(',')
 				name = sp[1].strip('image/').strip(".svg")
-				os.system('hb-view %s %s --output-format=svg --output-file=%s.svg' % (font_path, sp[2], name))
-				img1 = os.path.join(module_dir, 'static/lang/te_IN/font/%s' % sp[1])
-				img2 = os.path.join(module_dir, 'static/lang/te_IN/font/%s.svg' % name)
+				os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
+				or_name = sp[1].strip('.svg')
+				img1 = os.path.join(module_dir, 'static/lang/te_IN/font/%s.png' % or_name)
+				img2 = os.path.join(module_dir, 'static/lang/te_IN/font/%s.png' % name)
+				i1 = Image.open(img1)
+				i2 = Image.open(img2)
+				pairs = izip(i1.getdata(), i2.getdata())
+				if len(i1.getbands()) == 1:
+					dif = sum(abs(p1-p2) for p1,p2 in pairs)
+				else:
+					dif = sum(abs(c1-c2) for p1,p2 in pairs for c1,c2 in zip(p1,p2))
+				ncomponents = i1.size[0] * i1.size[1] * 3
+				diff = (dif / 255.0 * 100) / ncomponents
+				mat = float(100-diff)
+				per = "%s %%" % round(mat,2)
+				sp.append(per)
 				if filecmp.cmp(img1,img2)==True:
 					sp.append('Matched')
+					match_count += 1
 				else:
 					sp.append('Not Matched')
+					unmatch_count += 1
 				pd = sp[:]
 				pd.pop(1)
 				pdf_data.append(pd)
 				data_code.append(sp)
-				os.remove('%s.svg' % name)
+				os.remove('%s.png' % name)
 			"""PDF Generating"""
 			pdfmetrics.registerFont(TTFont('lohit-telugu',font_path))
 			doc = SimpleDocTemplate("telugu-report.pdf", pagesize=A4, rightMargin=30,leftMargin=30, topMargin=30,bottomMargin=18)
@@ -1906,7 +2110,7 @@ def telugu(request):
 			table_instance.inner_row_border = True
 			with open('telugu-report.txt','w') as f:
 				f.write(table_instance.table)
-    		return JsonResponse({'data_code': data_code})
+    		return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
 		return render(request, 'telugu.html')
 	else:
 		module_dir = os.path.dirname(__file__)
@@ -1998,4 +2202,3 @@ def telugu_txt(request):
 	response['Content-Disposition'] = 'attachment; filename=telugu-report.txt'
 	file.close()
 	return response
-
