@@ -1,0 +1,4 @@
+Django==1.10.4
+Pillow==3.4.2
+reportlab==3.3.0
+terminaltables==3.1.0
