@@ -132,4 +132,12 @@ urlpatterns = [
     url(r'^telugu/report.pdf$', views.telugu_pdf, name='telugu_pdf'),
     url(r'^telugu/report.csv$', views.telugu_csv, name='telugu_csv'),
     url(r'^telugu/report.txt$', views.telugu_txt, name='telugu_txt'),
+
+    url(r'^japanese/$', views.japanese, name='japanese'),
+    url(r'^japanese/codepoint$', views.japanese_codepoint, name='telugu_codepoint'),
+    url(r'^japanese/gsub$', views.japanese_gsub, name='japanese_gsub'),
+    url(r'^japanese/gpos$', views.japanese_gpos, name='japanese_gpos'),
+    url(r'^japanese/report.pdf$', views.japanese_pdf, name='japanese_pdf'),
+    url(r'^japanese/report.csv$', views.japanese_csv, name='japanese_csv'),
+    url(r'^japanese/report.txt$', views.japanese_txt, name='japanese_txt'),
 ]

@@ -2202,3 +2202,161 @@ def telugu_txt(request):
 	response['Content-Disposition'] = 'attachment; filename=telugu-report.txt'
 	file.close()
 	return response
+
+def japanese(request):
+	if request.method == 'POST':
+		if request.is_ajax():
+			module_dir = os.path.dirname(__file__)
+			file_path = os.path.join(module_dir, 'static/lang/ja_JP/font/data/master_ja.txt')
+			img_path = os.path.join(module_dir, 'static/lang/ja_JP/font/')
+			font_path = os.path.join(module_dir, 'static/fonts/vlgothic/VL-Gothic-Regular.ttf')
+			file = open(file_path)
+			data = file.read()
+			length = data.count('\n')
+			file.close()
+			file = open(file_path)
+			data_code = []
+			pdf_data = [['Codepoint','Character','Description','Matched %','Result']]
+			os.chdir(img_path)
+			match_count = 0
+			unmatch_count = 0
+			for i in range(length):
+				line = file.readline()
+				st = line.strip('\n')
+				sp = st.split(',')
+				name = sp[1].strip('image/').strip(".svg")
+				os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
+				or_name = sp[1].strip('.svg')
+				img1 = os.path.join(module_dir, 'static/lang/ja_JP/font/%s.png' % or_name)
+				img2 = os.path.join(module_dir, 'static/lang/ja_JP/font/%s.png' % name)
+				i1 = Image.open(img1)
+				i2 = Image.open(img2)
+				pairs = izip(i1.getdata(), i2.getdata())
+				if len(i1.getbands()) == 1:
+					dif = sum(abs(p1-p2) for p1,p2 in pairs)
+				else:
+					dif = sum(abs(c1-c2) for p1,p2 in pairs for c1,c2 in zip(p1,p2))
+				ncomponents = i1.size[0] * i1.size[1] * 3
+				diff = (dif / 255.0 * 100) / ncomponents
+				mat = float(100-diff)
+				per = "%s %%" % round(mat,2)
+				sp.append(per)
+				if filecmp.cmp(img1,img2)==True:
+					sp.append('Matched')
+					match_count += 1
+				else:
+					sp.append('Not Matched')
+					unmatch_count += 1
+				pd = sp[:]
+				pd.pop(1)
+				pdf_data.append(pd)
+				data_code.append(sp)
+				os.remove('%s.png' % name)
+			"""PDF Generating"""
+			pdfmetrics.registerFont(TTFont('vlgothic',font_path))
+			doc = SimpleDocTemplate("japanese-report.pdf", pagesize=A4, rightMargin=30,leftMargin=30, topMargin=30,bottomMargin=18)
+			elements = []
+			table = Table(pdf_data)
+			table.setStyle(TableStyle([
+			    ('FONT', (1, 0), (1, -1), 'vlgothic'),
+			    ('FONT', (0, 0), (-1, 0), 'Helvetica-Bold'),
+			    ('FONTSIZE', (0, 0), (-1, -1), 8),
+			    ('INNERGRID', (0, 0), (-1, -1), 0.25, colors.black),
+			    ('BOX', (0, 0), (-1, -1), 0.25, colors.black),
+			    ('ALIGN', (0, 0), (-1, 0), 'CENTER'),
+			]))
+			styles = getSampleStyleSheet()
+			p = Paragraph("<u>Report</u>\n", styles["title"])
+			elements.append(p)
+			elements.append(table)
+			doc.build(elements)
+			"""Libre Office Generating"""
+			with open('japanese-report.csv', 'w') as csvfile:
+				writer = csv.writer(csvfile)
+				[writer.writerow(r) for r in pdf_data]
+			"""Text File Generating"""
+			table_instance = AsciiTable(pdf_data, 'Report')
+			table_instance.justify_columns[1] = 'left'
+			table_instance.inner_row_border = True
+			with open('japanese-report.txt','w') as f:
+				f.write(table_instance.table)
+    		return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
+		return render(request, 'japanese.html')
+	else:
+		module_dir = os.path.dirname(__file__)
+		file_path = os.path.join(module_dir, 'static/lang/ja_JP/font/data/master_ja.txt')
+		file = open(file_path)
+		data = file.read()
+		length = data.count('\n')
+		file.close()
+		file = open(file_path)
+		data_code = []
+		for i in range(length):
+			line = file.readline()
+			st = line.strip('\n')
+			sp = st.split(',')
+			data_code.append(sp)
+		return render(request, 'japanese.html', {'data_code': data_code})
+
+def japanese_codepoint(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/ja_JP/font/data/codepoint/master_ja_JP.txt')
+	file = open(file_path)
+	data = file.read()
+	length = data.count('\n')
+	file.close()
+	file = open(file_path)
+	data_code = []
+	for i in range(length):
+		line = file.readline()
+		st = line.strip('\n')
+		sp = st.split(',')
+		data_code.append(sp)
+	return render(request, 'ja_codepoint.html', {'data_code': data_code[1:]})
+
+def japanese_gsub(request):
+	return render(request, 'ja_gsub.html')
+
+def japanese_gpos(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/ja_JP/font/data/gpos/master_gpos_ja_JP.txt')
+	file = open(file_path)
+	data = file.read()
+	length = data.count('\n')
+	file.close()
+	file = open(file_path)
+	data_gpos = []
+	for i in range(length):
+		line = file.readline()
+		st = line.strip('\n')
+		sp = st.split(',')
+		data_gpos.append(sp)
+	return render(request, 'ja_gpos.html', {'data_gpos': data_gpos[1:]})
+
+def japanese_pdf(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/ja_JP/font/japanese-report.pdf')
+	file = open(file_path, "r")
+	response = HttpResponse(FileWrapper(file), content_type='application/pdf')
+	response['Content-Disposition'] = 'attachment; filename=japanese-report.pdf'
+	file.close()
+	return response
+
+def japanese_csv(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/ja_JP/font/japanese-report.csv')
+	file = open(file_path, "r")
+	response = HttpResponse(FileWrapper(file), content_type='application/csv')
+	response['Content-Disposition'] = 'attachment; filename=japanese-report.csv'
+	file.close()
+	return response
+
+def japanese_txt(request):
+	module_dir = os.path.dirname(__file__)
+	file_path = os.path.join(module_dir, 'static/lang/ja_JP/font/japanese-report.txt')
+	file = open(file_path, "r")
+	response = HttpResponse(FileWrapper(file), content_type='application/text')
+	response['Content-Disposition'] = 'attachment; filename=japanese-report.txt'
+	file.close()
+	return response
+
