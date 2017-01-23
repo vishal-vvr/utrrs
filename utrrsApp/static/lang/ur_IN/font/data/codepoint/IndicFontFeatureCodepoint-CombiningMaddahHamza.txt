@@ -1,4 +1,0 @@
-codepoint, imagepath, rawcode, desc
-U+0653, lang/ur_IN/image/0653.gif, ٓ, ARABIC MADDAH ABOVE
-U+0654, lang/ur_IN/image/0654.gif, ٔ, ARABIC HAMZA ABOVE
-U+0655, lang/ur_IN/image/0655.gif, ٕ, ARABIC HAMZA BELOW

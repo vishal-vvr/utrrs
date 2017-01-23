@@ -1,6 +1,0 @@
-heading, location
-Independent Vowels, ../data/codepoint/IndicFontFeatureCodepoint-IndependentVowels.txt
-Dependent Vowels, ../data/codepoint/IndicFontFeatureCodepoint-DependentVowels.txt
-Consonants, ../data/codepoint/IndicFontFeatureCodepoint-Consonants.txt
-Various Signs, ../data/codepoint/IndicFontFeatureCodepoint-VariousSigns.txt
-Punctuation, ../data/codepoint/IndicFontFeatureCodepoint-Punctuation.txt

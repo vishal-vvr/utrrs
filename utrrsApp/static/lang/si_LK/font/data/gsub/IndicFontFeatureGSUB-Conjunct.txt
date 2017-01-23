@@ -1,2 +1,0 @@
-codepoint, imagepath, rawcode, desc
-//cons1 + 0dca + 200d + cons2//්‍

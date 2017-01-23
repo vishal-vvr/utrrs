@@ -1,7 +1,0 @@
-codepoint, imagepath, rawcode, desc
-
-U+0610, lang/ur_IN/image/0610.gif, ؐ, ARABIC SIGN SALLALLAHOU ALAYHE WASSALLAM
-U+0611, lang/ur_IN/image/0611.gif, ؑ, ARABIC SIGN ALAYHE ASSALLAM
-U+0612, lang/ur_IN/image/0612.gif, ؒ, ARABIC SIGN RAHMATULLAH ALAYHE
-U+0613, lang/ur_IN/image/0613.gif, ؓ, ARABIC SIGN ALLAHOU ANHU	
-U+0614, lang/ur_IN/image/0614.gif, ؔ, ARABIC SIGN TAKHALLUS

@@ -1,3 +1,0 @@
-codepoint, imagepath, rawcode, desc
-U+0915 U+0941 , image/0915-0941.jpg,  कु,	KA + U
-

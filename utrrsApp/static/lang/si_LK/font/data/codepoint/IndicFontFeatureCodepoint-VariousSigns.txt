@@ -1,5 +1,0 @@
-codepoint, imagepath, rawcode, desc
-
-U+0D82, image/0D82.jpg, ං, SINHALA SIGN ANUSVARAYA
-U+0D83, image/0D83.jpg, ඃ, SINHALA SIGN VISARGAYA
-U+0DCA, image/0DCA.jpg, ්, SINHALA SIGN AL-LAKUNA
