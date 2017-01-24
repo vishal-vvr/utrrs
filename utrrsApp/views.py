@@ -387,7 +387,7 @@ def german(request):
 		if request.is_ajax():
 			module_dir = os.path.dirname(__file__)
 			file_path = os.path.join(module_dir, 'static/lang/de_DE/font/data/codepoint/master_de_DE.txt')
-			img_path = os.path.join(module_dir, 'static/lang/de_DE/font/')
+			img_path = os.path.join(module_dir, 'static/lang/de_DE/font/tmp_images/')
 			font_path = os.path.join(module_dir, 'static/fonts/dejavu/DejaVuSans.ttf')
 			file = open(file_path)
 			data = file.read()
@@ -404,10 +404,10 @@ def german(request):
 				st = line.strip('\n')
 				sp = st.split(',')
 				name = sp[1].strip('image/').strip(".svg")
-				os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
+				#os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
 				or_name = sp[1].strip('.svg')
 				img1 = os.path.join(module_dir, 'static/lang/de_DE/font/%s.png' % or_name)
-				img2 = os.path.join(module_dir, 'static/lang/de_DE/font/%s.png' % name)
+				img2 = os.path.join(module_dir, 'static/lang/de_DE/font/tmp_images/%s.png' % name)
 				i1 = Image.open(img1)
 				i2 = Image.open(img2)
 				pairs = izip(i1.getdata(), i2.getdata())
@@ -430,7 +430,7 @@ def german(request):
 				pd.pop(1)
 				pdf_data.append(pd)
 				data_code.append(sp)
-				os.remove('%s.png' % name)
+				#os.remove('%s.png' % name)
 			"""PDF Generating"""
 			pdfmetrics.registerFont(TTFont('dejavu',font_path))
 			doc = SimpleDocTemplate("german-report.pdf", pagesize=A4, rightMargin=30,leftMargin=30, topMargin=30,bottomMargin=18)
@@ -501,7 +501,7 @@ def german_gpos(request):
 
 def german_pdf(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/de_DE/font/german-report.pdf')
+	file_path = os.path.join(module_dir, 'static/lang/de_DE/font/tmp_images/german-report.pdf')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/pdf')
 	response['Content-Disposition'] = 'attachment; filename=german-report.pdf'
@@ -510,7 +510,7 @@ def german_pdf(request):
 
 def german_csv(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/de_DE/font/german-report.csv')
+	file_path = os.path.join(module_dir, 'static/lang/de_DE/font/tmp_images/german-report.csv')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/csv')
 	response['Content-Disposition'] = 'attachment; filename=german-report.csv'
@@ -519,7 +519,7 @@ def german_csv(request):
 
 def german_txt(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/de_DE/font/german-report.txt')
+	file_path = os.path.join(module_dir, 'static/lang/de_DE/font/tmp_images/german-report.txt')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/text')
 	response['Content-Disposition'] = 'attachment; filename=german-report.txt'
@@ -531,7 +531,7 @@ def gujarati(request):
 		if request.is_ajax():
 			module_dir = os.path.dirname(__file__)
 			file_path = os.path.join(module_dir, 'static/lang/gu_IN/font/data/master_gu.txt')
-			img_path = os.path.join(module_dir, 'static/lang/gu_IN/font/')
+			img_path = os.path.join(module_dir, 'static/lang/gu_IN/font/tmp_images/')
 			font_path = os.path.join(module_dir, 'static/fonts/lohit-gujarati/Lohit-Gujarati.ttf')
 			file = open(file_path)
 			data = file.read()
@@ -548,10 +548,10 @@ def gujarati(request):
 				st = line.strip('\n')
 				sp = st.split(',')
 				name = sp[1].strip('image/').strip(".svg")
-				os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
+				#os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
 				or_name = sp[1].strip('.svg')
 				img1 = os.path.join(module_dir, 'static/lang/gu_IN/font/%s.png' % or_name)
-				img2 = os.path.join(module_dir, 'static/lang/gu_IN/font/%s.png' % name)
+				img2 = os.path.join(module_dir, 'static/lang/gu_IN/font/tmp_images/%s.png' % name)
 				i1 = Image.open(img1)
 				i2 = Image.open(img2)
 				pairs = izip(i1.getdata(), i2.getdata())
@@ -574,7 +574,7 @@ def gujarati(request):
 				pd.pop(1)
 				pdf_data.append(pd)
 				data_code.append(sp)
-				os.remove('%s.png' % name)
+				#os.remove('%s.png' % name)
 			"""PDF Generating"""
 			pdfmetrics.registerFont(TTFont('lohit-gujarati',font_path))
 			doc = SimpleDocTemplate("gujarati-report.pdf", pagesize=A4, rightMargin=30,leftMargin=30, topMargin=30,bottomMargin=18)
@@ -671,7 +671,7 @@ def gujarati_gpos(request):
 
 def gujarati_pdf(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/gu_IN/font/gujarati-report.pdf')
+	file_path = os.path.join(module_dir, 'static/lang/gu_IN/font/tmp_images/gujarati-report.pdf')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/pdf')
 	response['Content-Disposition'] = 'attachment; filename=gujarati-report.pdf'
@@ -680,7 +680,7 @@ def gujarati_pdf(request):
 
 def gujarati_csv(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/gu_IN/font/gujarati-report.csv')
+	file_path = os.path.join(module_dir, 'static/lang/gu_IN/font/tmp_images/gujarati-report.csv')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/csv')
 	response['Content-Disposition'] = 'attachment; filename=gujarati-report.csv'
@@ -689,7 +689,7 @@ def gujarati_csv(request):
 
 def gujarati_txt(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/gu_IN/font/gujarati-report.txt')
+	file_path = os.path.join(module_dir, 'static/lang/gu_IN/font/tmp_images/gujarati-report.txt')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/text')
 	response['Content-Disposition'] = 'attachment; filename=gujarati-report.txt'
@@ -701,7 +701,7 @@ def hindi(request):
 		if request.is_ajax():
 			module_dir = os.path.dirname(__file__)
 			file_path = os.path.join(module_dir, 'static/lang/hi_IN/font/data/master_hi.txt')
-			img_path = os.path.join(module_dir, 'static/lang/hi_IN/font/')
+			img_path = os.path.join(module_dir, 'static/lang/hi_IN/font/tmp_images/')
 			font_path = os.path.join(module_dir, 'static/fonts/lohit-devanagari/Lohit-Devanagari.ttf')
 			file = open(file_path)
 			data = file.read()
@@ -718,10 +718,10 @@ def hindi(request):
 				st = line.strip('\n')
 				sp = st.split(',')
 				name = sp[1].strip('image/').strip(".svg")
-				os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
+				#os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
 				or_name = sp[1].strip('.svg')
 				img1 = os.path.join(module_dir, 'static/lang/hi_IN/font/%s.png' % or_name)
-				img2 = os.path.join(module_dir, 'static/lang/hi_IN/font/%s.png' % name)
+				img2 = os.path.join(module_dir, 'static/lang/hi_IN/font/tmp_images/%s.png' % name)
 				i1 = Image.open(img1)
 				i2 = Image.open(img2)
 				pairs = izip(i1.getdata(), i2.getdata())
@@ -744,7 +744,7 @@ def hindi(request):
 				pd.pop(1)
 				pdf_data.append(pd)
 				data_code.append(sp)
-				os.remove('%s.png' % name)
+				#os.remove('%s.png' % name)
 			"""PDF Generating"""
 			pdfmetrics.registerFont(TTFont('lohit-devanagari',font_path))
 			doc = SimpleDocTemplate("hindi-report.pdf", pagesize=A4, rightMargin=30,leftMargin=30, topMargin=30,bottomMargin=18)
@@ -841,7 +841,7 @@ def hindi_gpos(request):
 
 def hindi_pdf(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/hi_IN/font/hindi-report.pdf')
+	file_path = os.path.join(module_dir, 'static/lang/hi_IN/font/tmp_images/hindi-report.pdf')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/pdf')
 	response['Content-Disposition'] = 'attachment; filename=hindi-report.pdf'
@@ -850,7 +850,7 @@ def hindi_pdf(request):
 
 def hindi_csv(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/hi_IN/font/hindi-report.csv')
+	file_path = os.path.join(module_dir, 'static/lang/hi_IN/font/tmp_images/hindi-report.csv')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/csv')
 	response['Content-Disposition'] = 'attachment; filename=hindi-report.csv'
@@ -859,7 +859,7 @@ def hindi_csv(request):
 
 def hindi_txt(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/hi_IN/font/hindi-report.txt')
+	file_path = os.path.join(module_dir, 'static/lang/hi_IN/font/tmp_images/hindi-report.txt')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/text')
 	response['Content-Disposition'] = 'attachment; filename=hindi-report.txt'
@@ -871,7 +871,7 @@ def kannada(request):
 		if request.is_ajax():
 			module_dir = os.path.dirname(__file__)
 			file_path = os.path.join(module_dir, 'static/lang/kn_IN/font/data/master_kn.txt')
-			img_path = os.path.join(module_dir, 'static/lang/kn_IN/font/')
+			img_path = os.path.join(module_dir, 'static/lang/kn_IN/font/tmp_images/')
 			font_path = os.path.join(module_dir, 'static/fonts/lohit-kannada/Lohit-Kannada.ttf')
 			file = open(file_path)
 			data = file.read()
@@ -888,10 +888,10 @@ def kannada(request):
 				st = line.strip('\n')
 				sp = st.split(',')
 				name = sp[1].strip('image/').strip(".svg")
-				os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
+				#os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
 				or_name = sp[1].strip('.svg')
 				img1 = os.path.join(module_dir, 'static/lang/kn_IN/font/%s.png' % or_name)
-				img2 = os.path.join(module_dir, 'static/lang/kn_IN/font/%s.png' % name)
+				img2 = os.path.join(module_dir, 'static/lang/kn_IN/font/tmp_images/%s.png' % name)
 				i1 = Image.open(img1)
 				i2 = Image.open(img2)
 				pairs = izip(i1.getdata(), i2.getdata())
@@ -914,7 +914,7 @@ def kannada(request):
 				pd.pop(1)
 				pdf_data.append(pd)
 				data_code.append(sp)
-				os.remove('%s.png' % name)
+				#os.remove('%s.png' % name)
 			"""PDF Generating"""
 			pdfmetrics.registerFont(TTFont('lohit-kannada',font_path))
 			doc = SimpleDocTemplate("kannada-report.pdf", pagesize=A4, rightMargin=30,leftMargin=30, topMargin=30,bottomMargin=18)
@@ -1011,7 +1011,7 @@ def kannada_gpos(request):
 
 def kannada_pdf(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/kn_IN/font/kannada-report.pdf')
+	file_path = os.path.join(module_dir, 'static/lang/kn_IN/font/tmp_images/kannada-report.pdf')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/pdf')
 	response['Content-Disposition'] = 'attachment; filename=kannada-report.pdf'
@@ -1020,7 +1020,7 @@ def kannada_pdf(request):
 
 def kannada_csv(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/kn_IN/font/kannada-report.csv')
+	file_path = os.path.join(module_dir, 'static/lang/kn_IN/font/tmp_images/kannada-report.csv')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/csv')
 	response['Content-Disposition'] = 'attachment; filename=kannada-report.csv'
@@ -1029,7 +1029,7 @@ def kannada_csv(request):
 
 def kannada_txt(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/kn_IN/font/kannada-report.txt')
+	file_path = os.path.join(module_dir, 'static/lang/kn_IN/font/tmp_images/kannada-report.txt')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/text')
 	response['Content-Disposition'] = 'attachment; filename=kannada-report.txt'
@@ -1041,7 +1041,7 @@ def maithili(request):
 		if request.is_ajax():
 			module_dir = os.path.dirname(__file__)
 			file_path = os.path.join(module_dir, 'static/lang/mai_IN/font/data/master_mai.txt')
-			img_path = os.path.join(module_dir, 'static/lang/mai_IN/font/')
+			img_path = os.path.join(module_dir, 'static/lang/mai_IN/font/tmp_images/')
 			font_path = os.path.join(module_dir, 'static/fonts/lohit-devanagari/Lohit-Devanagari.ttf')
 			file = open(file_path)
 			data = file.read()
@@ -1058,10 +1058,10 @@ def maithili(request):
 				st = line.strip('\n')
 				sp = st.split(',')
 				name = sp[1].strip('image/').strip(".svg")
-				os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
+				#os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
 				or_name = sp[1].strip('.svg')
 				img1 = os.path.join(module_dir, 'static/lang/mai_IN/font/%s.png' % or_name)
-				img2 = os.path.join(module_dir, 'static/lang/mai_IN/font/%s.png' % name)
+				img2 = os.path.join(module_dir, 'static/lang/mai_IN/font/tmp_images/%s.png' % name)
 				i1 = Image.open(img1)
 				i2 = Image.open(img2)
 				pairs = izip(i1.getdata(), i2.getdata())
@@ -1084,7 +1084,7 @@ def maithili(request):
 				pd.pop(1)
 				pdf_data.append(pd)
 				data_code.append(sp)
-				os.remove('%s.png' % name)
+				#os.remove('%s.png' % name)
 			"""PDF Generating"""
 			pdfmetrics.registerFont(TTFont('lohit-devanagari',font_path))
 			doc = SimpleDocTemplate("maithili-report.pdf", pagesize=A4, rightMargin=30,leftMargin=30, topMargin=30,bottomMargin=18)
@@ -1181,7 +1181,7 @@ def maithili_gpos(request):
 
 def maithili_pdf(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/mai_IN/font/maithili-report.pdf')
+	file_path = os.path.join(module_dir, 'static/lang/mai_IN/font/tmp_images/maithili-report.pdf')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/pdf')
 	response['Content-Disposition'] = 'attachment; filename=maithili-report.pdf'
@@ -1190,7 +1190,7 @@ def maithili_pdf(request):
 
 def maithili_csv(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/mai_IN/font/maithili-report.csv')
+	file_path = os.path.join(module_dir, 'static/lang/mai_IN/font/tmp_images/maithili-report.csv')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/csv')
 	response['Content-Disposition'] = 'attachment; filename=maithili-report.csv'
@@ -1199,7 +1199,7 @@ def maithili_csv(request):
 
 def maithili_txt(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/mai_IN/font/maithili-report.txt')
+	file_path = os.path.join(module_dir, 'static/lang/mai_IN/font/tmp_images/maithili-report.txt')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/text')
 	response['Content-Disposition'] = 'attachment; filename=maithili-report.txt'
@@ -1211,7 +1211,7 @@ def malayalam(request):
 		if request.is_ajax():
 			module_dir = os.path.dirname(__file__)
 			file_path = os.path.join(module_dir, 'static/lang/ml_IN/font/data/master_ml.txt')
-			img_path = os.path.join(module_dir, 'static/lang/ml_IN/font/')
+			img_path = os.path.join(module_dir, 'static/lang/ml_IN/font/tmp_images/')
 			font_path = os.path.join(module_dir, 'static/fonts/smc/Meera.ttf')
 			file = open(file_path)
 			data = file.read()
@@ -1228,10 +1228,10 @@ def malayalam(request):
 				st = line.strip('\n')
 				sp = st.split(',')
 				name = sp[1].strip('image/').strip(".svg")
-				os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
+				#os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
 				or_name = sp[1].strip('.svg')
 				img1 = os.path.join(module_dir, 'static/lang/ml_IN/font/%s.png' % or_name)
-				img2 = os.path.join(module_dir, 'static/lang/ml_IN/font/%s.png' % name)
+				img2 = os.path.join(module_dir, 'static/lang/ml_IN/font/tmp_images/%s.png' % name)
 				i1 = Image.open(img1)
 				i2 = Image.open(img2)
 				pairs = izip(i1.getdata(), i2.getdata())
@@ -1254,7 +1254,7 @@ def malayalam(request):
 				pd.pop(1)
 				pdf_data.append(pd)
 				data_code.append(sp)
-				os.remove('%s.png' % name)
+				#os.remove('%s.png' % name)
 			"""PDF Generating"""
 			pdfmetrics.registerFont(TTFont('smc',font_path))
 			doc = SimpleDocTemplate("malayalam-report.pdf", pagesize=A4, rightMargin=0,leftMargin=0, topMargin=30,bottomMargin=18)
@@ -1338,7 +1338,7 @@ def malayalam_gpos(request):
 
 def malayalam_pdf(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/ml_IN/font/malayalam-report.pdf')
+	file_path = os.path.join(module_dir, 'static/lang/ml_IN/font/tmp_images/malayalam-report.pdf')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/pdf')
 	response['Content-Disposition'] = 'attachment; filename=malayalam-report.pdf'
@@ -1347,7 +1347,7 @@ def malayalam_pdf(request):
 
 def malayalam_csv(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/ml_IN/font/malayalam-report.csv')
+	file_path = os.path.join(module_dir, 'static/lang/ml_IN/font/tmp_images/malayalam-report.csv')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/csv')
 	response['Content-Disposition'] = 'attachment; filename=malayalam-report.csv'
@@ -1356,7 +1356,7 @@ def malayalam_csv(request):
 
 def malayalam_txt(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/ml_IN/font/malayalam-report.txt')
+	file_path = os.path.join(module_dir, 'static/lang/ml_IN/font/tmp_images/malayalam-report.txt')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/text')
 	response['Content-Disposition'] = 'attachment; filename=malayalam-report.txt'
@@ -1368,7 +1368,7 @@ def marathi(request):
 		if request.is_ajax():
 			module_dir = os.path.dirname(__file__)
 			file_path = os.path.join(module_dir, 'static/lang/mr_IN/font/data/master_mr.txt')
-			img_path = os.path.join(module_dir, 'static/lang/mr_IN/font/')
+			img_path = os.path.join(module_dir, 'static/lang/mr_IN/font/tmp_images/')
 			font_path = os.path.join(module_dir, 'static/fonts/lohit-devanagari/Lohit-Devanagari.ttf')
 			file = open(file_path)
 			data = file.read()
@@ -1385,10 +1385,10 @@ def marathi(request):
 				st = line.strip('\n')
 				sp = st.split(',')
 				name = sp[1].strip('image/').strip(".svg")
-				os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
+				#os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
 				or_name = sp[1].strip('.svg')
 				img1 = os.path.join(module_dir, 'static/lang/mr_IN/font/%s.png' % or_name)
-				img2 = os.path.join(module_dir, 'static/lang/mr_IN/font/%s.png' % name)
+				img2 = os.path.join(module_dir, 'static/lang/mr_IN/font/tmp_images/%s.png' % name)
 				i1 = Image.open(img1)
 				i2 = Image.open(img2)
 				pairs = izip(i1.getdata(), i2.getdata())
@@ -1411,7 +1411,7 @@ def marathi(request):
 				pd.pop(1)
 				pdf_data.append(pd)
 				data_code.append(sp)
-				os.remove('%s.png' % name)
+				#os.remove('%s.png' % name)
 			"""PDF Generating"""
 			pdfmetrics.registerFont(TTFont('lohit-devanagari',font_path))
 			doc = SimpleDocTemplate("marathi-report.pdf", pagesize=A4, rightMargin=30,leftMargin=30, topMargin=30,bottomMargin=18)
@@ -1508,7 +1508,7 @@ def marathi_gpos(request):
 
 def marathi_pdf(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/mr_IN/font/marathi-report.pdf')
+	file_path = os.path.join(module_dir, 'static/lang/mr_IN/font/tmp_images/marathi-report.pdf')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/pdf')
 	response['Content-Disposition'] = 'attachment; filename=marathi-report.pdf'
@@ -1517,7 +1517,7 @@ def marathi_pdf(request):
 
 def marathi_csv(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/mr_IN/font/marathi-report.csv')
+	file_path = os.path.join(module_dir, 'static/lang/mr_IN/font/tmp_images/marathi-report.csv')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/csv')
 	response['Content-Disposition'] = 'attachment; filename=marathi-report.csv'
@@ -1526,7 +1526,7 @@ def marathi_csv(request):
 
 def marathi_txt(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/mr_IN/font/marathi-report.txt')
+	file_path = os.path.join(module_dir, 'static/lang/mr_IN/font/tmp_images/marathi-report.txt')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/text')
 	response['Content-Disposition'] = 'attachment; filename=marathi-report.txt'
@@ -1538,7 +1538,7 @@ def odia(request):
 		if request.is_ajax():
 			module_dir = os.path.dirname(__file__)
 			file_path = os.path.join(module_dir, 'static/lang/or_IN/font/data/master_or.txt')
-			img_path = os.path.join(module_dir, 'static/lang/or_IN/font/')
+			img_path = os.path.join(module_dir, 'static/lang/or_IN/font/tmp_images/')
 			font_path = os.path.join(module_dir, 'static/fonts/lohit-odia/Lohit-Odia.ttf')
 			file = open(file_path)
 			data = file.read()
@@ -1555,10 +1555,10 @@ def odia(request):
 				st = line.strip('\n')
 				sp = st.split(',')
 				name = sp[1].strip('image/').strip(".svg")
-				os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
+				#os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
 				or_name = sp[1].strip('.svg')
 				img1 = os.path.join(module_dir, 'static/lang/or_IN/font/%s.png' % or_name)
-				img2 = os.path.join(module_dir, 'static/lang/or_IN/font/%s.png' % name)
+				img2 = os.path.join(module_dir, 'static/lang/or_IN/font/tmp_images/%s.png' % name)
 				i1 = Image.open(img1)
 				i2 = Image.open(img2)
 				pairs = izip(i1.getdata(), i2.getdata())
@@ -1581,7 +1581,7 @@ def odia(request):
 				pd.pop(1)
 				pdf_data.append(pd)
 				data_code.append(sp)
-				os.remove('%s.png' % name)
+				#os.remove('%s.png' % name)
 			"""PDF Generating"""
 			pdfmetrics.registerFont(TTFont('lohit-odia',font_path))
 			doc = SimpleDocTemplate("odia-report.pdf", pagesize=A4, rightMargin=30,leftMargin=30, topMargin=30,bottomMargin=18)
@@ -1678,7 +1678,7 @@ def odia_gpos(request):
 
 def odia_pdf(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/or_IN/font/odia-report.pdf')
+	file_path = os.path.join(module_dir, 'static/lang/or_IN/font/tmp_images/odia-report.pdf')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/pdf')
 	response['Content-Disposition'] = 'attachment; filename=odia-report.pdf'
@@ -1687,7 +1687,7 @@ def odia_pdf(request):
 
 def odia_csv(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/or_IN/font/odia-report.csv')
+	file_path = os.path.join(module_dir, 'static/lang/or_IN/font/tmp_images/odia-report.csv')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/csv')
 	response['Content-Disposition'] = 'attachment; filename=odia-report.csv'
@@ -1696,7 +1696,7 @@ def odia_csv(request):
 
 def odia_txt(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/or_IN/font/odia-report.txt')
+	file_path = os.path.join(module_dir, 'static/lang/or_IN/font/tmp_images/odia-report.txt')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/text')
 	response['Content-Disposition'] = 'attachment; filename=odia-report.txt'
@@ -1708,7 +1708,7 @@ def punjabi(request):
 		if request.is_ajax():
 			module_dir = os.path.dirname(__file__)
 			file_path = os.path.join(module_dir, 'static/lang/pa_IN/font/data/master_pa.txt')
-			img_path = os.path.join(module_dir, 'static/lang/pa_IN/font/')
+			img_path = os.path.join(module_dir, 'static/lang/pa_IN/font/tmp_images/')
 			font_path = os.path.join(module_dir, 'static/fonts/lohit-gurmukhi/Lohit-Gurmukhi.ttf')
 			file = open(file_path)
 			data = file.read()
@@ -1725,10 +1725,10 @@ def punjabi(request):
 				st = line.strip('\n')
 				sp = st.split(',')
 				name = sp[1].strip('image/').strip(".svg")
-				os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
+				#os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
 				or_name = sp[1].strip('.svg')
 				img1 = os.path.join(module_dir, 'static/lang/pa_IN/font/%s.png' % or_name)
-				img2 = os.path.join(module_dir, 'static/lang/pa_IN/font/%s.png' % name)
+				img2 = os.path.join(module_dir, 'static/lang/pa_IN/font/tmp_images/%s.png' % name)
 				i1 = Image.open(img1)
 				i2 = Image.open(img2)
 				pairs = izip(i1.getdata(), i2.getdata())
@@ -1751,7 +1751,7 @@ def punjabi(request):
 				pd.pop(1)
 				pdf_data.append(pd)
 				data_code.append(sp)
-				os.remove('%s.png' % name)
+				#os.remove('%s.png' % name)
 			"""PDF Generating"""
 			pdfmetrics.registerFont(TTFont('lohit-gurmukhi',font_path))
 			doc = SimpleDocTemplate("punjabi-report.pdf", pagesize=A4, rightMargin=30,leftMargin=30, topMargin=30,bottomMargin=18)
@@ -1848,7 +1848,7 @@ def punjabi_gpos(request):
 
 def punjabi_pdf(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/pa_IN/font/punjabi-report.pdf')
+	file_path = os.path.join(module_dir, 'static/lang/pa_IN/font/tmp_images/punjabi-report.pdf')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/pdf')
 	response['Content-Disposition'] = 'attachment; filename=punjabi-report.pdf'
@@ -1857,7 +1857,7 @@ def punjabi_pdf(request):
 
 def punjabi_csv(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/pa_IN/font/punjabi-report.csv')
+	file_path = os.path.join(module_dir, 'static/lang/pa_IN/font/tmp_images/punjabi-report.csv')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/csv')
 	response['Content-Disposition'] = 'attachment; filename=punjabi-report.csv'
@@ -1866,7 +1866,7 @@ def punjabi_csv(request):
 
 def punjabi_txt(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/pa_IN/font/punjabi-report.txt')
+	file_path = os.path.join(module_dir, 'static/lang/pa_IN/font/tmp_images/punjabi-report.txt')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/text')
 	response['Content-Disposition'] = 'attachment; filename=punjabi-report.txt'
@@ -1878,7 +1878,7 @@ def tamil(request):
 		if request.is_ajax():
 			module_dir = os.path.dirname(__file__)
 			file_path = os.path.join(module_dir, 'static/lang/ta_IN/font/data/master_ta.txt')
-			img_path = os.path.join(module_dir, 'static/lang/ta_IN/font/')
+			img_path = os.path.join(module_dir, 'static/lang/ta_IN/font/tmp_images/')
 			font_path = os.path.join(module_dir, 'static/fonts/lohit-tamil/Lohit-Tamil.ttf')
 			file = open(file_path)
 			data = file.read()
@@ -1895,10 +1895,10 @@ def tamil(request):
 				st = line.strip('\n')
 				sp = st.split(',')
 				name = sp[1].strip('image/').strip(".svg")
-				os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
+				#os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
 				or_name = sp[1].strip('.svg')
 				img1 = os.path.join(module_dir, 'static/lang/ta_IN/font/%s.png' % or_name)
-				img2 = os.path.join(module_dir, 'static/lang/ta_IN/font/%s.png' % name)
+				img2 = os.path.join(module_dir, 'static/lang/ta_IN/font/tmp_images/%s.png' % name)
 				i1 = Image.open(img1)
 				i2 = Image.open(img2)
 				pairs = izip(i1.getdata(), i2.getdata())
@@ -1921,7 +1921,7 @@ def tamil(request):
 				pd.pop(1)
 				pdf_data.append(pd)
 				data_code.append(sp)
-				os.remove('%s.png' % name)
+				#os.remove('%s.png' % name)
 			"""PDF Generating"""
 			pdfmetrics.registerFont(TTFont('lohit-tamil',font_path))
 			doc = SimpleDocTemplate("tamil-report.pdf", pagesize=A4, rightMargin=30,leftMargin=30, topMargin=30,bottomMargin=18)
@@ -2018,7 +2018,7 @@ def tamil_gpos(request):
 
 def tamil_pdf(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/ta_IN/font/tamil-report.pdf')
+	file_path = os.path.join(module_dir, 'static/lang/ta_IN/font/tmp_images/tamil-report.pdf')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/pdf')
 	response['Content-Disposition'] = 'attachment; filename=tamil-report.pdf'
@@ -2027,7 +2027,7 @@ def tamil_pdf(request):
 
 def tamil_csv(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/ta_IN/font/tamil-report.csv')
+	file_path = os.path.join(module_dir, 'static/lang/ta_IN/font/tmp_images/tamil-report.csv')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/csv')
 	response['Content-Disposition'] = 'attachment; filename=tamil-report.csv'
@@ -2036,7 +2036,7 @@ def tamil_csv(request):
 
 def tamil_txt(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/ta_IN/font/tamil-report.txt')
+	file_path = os.path.join(module_dir, 'static/lang/ta_IN/font/tmp_images/tamil-report.txt')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/text')
 	response['Content-Disposition'] = 'attachment; filename=tamil-report.txt'
@@ -2048,7 +2048,7 @@ def telugu(request):
 		if request.is_ajax():
 			module_dir = os.path.dirname(__file__)
 			file_path = os.path.join(module_dir, 'static/lang/te_IN/font/data/master_te.txt')
-			img_path = os.path.join(module_dir, 'static/lang/te_IN/font/')
+			img_path = os.path.join(module_dir, 'static/lang/te_IN/font/tmp_images/')
 			font_path = os.path.join(module_dir, 'static/fonts/lohit-telugu/Lohit-Telugu.ttf')
 			file = open(file_path)
 			data = file.read()
@@ -2065,10 +2065,10 @@ def telugu(request):
 				st = line.strip('\n')
 				sp = st.split(',')
 				name = sp[1].strip('image/').strip(".svg")
-				os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
+				#os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
 				or_name = sp[1].strip('.svg')
 				img1 = os.path.join(module_dir, 'static/lang/te_IN/font/%s.png' % or_name)
-				img2 = os.path.join(module_dir, 'static/lang/te_IN/font/%s.png' % name)
+				img2 = os.path.join(module_dir, 'static/lang/te_IN/font/tmp_images/%s.png' % name)
 				i1 = Image.open(img1)
 				i2 = Image.open(img2)
 				pairs = izip(i1.getdata(), i2.getdata())
@@ -2091,7 +2091,7 @@ def telugu(request):
 				pd.pop(1)
 				pdf_data.append(pd)
 				data_code.append(sp)
-				os.remove('%s.png' % name)
+				#os.remove('%s.png' % name)
 			"""PDF Generating"""
 			pdfmetrics.registerFont(TTFont('lohit-telugu',font_path))
 			doc = SimpleDocTemplate("telugu-report.pdf", pagesize=A4, rightMargin=30,leftMargin=30, topMargin=30,bottomMargin=18)
@@ -2188,7 +2188,7 @@ def telugu_gpos(request):
 
 def telugu_pdf(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/te_IN/font/telugu-report.pdf')
+	file_path = os.path.join(module_dir, 'static/lang/te_IN/font/tmp_images/telugu-report.pdf')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/pdf')
 	response['Content-Disposition'] = 'attachment; filename=telugu-report.pdf'
@@ -2197,7 +2197,7 @@ def telugu_pdf(request):
 
 def telugu_csv(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/te_IN/font/telugu-report.csv')
+	file_path = os.path.join(module_dir, 'static/lang/te_IN/font/tmp_images/telugu-report.csv')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/csv')
 	response['Content-Disposition'] = 'attachment; filename=telugu-report.csv'
@@ -2206,7 +2206,7 @@ def telugu_csv(request):
 
 def telugu_txt(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/te_IN/font/telugu-report.txt')
+	file_path = os.path.join(module_dir, 'static/lang/te_IN/font/tmp_images/telugu-report.txt')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/text')
 	response['Content-Disposition'] = 'attachment; filename=telugu-report.txt'
@@ -2218,7 +2218,7 @@ def japanese(request):
 		if request.is_ajax():
 			module_dir = os.path.dirname(__file__)
 			file_path = os.path.join(module_dir, 'static/lang/ja_JP/font/data/master_ja.txt')
-			img_path = os.path.join(module_dir, 'static/lang/ja_JP/font/')
+			img_path = os.path.join(module_dir, 'static/lang/ja_JP/font/tmp_images/')
 			font_path = os.path.join(module_dir, 'static/fonts/vlgothic/VL-Gothic-Regular.ttf')
 			file = open(file_path)
 			data = file.read()
@@ -2235,10 +2235,10 @@ def japanese(request):
 				st = line.strip('\n')
 				sp = st.split(',')
 				name = sp[1].strip('image/').strip(".svg")
-				os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
+				#os.system('hb-view %s %s --output-format=png --output-file=%s.png' % (font_path, sp[2], name))
 				or_name = sp[1].strip('.svg')
 				img1 = os.path.join(module_dir, 'static/lang/ja_JP/font/%s.png' % or_name)
-				img2 = os.path.join(module_dir, 'static/lang/ja_JP/font/%s.png' % name)
+				img2 = os.path.join(module_dir, 'static/lang/ja_JP/font/tmp_images/%s.png' % name)
 				i1 = Image.open(img1)
 				i2 = Image.open(img2)
 				pairs = izip(i1.getdata(), i2.getdata())
@@ -2261,7 +2261,7 @@ def japanese(request):
 				pd.pop(1)
 				pdf_data.append(pd)
 				data_code.append(sp)
-				os.remove('%s.png' % name)
+				#os.remove('%s.png' % name)
 			"""PDF Generating"""
 			pdfmetrics.registerFont(TTFont('vlgothic',font_path))
 			doc = SimpleDocTemplate("japanese-report.pdf", pagesize=A4, rightMargin=30,leftMargin=30, topMargin=30,bottomMargin=18)
@@ -2345,7 +2345,7 @@ def japanese_gpos(request):
 
 def japanese_pdf(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/ja_JP/font/japanese-report.pdf')
+	file_path = os.path.join(module_dir, 'static/lang/ja_JP/font/tmp_images/japanese-report.pdf')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/pdf')
 	response['Content-Disposition'] = 'attachment; filename=japanese-report.pdf'
@@ -2354,7 +2354,7 @@ def japanese_pdf(request):
 
 def japanese_csv(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/ja_JP/font/japanese-report.csv')
+	file_path = os.path.join(module_dir, 'static/lang/ja_JP/font/tmp_images/japanese-report.csv')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/csv')
 	response['Content-Disposition'] = 'attachment; filename=japanese-report.csv'
@@ -2363,7 +2363,7 @@ def japanese_csv(request):
 
 def japanese_txt(request):
 	module_dir = os.path.dirname(__file__)
-	file_path = os.path.join(module_dir, 'static/lang/ja_JP/font/japanese-report.txt')
+	file_path = os.path.join(module_dir, 'static/lang/ja_JP/font/tmp_images/japanese-report.txt')
 	file = open(file_path, "r")
 	response = HttpResponse(FileWrapper(file), content_type='application/text')
 	response['Content-Disposition'] = 'attachment; filename=japanese-report.txt'
