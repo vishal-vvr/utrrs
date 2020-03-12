@@ -14,7 +14,6 @@ from reportlab.platypus import SimpleDocTemplate, Spacer, Table, TableStyle, Par
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from terminaltables import AsciiTable
-from itertools import izip
 from PIL import Image
 
 def home(request):
@@ -62,7 +61,7 @@ def assamese(request):
 				img2 = os.path.join(module_dir, 'static/lang/as_IN/font/tmp_images/%s.png' % name)
 				i1 = Image.open(img1)
 				i2 = Image.open(img2)
-				pairs = izip(i1.getdata(), i2.getdata())
+				pairs = zip(i1.getdata(), i2.getdata())
 				if len(i1.getbands()) == 1:
 					dif = sum(abs(p1-p2) for p1,p2 in pairs)
 				else:
@@ -111,7 +110,7 @@ def assamese(request):
 			table_instance.inner_row_border = True
 			with open('assamese-report.txt','w') as f:
 				f.write(table_instance.table)
-    		return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
+			return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
 		return render(request, 'assamese.html')
 	else:
 		module_dir = os.path.dirname(__file__)
@@ -237,7 +236,7 @@ def bengali(request):
 				img2 = os.path.join(module_dir, 'static/lang/bn_IN/font/tmp_images/%s.png' % name)
 				i1 = Image.open(img1)
 				i2 = Image.open(img2)
-				pairs = izip(i1.getdata(), i2.getdata())
+				pairs = zip(i1.getdata(), i2.getdata())
 				if len(i1.getbands()) == 1:
 					dif = sum(abs(p1-p2) for p1,p2 in pairs)
 				else:
@@ -286,7 +285,7 @@ def bengali(request):
 			table_instance.inner_row_border = True
 			with open('bengali-report.txt','w') as f:
 				f.write(table_instance.table)
-    		return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
+			return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
 		return render(request, 'bengali.html')
 	else:
 		module_dir = os.path.dirname(__file__)
@@ -410,7 +409,7 @@ def german(request):
 				img2 = os.path.join(module_dir, 'static/lang/de_DE/font/tmp_images/%s.png' % name)
 				i1 = Image.open(img1)
 				i2 = Image.open(img2)
-				pairs = izip(i1.getdata(), i2.getdata())
+				pairs = zip(i1.getdata(), i2.getdata())
 				if len(i1.getbands()) == 1:
 					dif = sum(abs(p1-p2) for p1,p2 in pairs)
 				else:
@@ -459,7 +458,7 @@ def german(request):
 			table_instance.inner_row_border = True
 			with open('german-report.txt','w') as f:
 				f.write(table_instance.table)
-    		return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
+			return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
 		return render(request, 'german.html')
 	else:
 		module_dir = os.path.dirname(__file__)
@@ -554,7 +553,7 @@ def gujarati(request):
 				img2 = os.path.join(module_dir, 'static/lang/gu_IN/font/tmp_images/%s.png' % name)
 				i1 = Image.open(img1)
 				i2 = Image.open(img2)
-				pairs = izip(i1.getdata(), i2.getdata())
+				pairs = zip(i1.getdata(), i2.getdata())
 				if len(i1.getbands()) == 1:
 					dif = sum(abs(p1-p2) for p1,p2 in pairs)
 				else:
@@ -603,7 +602,7 @@ def gujarati(request):
 			table_instance.inner_row_border = True
 			with open('gujarati-report.txt','w') as f:
 				f.write(table_instance.table)
-    		return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
+			return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
 		return render(request, 'gujarati.html')
 	else:
 		module_dir = os.path.dirname(__file__)
@@ -724,7 +723,7 @@ def hindi(request):
 				img2 = os.path.join(module_dir, 'static/lang/hi_IN/font/tmp_images/%s.png' % name)
 				i1 = Image.open(img1)
 				i2 = Image.open(img2)
-				pairs = izip(i1.getdata(), i2.getdata())
+				pairs = zip(i1.getdata(), i2.getdata())
 				if len(i1.getbands()) == 1:
 					dif = sum(abs(p1-p2) for p1,p2 in pairs)
 				else:
@@ -773,7 +772,7 @@ def hindi(request):
 			table_instance.inner_row_border = True
 			with open('hindi-report.txt','w') as f:
 				f.write(table_instance.table)
-    		return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
+			return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
 		return render(request, 'hindi.html')
 	else:
 		module_dir = os.path.dirname(__file__)
@@ -894,7 +893,7 @@ def kannada(request):
 				img2 = os.path.join(module_dir, 'static/lang/kn_IN/font/tmp_images/%s.png' % name)
 				i1 = Image.open(img1)
 				i2 = Image.open(img2)
-				pairs = izip(i1.getdata(), i2.getdata())
+				pairs = zip(i1.getdata(), i2.getdata())
 				if len(i1.getbands()) == 1:
 					dif = sum(abs(p1-p2) for p1,p2 in pairs)
 				else:
@@ -943,7 +942,7 @@ def kannada(request):
 			table_instance.inner_row_border = True
 			with open('kannada-report.txt','w') as f:
 				f.write(table_instance.table)
-    		return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
+			return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
 		return render(request, 'kannada.html')
 	else:
 		module_dir = os.path.dirname(__file__)
@@ -1064,7 +1063,7 @@ def maithili(request):
 				img2 = os.path.join(module_dir, 'static/lang/mai_IN/font/tmp_images/%s.png' % name)
 				i1 = Image.open(img1)
 				i2 = Image.open(img2)
-				pairs = izip(i1.getdata(), i2.getdata())
+				pairs = zip(i1.getdata(), i2.getdata())
 				if len(i1.getbands()) == 1:
 					dif = sum(abs(p1-p2) for p1,p2 in pairs)
 				else:
@@ -1113,7 +1112,7 @@ def maithili(request):
 			table_instance.inner_row_border = True
 			with open('maithili-report.txt','w') as f:
 				f.write(table_instance.table)
-    		return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
+			return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
 		return render(request, 'maithili.html')
 	else:
 		module_dir = os.path.dirname(__file__)
@@ -1234,7 +1233,7 @@ def malayalam(request):
 				img2 = os.path.join(module_dir, 'static/lang/ml_IN/font/tmp_images/%s.png' % name)
 				i1 = Image.open(img1)
 				i2 = Image.open(img2)
-				pairs = izip(i1.getdata(), i2.getdata())
+				pairs = zip(i1.getdata(), i2.getdata())
 				if len(i1.getbands()) == 1:
 					dif = sum(abs(p1-p2) for p1,p2 in pairs)
 				else:
@@ -1283,7 +1282,7 @@ def malayalam(request):
 			table_instance.inner_row_border = True
 			with open('malayalam-report.txt','w') as f:
 				f.write(table_instance.table)
-    		return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
+			return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
 		return render(request, 'malayalam.html')
 	else:
 		module_dir = os.path.dirname(__file__)
@@ -1391,7 +1390,7 @@ def marathi(request):
 				img2 = os.path.join(module_dir, 'static/lang/mr_IN/font/tmp_images/%s.png' % name)
 				i1 = Image.open(img1)
 				i2 = Image.open(img2)
-				pairs = izip(i1.getdata(), i2.getdata())
+				pairs = zip(i1.getdata(), i2.getdata())
 				if len(i1.getbands()) == 1:
 					dif = sum(abs(p1-p2) for p1,p2 in pairs)
 				else:
@@ -1440,7 +1439,7 @@ def marathi(request):
 			table_instance.inner_row_border = True
 			with open('marathi-report.txt','w') as f:
 				f.write(table_instance.table)
-    		return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
+			return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
 		return render(request, 'marathi.html')
 	else:
 		module_dir = os.path.dirname(__file__)
@@ -1561,7 +1560,7 @@ def odia(request):
 				img2 = os.path.join(module_dir, 'static/lang/or_IN/font/tmp_images/%s.png' % name)
 				i1 = Image.open(img1)
 				i2 = Image.open(img2)
-				pairs = izip(i1.getdata(), i2.getdata())
+				pairs = zip(i1.getdata(), i2.getdata())
 				if len(i1.getbands()) == 1:
 					dif = sum(abs(p1-p2) for p1,p2 in pairs)
 				else:
@@ -1610,7 +1609,7 @@ def odia(request):
 			table_instance.inner_row_border = True
 			with open('odia-report.txt','w') as f:
 				f.write(table_instance.table)
-    		return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
+			return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
 		return render(request, 'odia.html')
 	else:
 		module_dir = os.path.dirname(__file__)
@@ -1731,7 +1730,7 @@ def punjabi(request):
 				img2 = os.path.join(module_dir, 'static/lang/pa_IN/font/tmp_images/%s.png' % name)
 				i1 = Image.open(img1)
 				i2 = Image.open(img2)
-				pairs = izip(i1.getdata(), i2.getdata())
+				pairs = zip(i1.getdata(), i2.getdata())
 				if len(i1.getbands()) == 1:
 					dif = sum(abs(p1-p2) for p1,p2 in pairs)
 				else:
@@ -1780,7 +1779,7 @@ def punjabi(request):
 			table_instance.inner_row_border = True
 			with open('punjabi-report.txt','w') as f:
 				f.write(table_instance.table)
-    		return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
+			return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
 		return render(request, 'punjabi.html')
 	else:
 		module_dir = os.path.dirname(__file__)
@@ -1901,7 +1900,7 @@ def tamil(request):
 				img2 = os.path.join(module_dir, 'static/lang/ta_IN/font/tmp_images/%s.png' % name)
 				i1 = Image.open(img1)
 				i2 = Image.open(img2)
-				pairs = izip(i1.getdata(), i2.getdata())
+				pairs = zip(i1.getdata(), i2.getdata())
 				if len(i1.getbands()) == 1:
 					dif = sum(abs(p1-p2) for p1,p2 in pairs)
 				else:
@@ -1950,7 +1949,7 @@ def tamil(request):
 			table_instance.inner_row_border = True
 			with open('tamil-report.txt','w') as f:
 				f.write(table_instance.table)
-    		return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
+			return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
 		return render(request, 'tamil.html')
 	else:
 		module_dir = os.path.dirname(__file__)
@@ -2071,7 +2070,7 @@ def telugu(request):
 				img2 = os.path.join(module_dir, 'static/lang/te_IN/font/tmp_images/%s.png' % name)
 				i1 = Image.open(img1)
 				i2 = Image.open(img2)
-				pairs = izip(i1.getdata(), i2.getdata())
+				pairs = zip(i1.getdata(), i2.getdata())
 				if len(i1.getbands()) == 1:
 					dif = sum(abs(p1-p2) for p1,p2 in pairs)
 				else:
@@ -2120,7 +2119,7 @@ def telugu(request):
 			table_instance.inner_row_border = True
 			with open('telugu-report.txt','w') as f:
 				f.write(table_instance.table)
-    		return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
+			return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
 		return render(request, 'telugu.html')
 	else:
 		module_dir = os.path.dirname(__file__)
@@ -2241,7 +2240,7 @@ def japanese(request):
 				img2 = os.path.join(module_dir, 'static/lang/ja_JP/font/tmp_images/%s.png' % name)
 				i1 = Image.open(img1)
 				i2 = Image.open(img2)
-				pairs = izip(i1.getdata(), i2.getdata())
+				pairs = zip(i1.getdata(), i2.getdata())
 				if len(i1.getbands()) == 1:
 					dif = sum(abs(p1-p2) for p1,p2 in pairs)
 				else:
@@ -2290,7 +2289,7 @@ def japanese(request):
 			table_instance.inner_row_border = True
 			with open('japanese-report.txt','w') as f:
 				f.write(table_instance.table)
-    		return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
+			return JsonResponse({'data_code': data_code, 'match_count': match_count, 'unmatch_count': unmatch_count})
 		return render(request, 'japanese.html')
 	else:
 		module_dir = os.path.dirname(__file__)

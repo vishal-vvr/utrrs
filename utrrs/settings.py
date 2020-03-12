@@ -24,7 +24,7 @@ SECRET_KEY = '%edtp#wxfix&qnvs^&^nj!6x$@rnpz96c7_2*z)x#i6c$$3-6z'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['utrrs-utrrs.6923.rh-us-east-1.openshiftapps.com']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 # Application definition
 
