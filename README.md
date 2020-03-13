@@ -16,7 +16,7 @@ $ python3 manage.py runserver
 ```
 
 # License
-This application is licensed under the GPL License, Version 3.
+This application is licensed under the MIT License.
 Please read file [LICENSE](LICENSE) for details.
 
 # Credits
