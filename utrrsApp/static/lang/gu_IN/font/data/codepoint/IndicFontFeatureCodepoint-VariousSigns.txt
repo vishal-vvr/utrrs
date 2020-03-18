@@ -1,8 +1,0 @@
-codepoint, imagepath, rawcode, desc
-U+0A81, image/0A81.jpg,  ઁ, GUJARATI SIGN CHANDRABINDU
-U+0A82, image/0A82.jpg,  ં, GUJARATI SIGN ANUSVARA
-U+0A83, image/0A83.jpg,  ઃ, GUJARATI SIGN VISARGA
-U+0ABC, image/0ABC.jpg,  ઼, GUJARATI SIGN NUKTA
-U+0ABD, image/0ABD.jpg,  ઽ, GUJARATI SIGN AVAGRAHA
-U+0ACD, image/0ACD.jpg,  ્, GUJARATI SIGN VIRAMA (HALANT)
-U+0AD0, image/0AD0.jpg,  ૐ, GUJARATI SIGN OM

@@ -1,2 +1,0 @@
-codepoint, imagepath, rawcode, desc
-U+0970, image/0970.jpg,  ॰,DEVNAGARI ABREVIATION SIGN

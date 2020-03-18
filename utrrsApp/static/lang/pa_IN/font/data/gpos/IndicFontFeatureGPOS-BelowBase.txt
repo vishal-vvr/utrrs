@@ -1,3 +1,0 @@
-codepoint, imagepath, rawcode, desc
-U+0A73, image/0A73.jpg, ੳ, GURMUKHI LETTER URA
-U+0A72, image/0A72.jpg, ੲ, GURMUKHI LETTER IRI

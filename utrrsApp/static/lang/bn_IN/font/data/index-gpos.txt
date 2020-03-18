@@ -1,3 +1,0 @@
-heading, location
-GPOS-AboveBase, ../data/gpos/IndicFontFeatureGPOS-AboveBase.txt
-GPOS-BelowBase, ../data/gpos/IndicFontFeatureGPOS-BelowBase.txt

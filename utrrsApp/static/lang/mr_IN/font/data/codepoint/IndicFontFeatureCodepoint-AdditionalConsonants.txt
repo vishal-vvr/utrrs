@@ -1,9 +1,0 @@
-codepoint, imagepath, rawcode, desc
-U+0958, image/0958.jpg,  क़, DEVNAGARI LETTER QA
-U+0959, image/0959.jpg,  ख़, DEVNAGARI LETTER KHHA
-U+095A, image/095A.jpg,  ग़, DEVNAGARI LETTER GHHA
-U+095B, image/095B.jpg,  ज़, DEVNAGARI LETTER ZA
-U+095C, image/095C.jpg,  ड़, DEVNAGARI LETTER DDDHA
-U+095D, image/095D.jpg,  ढ़, DEVNAGARI LETTER RHA
-U+095E, image/095E.jpg,  फ़, DEVNAGARI LETTER FA
-U+095F, image/095F.jpg,  य, DEVNAGARI LETTER YYA

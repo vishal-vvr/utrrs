@@ -1,8 +1,0 @@
-codepoint, imagepath, rawcode, desc
-
-U+0A70, image/0A70.jpg, ੰ, GURMUKHI TIPPI
-U+0A71, image/0A71.jpg, ੱ, GURMUKHI ADDAK
-U+0A72, image/0A72.jpg, ੲ, GURMUKHI IRI
-U+0A73, image/0A73.jpg, ੳ, GURMUKHI URA
-U+0A74, image/0A74.jpg, ੴ, GURMUKHI EK ONKAR
-U+0A75, image/0A75.jpg, ੵ, GURMUKHI SIGN YAKASH

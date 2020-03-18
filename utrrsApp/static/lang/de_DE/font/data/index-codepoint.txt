@@ -1,4 +1,0 @@
-heading, location
-Vowels, ../data/codepoint/GermanFontFeatureCodepoint-Vowels.txt
-Consonants, ../data/codepoint/GermanFontFeatureCodepoint-Consonants.txt
-Umlaut, ../data/codepoint/GermanFontFeatureCodepoint-Umlaut.txt

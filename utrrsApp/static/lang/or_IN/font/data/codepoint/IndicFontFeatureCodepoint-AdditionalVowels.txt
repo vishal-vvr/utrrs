@@ -1,4 +1,0 @@
-codepoint, imagepath, rawcode, desc
-
-U+0B60, image/0B60.jpg, ୠ, ORIYA LETTER VOCALIC RR {Sanskrit}
-U+0B61, image/0B61.jpg, ୡ, ORIYA LETTER VOCALIC LL {Sanskrit}

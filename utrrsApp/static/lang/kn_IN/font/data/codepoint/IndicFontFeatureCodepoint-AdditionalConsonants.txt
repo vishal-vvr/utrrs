@@ -1,2 +1,0 @@
-codepoint, imagepath, rawcode, desc
-U+0CDE, image/0CDE.jpg,  ೞ, KANNADA LETTER FA (obsolete historic letter)

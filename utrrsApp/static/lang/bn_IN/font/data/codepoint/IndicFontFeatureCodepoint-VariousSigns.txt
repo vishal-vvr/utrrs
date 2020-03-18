@@ -1,9 +1,0 @@
-codepoint, imagepath, rawcode, desc
-U+09CD, image/09CD.jpg,  ্, SIGN VIRAMA(HALANT)
-U+09BC, image/09BC.jpg,  ়, SIGN NUKTA 
-U+0982, image/0982.jpg,  ং, SIGN ANUSWARA
-U+0983, image/0983.jpg,  ঃ, SIGN VISARGA
-U+0981, image/0981.jpg,  ঁ, SIGN CHANDRABINDU
-U+09FA, image/09FA.jpg,  ৺, SIGN ISSHAR
-U+09FB, image/09FB.jpg,	৻,	BENGALI GANDA MARK 
-U+20B9, image/20B9.jpg,	₹,	India Rupee Sign 

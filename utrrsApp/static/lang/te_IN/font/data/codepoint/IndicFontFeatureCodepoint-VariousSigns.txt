@@ -1,7 +1,0 @@
-codepoint, imagepath, rawcode, desc
-U+0C01, image/0C01.jpg,  ఁ, TELUGU SIGN CHANDRABINDU
-U+0C02, image/0C02.jpg,  ం, TELUGU SIGN ANUSVARA
-U+0C03, image/0C03.jpg,  ః, TELUGU SIGN VISARGA
-U+0C4D, image/0C4D.jpg,  ్, TELUGU SIGN VIRAMA (HALANT)
-U+0C55, image/0C55.jpg,  ౕ, TELUGU LENGTH MARK
-U+0C56, image/0C56.jpg,  ౖ, TELUGU AI LENGTH MARK

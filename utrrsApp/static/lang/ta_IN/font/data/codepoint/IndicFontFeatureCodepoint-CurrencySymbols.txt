@@ -1,2 +1,0 @@
-codepoint, imagepath, rawcode, desc
-U+0BF9, image/0BF9.jpg,  ௹, TAMIL RUPEE SIGN

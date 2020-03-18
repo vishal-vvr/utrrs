@@ -1,8 +1,0 @@
-codepoint, imagepath, rawcode, desc
-
-U+0A01, image/0A01.jpg, ਁ, GURMUKHI SIGN ADAK BINDI
-U+0A02, image/0A02.jpg, ਂ, GURMUKHI SIGN BINDI
-U+0A03, image/0A03.jpg, ਃ, GURMUKHI SIGN VISARGA
-U+0A3C, image/0A3C.jpg, ਼, GURMUKHI SIGN NUKTA
-U+0A4D, image/0A4D.jpg, ੍, GURMUKHI SIGN VIRAMA
-U+0A51, image/0A51.jpg, ੑ, GURMUKHI SIGN UDAAT

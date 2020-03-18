@@ -1,7 +1,0 @@
-codepoint, imagepath, rawcode, desc
-U+0BF3, image/0BF3.jpg,  ௳, TAMIL DAY SIGN
-U+0BF4, image/0BF4.jpg,  ௴, TAMIL MONTH SIGN
-U+0BF5, image/0BF5.jpg,  ௵, TAMIL YEAR SIGN
-U+0BF6, image/0BF6.jpg,  ௶, TAMIL DEBIT SIGN
-U+0BF7, image/0BF7.jpg,  ௷, TAMIL CREDIT SIGN
-U+0BF8, image/0BF8.jpg,  ௸, TAMIL AS ABOVE SIGN
