@@ -12,12 +12,24 @@ Comparing the results of a text rendering engine to actual text can be done with
 # Setup
 ```sh
 $ python3 setup.py install
-$ python3 manage.py runserver
+$ python3 src/manage.py createsuperuser
+$ python3 src/manage.py runserver
 ```
+NOTE: 
+- In production env just update 
+    ```
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'utrrs.settings.development') to
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'utrrs.settings.production') in src/manage.py file 
+    ```
+    and production env releated settings in 
+    ```
+    utrrs/settings/production.py file
+    ```
+    
 
 # License
 This application is licensed under the MIT License.
 Please read file [LICENSE](LICENSE) for details.
 
 # Credits
-Please read file [AUTHORS](AUTHORS.md) for list of contributors.
+Please read file [CONTRIBUTORS](CONTRIBUTORS.md) for list of contributors.

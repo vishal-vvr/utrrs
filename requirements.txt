@@ -1,4 +1,4 @@
-Django==1.10.4
-Pillow==3.4.2
-reportlab==3.3.0
-terminaltables==3.1.0
+Django==3.0.4
+Pillow==7.0.0
+django-cleanup==4.0.0
+django-debug-toolbar==2.2
