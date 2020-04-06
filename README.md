@@ -12,6 +12,7 @@ Comparing the results of a text rendering engine to actual text can be done with
 # Setup
 ```sh
 $ python3 setup.py install
+$ python3 src/manage.py migrate
 $ python3 src/manage.py createsuperuser
 $ python3 src/manage.py runserver
 ```
@@ -21,7 +22,7 @@ NOTE:
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'utrrs.settings.development') to
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'utrrs.settings.production') in src/manage.py file 
     ```
-    and production env releated settings in 
+    and production env releated settings(db details and etc) in 
     ```
     utrrs/settings/production.py file
     ```
